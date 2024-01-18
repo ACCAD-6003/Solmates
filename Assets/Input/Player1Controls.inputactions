@@ -1,0 +1,56 @@
+{
+    "name": "Player1Controls",
+    "maps": [
+        {
+            "name": "Movement",
+            "id": "78f77ce1-2c6f-4ca6-a6fb-ef9cd16e34ed",
+            "actions": [
+                {
+                    "name": "Circle",
+                    "type": "Value",
+                    "id": "2cd9963f-701a-4738-a82d-dbbf2294c377",
+                    "expectedControlType": "Analog",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "Keyboard",
+                    "id": "72e7d064-1c58-4a48-aef5-f12cc72302c0",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Circle",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "228649e9-0a15-4745-857e-de559df6aa4d",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Circle",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "56a4e3a3-e9f2-42a3-a762-26a912b463df",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Circle",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

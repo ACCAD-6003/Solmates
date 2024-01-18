@@ -1,0 +1,40 @@
+{
+    "name": "TestControls",
+    "maps": [
+        {
+            "name": "Testing",
+            "id": "bbd98d69-4d4d-4075-ba7b-a01b29f0b9d9",
+            "actions": [
+                {
+                    "name": "SwitchCamera",
+                    "type": "Button",
+                    "id": "c1b34447-4b39-4a75-ac88-24c7d3543e20",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "905dd8ea-95fa-4614-a84a-0a238c7b7837",
+                    "path": "<Keyboard>/c",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "TestControls",
+                    "action": "SwitchCamera",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "TestControls",
+            "bindingGroup": "TestControls",
+            "devices": []
+        }
+    ]
+}
