@@ -10,6 +10,11 @@ public abstract class UIButton : MonoBehaviour, IButton, IPointerEnterHandler
     public event Action<IButton> OnClick;
     protected bool isSelected;
 
+    public void Awake()
+    {
+        GetComponent<Button>().onClick.AddListener(Click);
+    }
+
     public void OnPointerEnter(PointerEventData eventData)
     {
         if (!isSelected) OnSelect?.Invoke(this);

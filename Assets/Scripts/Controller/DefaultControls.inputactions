@@ -49,6 +49,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "PlayerTwoInteract",
+                    "type": "Button",
+                    "id": "a66cb535-1341-4316-9d3d-e9235d510873",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -56,17 +65,6 @@
                     "name": "",
                     "id": "4a1eab5c-9475-467f-bb1a-bb11533f5533",
                     "path": "<Keyboard>/e",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Interact",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "8f697bfa-a2e2-4182-bf1a-67ff85dfa1bb",
-                    "path": "<Keyboard>/enter",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -214,6 +212,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "eaaa3985-46b5-40d6-a4d7-319c44e2d8b5",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PlayerTwoInteract",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -494,74 +503,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "AbortDialogue",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                }
-            ]
-        },
-        {
-            "name": "UIPuzzle",
-            "id": "0e2447fc-91b1-4524-bbab-6b22ee148cb6",
-            "actions": [
-                {
-                    "name": "Click",
-                    "type": "Button",
-                    "id": "6c76f926-55ee-4390-a1df-43bf8f2086d3",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Position",
-                    "type": "PassThrough",
-                    "id": "63e98c7d-b88c-4f7f-a8ab-51b97d129f29",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "Cancel",
-                    "type": "Button",
-                    "id": "13ff90f7-40da-45d6-bf26-2ec0e15cb521",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                }
-            ],
-            "bindings": [
-                {
-                    "name": "",
-                    "id": "cafc98a6-9cc6-40f0-8aa3-7d982e2e871d",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Click",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "20e1c413-84ca-4538-842f-172f74e55a51",
-                    "path": "<Mouse>/position",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Position",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "2571e279-7dfc-4d05-a3ed-18257a53102b",
-                    "path": "<Keyboard>/escape",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Cancel",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -19,6 +19,8 @@ public class Controller : SingletonMonoBehavior<Controller>
     public static Action OnResume;
     public static Action OnNextDialogue;
     public static Action OnOverrideSkip;
+    
+    public static Action OnPlayerTwoInteract;
 
     public static Action OnCancel;
 
@@ -136,5 +138,17 @@ public class Controller : SingletonMonoBehavior<Controller>
             OnCancel?.Invoke();
         }
     }
+    #endregion
+
+    #region PlayerTwo Layout
+    
+    public void PlayerTwoInteract(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            OnPlayerTwoInteract?.Invoke();
+        }
+    }
+
     #endregion
 }

@@ -20,7 +20,8 @@ public class DialogueManager : SingletonMonoBehavior<DialogueManager>
     [SerializeField, Tooltip("Chars/Second")] float dialogueSpeed;
     [SerializeField, Tooltip("Chars/Second")] float dialogueFastSpeed;
     [SerializeField, ReadOnly] List<SOConversationData> conversationGroup;
-    [SerializeField] private ConversantType DEBUG_currentPlayer;
+    
+    private ConversantType currentPlayer;
 
     private Dictionary<ConversationData, int> conversationProgress = new();
     private float currentDialogueSpeed;
@@ -38,9 +39,17 @@ public class DialogueManager : SingletonMonoBehavior<DialogueManager>
         conversationGroup = Resources.LoadAll<SOConversationData>("Dialogue").ToList();
     }
 
-    [Button]
-    public void StartDialogue(SOConversationData conversation)
+    [Button(ButtonStyle.Box)]
+    public void StartPlayerOneDialogue(SOConversationData conversation)
     {
+        currentPlayer = ConversantType.PlayerOne;
+        StartDialogue(conversation.Data.ID);
+    }
+
+    [Button(ButtonStyle.Box)]
+    public void StartPlayerTwoDialogue(SOConversationData conversation)
+    {
+        currentPlayer = ConversantType.PlayerTwo;
         StartDialogue(conversation.Data.ID);
     }
 
@@ -101,7 +110,7 @@ public class DialogueManager : SingletonMonoBehavior<DialogueManager>
 
             foreach (var dialogue in dialogueChain.dialogues)
             {
-                switch (DEBUG_currentPlayer)
+                switch (currentPlayer)
                 {
                     case ConversantType.PlayerOne when dialogue.speaker == ConversantType.PlayerTwo:
                     case ConversantType.PlayerTwo when dialogue.speaker == ConversantType.PlayerOne:
