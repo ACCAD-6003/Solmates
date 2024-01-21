@@ -13,23 +13,24 @@ public class DialogueManager : SingletonMonoBehavior<DialogueManager>
 {
     public static Action<ConversationData> OnDialogueStarted;
     public static Action OnDialogueEnded;
-    public static Action<string, bool> OnTextUpdated;
+    public static Action<string> OnTextUpdated;
     public static Action<List<string>> OnChoiceMenuOpen;
     public static Action OnChoiceMenuClose;
 
-    [SerializeField] float dialogueSpeed;
-    [SerializeField] float dialogueFastSpeed;
+    [SerializeField, Tooltip("Chars/Second")] float dialogueSpeed;
+    [SerializeField, Tooltip("Chars/Second")] float dialogueFastSpeed;
     [SerializeField, ReadOnly] List<SOConversationData> conversationGroup;
+    [SerializeField] private ConversantType DEBUG_currentPlayer;
 
-    Dictionary<string, DialogueBranchData> choiceToPath = new Dictionary<string, DialogueBranchData>();
-
-    float currentDialogueSpeed;
-    bool inDialogue;
-    bool continueInputRecieved;
-    bool abortDialogue;
-    string choiceSelected;
+    private Dictionary<ConversationData, int> conversationProgress = new();
+    private float currentDialogueSpeed;
+    private bool inDialogue;
+    private bool continueInputReceived;
+    private bool abortDialogue;
+    private string choiceSelected;
     public bool InDialogue => inDialogue;
     public bool ValidateID(string id) => conversationGroup.Find(data => data.Data.ID.ToLower().Equals(id.ToLower()));
+    
 
     protected override void Awake()
     {
@@ -56,14 +57,22 @@ public class DialogueManager : SingletonMonoBehavior<DialogueManager>
             Controller.Instance.SwapToUI();
         }
 
-        var SOConversationData = conversationGroup.Find(data => data.Data.ID.ToLower().Equals(dialogueId.ToLower()));
-        if (SOConversationData == null)
+        var ConversationDataPointer = conversationGroup.Find(data => data.Data.ID.ToLower().Equals(dialogueId.ToLower()));
+        if (ConversationDataPointer == null)
         {
             Debug.LogError("Could not find " + dialogueId + " in database");
             return;
         }
+        if (conversationProgress.ContainsKey(ConversationDataPointer.Data))
+        {
+            conversationProgress[ConversationDataPointer.Data]++;
+        }
+        else
+        {
+            conversationProgress.Add(ConversationDataPointer.Data, 0);
+        }
 
-        StartCoroutine(HandleConversation(SOConversationData.Data));
+        StartCoroutine(HandleConversation(ConversationDataPointer.Data));
     }
 
     private void ExitDialogue()
@@ -82,74 +91,78 @@ public class DialogueManager : SingletonMonoBehavior<DialogueManager>
     private IEnumerator HandleConversation(ConversationData data)
     {
         OnDialogueStarted?.Invoke(data);
+        var dialogueChain = conversationProgress[data] < data.DialoguesSeries.Count ? 
+            data.DialoguesSeries[conversationProgress[data]] : data.DialoguesSeries[^1];
 
-        if (data.Dialogues.Count >= 1 && !data.Dialogues[0].Dialogue.IsNullOrWhitespace())
+        if (dialogueChain.dialogues.Count >= 1 && !dialogueChain.dialogues[0].Dialogue.IsNullOrWhitespace())
         {
             abortDialogue = false;
             Controller.OnOverrideSkip += OnAbort;
 
-            foreach (var dialogue in data.Dialogues)
+            foreach (var dialogue in dialogueChain.dialogues)
             {
+                switch (DEBUG_currentPlayer)
+                {
+                    case ConversantType.PlayerOne when dialogue.speaker == ConversantType.PlayerTwo:
+                    case ConversantType.PlayerTwo when dialogue.speaker == ConversantType.PlayerOne:
+                        continue;
+                }
                 yield return ProcessDialogue(dialogue, data.Conversant);
                 if (abortDialogue) break;
             }
 
             Controller.OnOverrideSkip -= OnAbort;
-            
-
         }
 
-        GenerateChoiceToPath(data);
-        yield return HandleChoices();
+        yield return HandleChoices(dialogueChain.choices);
         ExitDialogue();
     }
 
     public void SelectChoice(string choice) => choiceSelected = choice;
 
-    private IEnumerator HandleChoices()
+    private IEnumerator HandleChoices(List<string> choices)
     {
         choiceSelected = null;
-        if (choiceToPath.Count == 0) yield break;
+        if (choices.Count == 0) yield break;
 
-        OnChoiceMenuOpen?.Invoke(choiceToPath.Keys.ToList());
+        OnChoiceMenuOpen?.Invoke(choices);
         yield return new WaitUntil(() => choiceSelected != null);
         OnChoiceMenuClose?.Invoke();
     }
 
-    private void GenerateChoiceToPath(ConversationData conversation)
-    {
-        choiceToPath.Clear();
-        for (int i = 0; i < conversation.Choices.Count; i++)
-        {
-            choiceToPath.Add(conversation.Choices[i], conversation.LeadsTo[i]);
-        }
-    }
-
-    private void OnContinueInput() => continueInputRecieved = true;
+    private void OnContinueInput() => continueInputReceived = true;
 
     private IEnumerator ProcessDialogue(DialogueData dialogue, string conversant)
     {
-        OnTextUpdated?.Invoke("", dialogue.PlayerIsSpeaker);
+        string Underline(string text) => "<u>" + text + "</u>";
+        OnTextUpdated?.Invoke("");
         yield return new WaitUntil(() => FadeToBlackSystem.FadeOutComplete);
 
-        continueInputRecieved = false;
-        string name = "";
+        continueInputReceived = false;
+        var speakerName = "";
 
-        if (!dialogue.VoiceSpeaker)
+        if (dialogue.speaker != ConversantType.Other)
         {
-            name =  "<u>" + (dialogue.PlayerIsSpeaker ? PLAYER_MARKER : (conversant + ": ")) + "</u>\n";
+            speakerName = dialogue.speaker switch
+            {
+                ConversantType.PlayerOne => PLAYER_MARKER,
+                ConversantType.PlayerTwo => PLAYER_TWO_MARKER,
+                ConversantType.Conversant => conversant,
+                _ => speakerName
+            };
+            speakerName = Underline(speakerName) + "\n";
         }
 
-        yield return TypewriterDialogue(name, dialogue.Dialogue, dialogue.PlayerIsSpeaker);
+        yield return TypewriterDialogue(speakerName, dialogue.Dialogue);
 
         Controller.OnNextDialogue += OnContinueInput;
 
-        yield return new WaitUntil(() => continueInputRecieved);
+        yield return new WaitUntil(() => continueInputReceived);
 
         Controller.OnNextDialogue -= OnContinueInput;
     }
 
-    private IEnumerator TypewriterDialogue(string name, string line, bool isWickSpeaker)
+    private IEnumerator TypewriterDialogue(string name, string line)
     {
         currentDialogueSpeed = dialogueSpeed;
         string loadedText = name;
@@ -161,9 +174,9 @@ public class DialogueManager : SingletonMonoBehavior<DialogueManager>
             atSpecialCharacter = letter == '<' || atSpecialCharacter;
             if (atSpecialCharacter && letter != '>') continue;
             atSpecialCharacter = false;
-            OnTextUpdated?.Invoke(loadedText, isWickSpeaker);
+            OnTextUpdated?.Invoke(loadedText);
             yield return new WaitForSeconds(1 / currentDialogueSpeed);
-            if (abortDialogue) { OnTextUpdated?.Invoke(name + line, isWickSpeaker); break; }
+            if (abortDialogue) { OnTextUpdated?.Invoke(name + line); break; }
         }
         Controller.OnNextDialogue -= SpeedUpText;
     }

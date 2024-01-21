@@ -15,7 +15,7 @@ public class DialogueSoundListener : MonoBehaviour
 
     private void TriggerAudio(ConversationData dialogueNode)
     {
-        if (soundDatabase.GetClip(dialogueNode.Sound, out var clip))
+        if (soundDatabase.GetClip(dialogueNode.Conversant, out var clip))
         {
             audio.PlayOneShot(clip);
         }

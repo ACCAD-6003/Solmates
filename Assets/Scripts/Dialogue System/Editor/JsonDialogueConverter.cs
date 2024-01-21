@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using Sirenix.Utilities;
+using Unity.VisualScripting;
 using UnityEditor;
+using UnityEngine.Timeline;
 using static DialogueHelperClass;
 
 public static class JsonDialogueConverter
@@ -48,104 +50,72 @@ public static class JsonDialogueConverter
     {
         var conversation = new ConversationData();
         var lines = text.Split('\n').Where(x => !x.IsNullOrWhitespace()).Select(x => x.Trim()).ToList();
+        string NextLine() => lines[0];
+        void RemoveLine() => lines.RemoveAt(0);
+        bool MoreLinesToProcess() => lines.Count > 0;
+        void CreateNewChain() => conversation.DialoguesSeries.Add(new DialogueChain());
+        bool ReachedChoices() => NextLine().StartsWith(CHOICES_MARKER);
+        bool ReachedDialogue() => NextLine().StartsWith(DIALOGUE_MARKER);
+        void AddChoicesToChain() => conversation.DialoguesSeries[^1].choices.Add(NextLine());
 
-        conversation.ID = lines[0];
-        Debug.Log($"Converting {lines[0]}");
-        lines.RemoveAt(0);
+        conversation.ID = NextLine();
+        Debug.Log($"Converting {NextLine()}");
+        RemoveLine();
+        
+        AssertMarker(NextLine(), CONVERSANT_MARKER);
+        conversation.Conversant = NextLine()[CONVERSANT_MARKER.Length..];
+        RemoveLine();
 
-
-        AssertMarker(lines[0], CONVERSANT_MARKER);
-        conversation.Conversant = lines[0].Substring(CONVERSANT_MARKER.Length);
-        lines.RemoveAt(0);
-
-        while (lines.Count > 0)
+        while (MoreLinesToProcess())
         {
-            AssertMarker(lines[0], DIALOGUE_MARKER);
-            lines.RemoveAt(0);
+            AssertMarker(NextLine(), DIALOGUE_MARKER);
+            RemoveLine();
             
-            conversation.DialoguesSeries.Add(new List<DialogueData>());
+            CreateNewChain();
 
-            while (!lines[0].StartsWith(CHOICES_MARKER))
+            while (!ReachedChoices())
             {
-                if (!lines[0].StartsWith(PLAYER_MARKER) && !lines[0].StartsWith($"{conversation.Conversant}: ") &&
-                    !lines[0].StartsWith(VOICE_MARKER))
-                {
-                    conversation.DialoguesSeries[^1][^1].Dialogue += " " + lines[0];
-                }
-                else
-                {
-                    string dialogueLine = "";
-                    if (lines[0].StartsWith(PLAYER_MARKER))
-                    {
-                        dialogueLine = lines[0][PLAYER_MARKER.Length..];
-                    }
-                    else if (lines[0].StartsWith(PLAYER_TWO_MARKER))
-                    {
-                        dialogueLine = lines[0][PLAYER_TWO_MARKER.Length..];
-                    }
-                    else if (lines[0].StartsWith(VOICE_MARKER))
-                    {
-                        dialogueLine = lines[0][VOICE_MARKER.Length..];
-                    }
-                    else
-                    {
-                        dialogueLine = lines[0][(conversation.Conversant.Length + ": ".Length)..];
-                    }
-
-                    conversation.DialoguesSeries[^1].Add(new DialogueData()
-                    {
-                        Dialogue = dialogueLine.Trim(), VoiceSpeaker = lines[0].StartsWith(VOICE_MARKER),
-                        PlayerIsSpeaker = lines[0].StartsWith(PLAYER_MARKER)
-                    });
-                }
-
-                lines.RemoveAt(0);
+                AddDialogueToChain(conversation, NextLine());
+                RemoveLine();
             }
             
-            lines.RemoveAt(0);
-            conversation.ChoiceSeries.Add(new List<string>());
+            RemoveLine();
             
-            while (lines.Count > 0 && !lines[0].StartsWith(DIALOGUE_MARKER))
+            while (MoreLinesToProcess() && !ReachedDialogue())
             {
-                conversation.ChoiceSeries[^1].Add(lines[0]);
-                lines.RemoveAt(0);
+                AddChoicesToChain();
+                RemoveLine();
             }
         }
 
         return conversation;
     }
 
-    private static List<RequirementData> GenerateRequirmentsData(string[] branchLines)
+    private static void AddDialogueToChain(ConversationData conversation, string line)
     {
-        var requirments = new List<RequirementData>();
-
-        for (int i = 1; i < branchLines.Length; i++)
+        var markersToCheck = new List<(string label, ConversantType type)>
         {
-            var requirment = new RequirementData();
-            int offset = 0;
+            (PLAYER_MARKER, ConversantType.PlayerOne), (PLAYER_TWO_MARKER, ConversantType.PlayerTwo), 
+            (VOICE_MARKER, ConversantType.Other), ($"{conversation.Conversant}: ", ConversantType.Conversant)
+        };
 
-            if (branchLines[i][0] == '$')
-            {
-                offset++;
-                requirment.isItemID = true;
-            }
-            if (branchLines[i].Length > 1 && branchLines[i][1] == '$')
-            {
-                offset++;
-                requirment.consumesItem = true;
-            }
+        var markerFound = markersToCheck.FirstOrDefault(x => line.StartsWith(x.label));
 
-            requirment.label = branchLines[i][offset..].ToLowerInvariant();
-
-            requirments.Add(requirment);
+        if (markerFound == default)
+        {
+            conversation.DialoguesSeries[^1].dialogues[^1].Dialogue += " " + line;
         }
+        else
+        {
+            var dialogueLine = line[markerFound.label.Length..].Trim();
+            var dialogueData = new DialogueData { Dialogue = dialogueLine, speaker = markerFound.type };
 
-        return requirments;
+            conversation.DialoguesSeries[^1].dialogues.Add(dialogueData);
+        }
     }
 
-    private static bool AssertMarker(string text, string marker)
+    private static void AssertMarker(string text, string marker)
     {
         Debug.Assert(text.StartsWith(marker), $"ERROR: {text} did not start with {marker}");
-        return text.StartsWith(marker);
     }
 }

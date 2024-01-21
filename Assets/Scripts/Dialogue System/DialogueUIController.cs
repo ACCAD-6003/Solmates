@@ -6,11 +6,10 @@ using static DialogueHelperClass;
 
 public class DialogueUIController : MonoBehaviour
 {
-    [SerializeField] PortraitDisplay leftPortrait, rightPortrait;
     [SerializeField] TextBoxDisplay textBoxDisplay;
     [SerializeField] ChoicesDisplay choicesDisplay;
 
-    List<string> choices = new List<string>();
+    List<string> choices = new();
     int currentChoice;
     int totalChoices;
 
@@ -29,8 +28,7 @@ public class DialogueUIController : MonoBehaviour
         {
             child.gameObject.SetActive(false);
         }
-        leftPortrait.Hide();
-        rightPortrait.Hide();
+        
         textBoxDisplay.Hide();
         choicesDisplay.Hide();
         DialogueManager.OnTextUpdated -= textBoxDisplay.UpdateDialogueText;
@@ -42,9 +40,7 @@ public class DialogueUIController : MonoBehaviour
         {
             child.gameObject.SetActive(true);
         }
-
-        leftPortrait.Display(conversation.Conversant);
-        rightPortrait.Display("l0-1d");
+        
         textBoxDisplay.Display();
         DialogueManager.OnTextUpdated += textBoxDisplay.UpdateDialogueText;
     }

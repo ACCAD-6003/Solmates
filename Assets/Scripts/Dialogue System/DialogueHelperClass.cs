@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.Serialization;
 
 public static class DialogueHelperClass
 {
@@ -27,9 +28,16 @@ public static class DialogueHelperClass
     [System.Serializable]
     public class DialogueData
     {
-        public bool PlayerIsSpeaker;
-        public bool VoiceSpeaker;
+        public ConversantType speaker;
         [SerializeField, TextArea()] public string Dialogue;
+    }
+    
+    public enum ConversantType
+    {
+        PlayerOne,
+        PlayerTwo,
+        Conversant,
+        Other,
     }
 
     [System.Serializable]
@@ -37,28 +45,13 @@ public static class DialogueHelperClass
     {
         public string ID;
         public string Conversant;
-        public string Unlocks;
-        public string Sound;
-        public List<List<DialogueData>> DialoguesSeries = new List<List<DialogueData>>();
-        public List<DialogueData> Dialogues = new List<DialogueData>();
-        public List<List<string>> ChoiceSeries = new List<List<string>>();
-        public List<string> Choices = new List<string>();
-        public List<DialogueBranchData> LeadsTo = new List<DialogueBranchData>();
+        public List<DialogueChain> DialoguesSeries = new();
     }
 
     [System.Serializable]
-    public class DialogueBranchData
+    public class DialogueChain
     {
-        public string BranchText;
-        public bool isPuzzle;
-        public List<RequirementData> Requirements;
-    }
-
-    [System.Serializable]
-    public class RequirementData
-    {
-        public string label;
-        public bool isItemID;
-        [ShowIf("isItemID", true)] public bool consumesItem;
+        public List<DialogueData> dialogues = new();
+        public List<string> choices = new();
     }
 }
