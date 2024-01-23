@@ -1,6 +1,8 @@
 
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 public class Movement : MonoBehaviour
 {
@@ -8,11 +10,14 @@ public class Movement : MonoBehaviour
     public float speed = 5f;
     [SerializeField]
     public float radius = 5;
+    public float minRadius = 2;
+    public float maxRadius = 20;
     [SerializeField]
     public Transform otherPlayer;
 
     [SerializeField]
     public InputActionAsset input;
+    public InputActionMap actionMap;
 
     // <0 is clockwise, >0 is counterclockwise, 0 is not moving 
     private float movementDirection = 0;
@@ -20,7 +25,7 @@ public class Movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InputActionMap actionMap = input.FindActionMap("Movement");
+        actionMap = input.FindActionMap("Movement");
         actionMap.actionTriggered += ActionTriggered;
         actionMap.Enable();
 
@@ -41,6 +46,11 @@ public class Movement : MonoBehaviour
     private void Circle(float direction)
     {
         movementDirection = direction;
+    }
+
+    public void ChangeRadius(float scale)
+    {
+        radius = Mathf.Clamp(radius + scale, minRadius, maxRadius);
     }
 
     private float GetAngleToOtherPlayer()
