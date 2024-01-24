@@ -470,7 +470,7 @@ PrefabInstance:
       objectReference: {fileID: -944628639613478452, guid: 71372354c4c0a9445abcde08c421d64d, type: 3}
     - target: {fileID: 1157235802502065448, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}
       propertyPath: speed
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1157235802502065448, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}
       propertyPath: otherPlayer
@@ -480,6 +480,10 @@ PrefabInstance:
       propertyPath: LookAt
       value: 
       objectReference: {fileID: 2020959050}
+    - target: {fileID: 4812032995375782613, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: f794bfa42230d5f468e48074ad521610, type: 2}
     - target: {fileID: 4812032995375782615, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}
       propertyPath: m_Name
       value: RedPlayer
@@ -557,7 +561,7 @@ PrefabInstance:
       objectReference: {fileID: -944628639613478452, guid: a54bed459ab5a8a42b5a408f15051ecc, type: 3}
     - target: {fileID: 1157235802502065448, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}
       propertyPath: speed
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1157235802502065448, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}
       propertyPath: otherPlayer
@@ -567,6 +571,14 @@ PrefabInstance:
       propertyPath: LookAt
       value: 
       objectReference: {fileID: 1203788820}
+    - target: {fileID: 4812032995375782612, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4812032995375782613, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: f794bfa42230d5f468e48074ad521610, type: 2}
     - target: {fileID: 4812032995375782615, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}
       propertyPath: m_Name
       value: BluePlayer

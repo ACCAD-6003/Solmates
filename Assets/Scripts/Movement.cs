@@ -14,6 +14,8 @@ public class Movement : MonoBehaviour
     [SerializeField]
     public InputActionAsset input;
 
+    private float savedSpeed = 0;
+
     // <0 is clockwise, >0 is counterclockwise, 0 is not moving 
     private float movementDirection = 0;
 
@@ -45,12 +47,17 @@ public class Movement : MonoBehaviour
 
     public void StopPlayer()
     {
+        if (speed == 0) {
+            return;
+        }
+
+        savedSpeed = speed;
         speed = 0f;
     }
 
     public void StartPlayer()
     {
-        speed = 5f;
+        speed = savedSpeed;
     }
 
     private float GetAngleToOtherPlayer()
@@ -63,13 +70,21 @@ public class Movement : MonoBehaviour
         transform.position = Vector3.Scale(otherPlayer.position, new Vector3(1,0,1))  + radius * new Vector3(Mathf.Cos(angle), 0, Mathf.Sin(angle)) + transform.position.y * Vector3.up;
     }
 
-    // Update is called once per frame
-    void Update()
+    private Vector3 RadiusVector() 
     {
-        if (movementDirection != 0)
-        {
-            SetAngleToOtherPlayer(GetAngleToOtherPlayer() + movementDirection * speed * Time.deltaTime * 2 * Mathf.PI);
-        }
+        return Vector3.Scale(new Vector3(1,0,1), otherPlayer.position - transform.position);    
+    }
+
+    private void move(float localVelocity) {
+        GetComponent<Rigidbody>().velocity = localVelocity * Vector3.Cross(RadiusVector(), Vector3.up);
+    }
+
+    // Update is called once per frame
+    void FixedUpdate()
+    {
+        move(movementDirection * speed);
+
+        SetAngleToOtherPlayer(GetAngleToOtherPlayer());
 
         transform.LookAt(otherPlayer);
     }
