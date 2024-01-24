@@ -15,22 +15,13 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Grow",
-                    "type": "Button",
-                    "id": "f6839d7d-f3e6-4b43-8ec0-00e38b3fc396",
-                    "expectedControlType": "Button",
+                    "name": "Radius",
+                    "type": "Value",
+                    "id": "105e8f79-3322-46e6-b752-0e9da6cc6e41",
+                    "expectedControlType": "Analog",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Shrink",
-                    "type": "Button",
-                    "id": "777b6ad9-e592-44d9-aef1-78bf55c712e2",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -68,26 +59,37 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "",
-                    "id": "211bc6eb-ebc9-4dbc-a5b9-5d28e64d57a3",
-                    "path": "<Keyboard>/#(E)",
+                    "name": "Keyboard",
+                    "id": "d310012f-9aad-4706-b9fb-bc890fbd1d8a",
+                    "path": "1DAxis",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Grow",
-                    "isComposite": false,
+                    "action": "Radius",
+                    "isComposite": true,
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "",
-                    "id": "0559827f-1be2-478c-b64f-611190c36233",
-                    "path": "<Keyboard>/#(Q)",
+                    "name": "negative",
+                    "id": "c5eed4fb-b8a2-4c9f-9177-3f1945432f78",
+                    "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Shrink",
+                    "action": "Radius",
                     "isComposite": false,
-                    "isPartOfComposite": false
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "178b7bfc-40b8-4888-923a-1ba4842fea2d",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Radius",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         }

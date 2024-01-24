@@ -27,7 +27,7 @@ public class GrowShrink : MonoBehaviour
             playerMovement = other.GetComponent<Movement>();
 
             // Get references to InputActions from the "Movement" action map
-            playerMovement.actionMap.actionTriggered += playerMovement.TotemActionTriggered;
+            // playerMovement.actionMap.actionTriggered += playerMovement.TotemActionTriggered;
         }
     }
 
@@ -39,34 +39,33 @@ public class GrowShrink : MonoBehaviour
             Debug.Log("Player left Totem of Love");
 
             // Get references to InputActions from the "Movement" action map
-            playerMovement.actionMap.actionTriggered -= playerMovement.TotemActionTriggered;
+            // playerMovement.actionMap.actionTriggered -= playerMovement.TotemActionTriggered;
         }
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         // Check if the script is found
         if (playerMovement != null)
         {
-            // Check for key presses
-            if (playerMovement.totemAction == "Grow" || playerMovement.totemAction == "Shrink")
-            {
-                Debug.Log("Action triggered");
-                for (int i = 0; i < players.Length; i++) {
-                    Movement tempMovement = players[i].GetComponent<Movement>();
-                    if (playerMovement.totemAction == "Grow") {
-                        // Increase radius
-                        Debug.Log("Player increased radius");
-                        tempMovement.ChangeRadius(1);
-                    }
-                    else if (playerMovement.totemAction == "Shrink") {
-                        // Decrease radius
-                        Debug.Log("Player decreased radius");
-                        tempMovement.ChangeRadius(-1);
-                    }
-                }
-            }
-            playerMovement.totemAction = "null";
+            // // Check for key presses
+            // if (playerMovement.totemAction == "Grow" || playerMovement.totemAction == "Shrink")
+            // {
+            //     Debug.Log("Action triggered");
+            //     for (int i = 0; i < players.Length; i++) {
+            //         Movement tempMovement = players[i].GetComponent<Movement>();
+            //         if (playerMovement.totemAction == "Grow") {
+            //             // Increase radius
+            //             Debug.Log("Player increased radius");
+            //             tempMovement.ChangeRadius(Time.deltaTime);
+            //         }
+            //         else if (playerMovement.totemAction == "Shrink") {
+            //             // Decrease radius
+            //             Debug.Log("Player decreased radius");
+            //             tempMovement.ChangeRadius(-Time.deltaTime);
+            //         }
+            //     }
+            // }
         }
     }
 }

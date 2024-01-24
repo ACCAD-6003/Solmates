@@ -12,7 +12,7 @@ public class Movement : MonoBehaviour
     public float radius = 5;
     public float minRadius = 2;
     public float maxRadius = 20;
-    public string totemAction;
+    public bool nearTotem;
     [SerializeField]
     public Transform otherPlayer;
 
@@ -32,7 +32,7 @@ public class Movement : MonoBehaviour
         actionMap.actionTriggered += ActionTriggered;
         actionMap.Enable();
         
-        totemAction = "null";
+        nearTotem = false;
 
         // normalize radius when game starts
         SetAngleToOtherPlayer(GetAngleToOtherPlayer());
@@ -45,16 +45,17 @@ public class Movement : MonoBehaviour
         if (action == "Circle")
         {
             Circle(inpAction.ReadValue<float>());
-        }
-    }
-
-    public void TotemActionTriggered(InputAction.CallbackContext inpAction)
-    {
-        string action = inpAction.action.name;
-
-        if (action == "Grow" || action == "Shrink")
+        } 
+        else if (action == "Radius") 
         {
-            totemAction = action;
+            if (nearTotem) {
+                StopPlayer();
+                otherPlayer.GetComponent<Movement>().StopPlayer();
+                ChangeRadius(inpAction.ReadValue<float>() / 2f);
+                otherPlayer.GetComponent<Movement>().ChangeRadius(inpAction.ReadValue<float>() / 2f);
+                StartPlayer();
+                otherPlayer.GetComponent<Movement>().StartPlayer();
+            }
         }
     }
 
@@ -112,5 +113,21 @@ public class Movement : MonoBehaviour
     void Update() 
     {    
         transform.LookAt(otherPlayer);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Totem"))
+        {
+           nearTotem = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Totem"))
+        {
+           nearTotem = false;
+        }
     }
 }

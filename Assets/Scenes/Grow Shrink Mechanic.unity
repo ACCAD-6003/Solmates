@@ -319,7 +319,7 @@ GameObject:
   - component: {fileID: 658050727}
   m_Layer: 0
   m_Name: Totem of Love
-  m_TagString: Untagged
+  m_TagString: Totem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -764,10 +764,9 @@ GameObject:
   - component: {fileID: 2124611990}
   - component: {fileID: 2124611989}
   - component: {fileID: 2124611988}
-  - component: {fileID: 2124611991}
   m_Layer: 0
   m_Name: Activation Zone
-  m_TagString: Untagged
+  m_TagString: Totem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -850,35 +849,3 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2124611986}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &2124611991
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2124611986}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42a92af5924d27b45a38e9ced9433b5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerMovement: {fileID: 0}
-  growAction:
-    m_Name: Grow
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: f57660af-a088-4cd7-aa87-9097f995f9ab
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
-  shrinkAction:
-    m_Name: Shrink
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 3bb5a8b0-310d-46d8-bd57-44586f7dbdf0
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
-  players: []

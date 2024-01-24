@@ -15,22 +15,13 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Grow",
-                    "type": "Button",
-                    "id": "8685bed9-0b71-411b-bb5c-95f3b3cea8a9",
-                    "expectedControlType": "Button",
+                    "name": "Radius",
+                    "type": "Value",
+                    "id": "46e84a0d-cfe6-4090-ab67-bd49a343645d",
+                    "expectedControlType": "Analog",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Shrink",
-                    "type": "Button",
-                    "id": "b60bb44d-fc22-479e-a570-5ff61ddc2ba3",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -68,26 +59,37 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "",
-                    "id": "c0d3369f-d86e-468f-8bca-3d7537328baa",
-                    "path": "<Keyboard>/#(-)",
+                    "name": "Keyboard",
+                    "id": "093d8b63-41a3-4f1f-b511-806790cd840e",
+                    "path": "1DAxis",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Shrink",
-                    "isComposite": false,
+                    "action": "Radius",
+                    "isComposite": true,
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "",
-                    "id": "bbba24f9-e4c5-4e43-9f94-69bcb02685d9",
-                    "path": "<Keyboard>/#(=)",
+                    "name": "negative",
+                    "id": "c7491f0a-2c43-425f-bd54-66aca6eaaef3",
+                    "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Grow",
+                    "action": "Radius",
                     "isComposite": false,
-                    "isPartOfComposite": false
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "f2eefdb6-9dc6-46b3-aa36-6729100da302",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Radius",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         }
