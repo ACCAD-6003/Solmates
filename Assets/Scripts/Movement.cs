@@ -76,16 +76,18 @@ public class Movement : MonoBehaviour
     }
 
     private void move(float localVelocity) {
-        GetComponent<Rigidbody>().velocity = localVelocity * Vector3.Cross(RadiusVector(), Vector3.up);
+        GetComponent<Rigidbody>().velocity = localVelocity * Vector3.Cross(Vector3.up, RadiusVector());
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
         move(movementDirection * speed);
-
         SetAngleToOtherPlayer(GetAngleToOtherPlayer());
+    }
 
+    void Update() 
+    {    
         transform.LookAt(otherPlayer);
     }
 }
