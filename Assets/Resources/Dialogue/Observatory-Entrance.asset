@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff4c86d78dfd55d47a03b069c598849c, type: 3}
+  m_Name: Observatory-Entrance
+  m_EditorClassIdentifier: 
+  conversationData:
+    ID: Observatory-Entrance
+    Conversant: Monument
+    DialoguesSeries:
+    - dialogues:
+      - speaker: 2
+        Dialogue: "Welcome to the Centauri University Observatory. Here, you will
+          observe many prestigious findings in astrology. Please be sure to visit
+          the planetarium-this establishment\u2019s greatest achievement. In the
+          stars, you will find love and wonder. Enjoy your time here, and consider
+          engaging with all the exhibits."
+      - speaker: 0
+        Dialogue: "Science is really beautiful, but we have to be careful. I hope
+          we don\u2019t go too far."
+      - speaker: 1
+        Dialogue: Nice! Planets are fun to look at. They glow a bunch of different
+          colors.
+      choices:
+      - yes
+      - no
+    - dialogues:
+      - speaker: 2
+        Dialogue: The planetarium is a place of great pride for our organization.
+          Please, consider visiting that exhibit.
+      - speaker: 0
+        Dialogue: "The stars are quite calming for me, though I don\u2019t recall
+          why.."
+      - speaker: 1
+        Dialogue: "I don\u2019t really remember why, but I love the stars."
+      choices:
+      - yes
+      - yes!

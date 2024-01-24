@@ -1,0 +1,18 @@
+{
+    "name": "SharedData.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:4b02e6f4c670b0347b3292765d0c426f"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

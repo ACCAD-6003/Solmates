@@ -20,6 +20,8 @@ public class Movement : MonoBehaviour
     public InputActionAsset input;
     public InputActionMap actionMap;
 
+    private float savedSpeed = 0;
+
     // <0 is clockwise, >0 is counterclockwise, 0 is not moving 
     private float movementDirection = 0;
 
@@ -65,6 +67,21 @@ public class Movement : MonoBehaviour
     {
         radius = Mathf.Clamp(radius + scale, minRadius, maxRadius);
     }
+    
+    public void StopPlayer()
+    {
+        if (speed == 0) {
+            return;
+        }
+
+        savedSpeed = speed;
+        speed = 0f;
+    }
+
+    public void StartPlayer()
+    {
+        speed = savedSpeed;
+    }
 
     private float GetAngleToOtherPlayer()
     {
@@ -73,17 +90,27 @@ public class Movement : MonoBehaviour
 
     private void SetAngleToOtherPlayer(float angle)
     {
-        transform.position = otherPlayer.position + radius * new Vector3(Mathf.Cos(angle), 0, Mathf.Sin(angle));
+        transform.position = Vector3.Scale(otherPlayer.position, new Vector3(1,0,1))  + radius * new Vector3(Mathf.Cos(angle), 0, Mathf.Sin(angle)) + transform.position.y * Vector3.up;
+    }
+
+    private Vector3 RadiusVector() 
+    {
+        return Vector3.Scale(new Vector3(1,0,1), otherPlayer.position - transform.position);    
+    }
+
+    private void move(float localVelocity) {
+        GetComponent<Rigidbody>().velocity = localVelocity * Vector3.Cross(Vector3.up, RadiusVector());
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        if (movementDirection != 0)
-        {
-            SetAngleToOtherPlayer(GetAngleToOtherPlayer() + movementDirection * speed * Time.deltaTime * 2 * Mathf.PI);
-        }
+        move(movementDirection * speed);
+        SetAngleToOtherPlayer(GetAngleToOtherPlayer());
+    }
 
+    void Update() 
+    {    
         transform.LookAt(otherPlayer);
     }
 }
