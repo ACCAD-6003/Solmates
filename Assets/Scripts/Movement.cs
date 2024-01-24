@@ -43,6 +43,16 @@ public class Movement : MonoBehaviour
         movementDirection = direction;
     }
 
+    public void StopPlayer()
+    {
+        speed = 0f;
+    }
+
+    public void StartPlayer()
+    {
+        speed = 5f;
+    }
+
     private float GetAngleToOtherPlayer()
     {
         return Mathf.Atan2(transform.position.z - otherPlayer.position.z, transform.position.x - otherPlayer.position.x);
