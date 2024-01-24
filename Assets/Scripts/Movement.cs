@@ -60,7 +60,7 @@ public class Movement : MonoBehaviour
 
     private void SetAngleToOtherPlayer(float angle)
     {
-        transform.position = otherPlayer.position + radius * new Vector3(Mathf.Cos(angle), 0, Mathf.Sin(angle));
+        transform.position = Vector3.Scale(otherPlayer.position, new Vector3(1,0,1))  + radius * new Vector3(Mathf.Cos(angle), 0, Mathf.Sin(angle)) + transform.position.y * Vector3.up;
     }
 
     // Update is called once per frame
