@@ -260,7 +260,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: b5148ee28ce3b41408b50c9d70dd7d74, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -476,6 +476,10 @@ PrefabInstance:
       propertyPath: otherPlayer
       value: 
       objectReference: {fileID: 2020959050}
+    - target: {fileID: 3045479165410398864, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}
+      propertyPath: LookAt
+      value: 
+      objectReference: {fileID: 2020959050}
     - target: {fileID: 4812032995375782615, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}
       propertyPath: m_Name
       value: RedPlayer
@@ -524,8 +528,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 471639381722143428, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}
 --- !u!4 &1203788820 stripped
 Transform:
@@ -558,6 +561,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1157235802502065448, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}
       propertyPath: otherPlayer
+      value: 
+      objectReference: {fileID: 1203788820}
+    - target: {fileID: 3045479165410398864, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}
+      propertyPath: LookAt
       value: 
       objectReference: {fileID: 1203788820}
     - target: {fileID: 4812032995375782615, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}
@@ -612,8 +619,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 021daabb2bc699d45bf01fe1a51b7f03, type: 2}
-    m_RemovedComponents:
-    - {fileID: 471639381722143428, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}
+    - target: {fileID: 9208109469234984261, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 021daabb2bc699d45bf01fe1a51b7f03, type: 2}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}
 --- !u!4 &2020959050 stripped
 Transform:
