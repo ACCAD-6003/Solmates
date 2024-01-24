@@ -5,10 +5,16 @@ using UnityEngine.InputSystem;
 
 public class GrowShrink : MonoBehaviour
 {
-    private Movement playerMovement;
+    public Movement playerMovement;
     // Define InputAction references
-    private InputAction growAction;
-    private InputAction shrinkAction;
+    public InputAction growAction;
+    public InputAction shrinkAction;
+    public GameObject[] players;
+
+    // Start is called before the first frame update
+    private void Start(){
+        players = GameObject.FindGameObjectsWithTag("Player");
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -21,29 +27,46 @@ public class GrowShrink : MonoBehaviour
             playerMovement = other.GetComponent<Movement>();
 
             // Get references to InputActions from the "Movement" action map
-            growAction = playerMovement.actionMap.actions[1];
-            shrinkAction = playerMovement.actionMap.actions[2];
+            playerMovement.actionMap.actionTriggered += playerMovement.TotemActionTriggered;
         }
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            // Collision with an enemy occurred
+            Debug.Log("Player left Totem of Love");
+
+            // Get references to InputActions from the "Movement" action map
+            playerMovement.actionMap.actionTriggered -= playerMovement.TotemActionTriggered;
+        }
+    }
+
+    private void FixedUpdate()
     {
         // Check if the script is found
         if (playerMovement != null)
         {
             // Check for key presses
-            if (growAction.triggered)
+            if (playerMovement.totemAction == "Grow" || playerMovement.totemAction == "Shrink")
             {
-                // Increase radius
-                Debug.Log("Player increased radius");
-                playerMovement.ChangeRadius(1);
+                Debug.Log("Action triggered");
+                for (int i = 0; i < players.Length; i++) {
+                    Movement tempMovement = players[i].GetComponent<Movement>();
+                    if (playerMovement.totemAction == "Grow") {
+                        // Increase radius
+                        Debug.Log("Player increased radius");
+                        tempMovement.ChangeRadius(1);
+                    }
+                    else if (playerMovement.totemAction == "Shrink") {
+                        // Decrease radius
+                        Debug.Log("Player decreased radius");
+                        tempMovement.ChangeRadius(-1);
+                    }
+                }
             }
-            else if (shrinkAction.triggered)
-            {
-                // Decrease radius
-                Debug.Log("Player decreased radius");
-                playerMovement.ChangeRadius(-1);
-            }
+            playerMovement.totemAction = "null";
         }
     }
 }

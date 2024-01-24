@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -862,3 +862,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42a92af5924d27b45a38e9ced9433b5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerMovement: {fileID: 0}
+  growAction:
+    m_Name: Grow
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: f57660af-a088-4cd7-aa87-9097f995f9ab
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  shrinkAction:
+    m_Name: Shrink
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 3bb5a8b0-310d-46d8-bd57-44586f7dbdf0
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  players: []

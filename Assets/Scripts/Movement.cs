@@ -12,6 +12,7 @@ public class Movement : MonoBehaviour
     public float radius = 5;
     public float minRadius = 2;
     public float maxRadius = 20;
+    public string totemAction;
     [SerializeField]
     public Transform otherPlayer;
 
@@ -28,6 +29,8 @@ public class Movement : MonoBehaviour
         actionMap = input.FindActionMap("Movement");
         actionMap.actionTriggered += ActionTriggered;
         actionMap.Enable();
+        
+        totemAction = "null";
 
         // normalize radius when game starts
         SetAngleToOtherPlayer(GetAngleToOtherPlayer());
@@ -40,6 +43,16 @@ public class Movement : MonoBehaviour
         if (action == "Circle")
         {
             Circle(inpAction.ReadValue<float>());
+        }
+    }
+
+    public void TotemActionTriggered(InputAction.CallbackContext inpAction)
+    {
+        string action = inpAction.action.name;
+
+        if (action == "Grow" || action == "Shrink")
+        {
+            totemAction = action;
         }
     }
 
