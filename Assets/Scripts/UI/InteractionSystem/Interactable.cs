@@ -1,4 +1,5 @@
 ﻿using System;
+using Controller;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -26,23 +27,23 @@ namespace UI.InteractionSystem
             return objectToCheck.gameObject.CompareTag(tagToCheck);
         } 
         
-        private void OnCollisionEnter(Collision other)
+        private void OnTriggerEnter(Collider other)
         {
             if (!IsPlayer(other.gameObject)) return;
             
-            if (HasTag(other.gameObject, PLAYER_ONE_TAG)) Controller.OnInteract += onPlayerOneInteract.Invoke;
-            else if (HasTag(other.gameObject, PLAYER_TWO_TAG)) Controller.OnPlayerTwoInteract += onPlayerTwoInteract.Invoke;
+            if (HasTag(other.gameObject, PLAYER_ONE_TAG)) UIController.OnInteract += onPlayerOneInteract.Invoke;
+            else if (HasTag(other.gameObject, PLAYER_TWO_TAG)) UIController.OnPlayerTwoInteract += onPlayerTwoInteract.Invoke;
             
             if (playersInRange == 0) onInRange.Invoke();
             playersInRange++;
         }
         
-        private void OnCollisionExit(Collision other)
+        private void OnTriggerExit(Collider other)
         {
             if (!IsPlayer(other.gameObject)) return;
             
-            if (HasTag(other.gameObject, PLAYER_ONE_TAG)) Controller.OnInteract -= onPlayerOneInteract.Invoke;
-            else if (HasTag(other.gameObject, PLAYER_TWO_TAG)) Controller.OnPlayerTwoInteract -= onPlayerTwoInteract.Invoke;
+            if (HasTag(other.gameObject, PLAYER_ONE_TAG)) UIController.OnInteract -= onPlayerOneInteract.Invoke;
+            else if (HasTag(other.gameObject, PLAYER_TWO_TAG)) UIController.OnPlayerTwoInteract -= onPlayerTwoInteract.Invoke;
             
             playersInRange--;
             if (playersInRange == 0) onOutOfRange.Invoke();
@@ -50,8 +51,8 @@ namespace UI.InteractionSystem
 
         private void OnDestroy()
         {
-            Controller.OnInteract -= onPlayerOneInteract.Invoke;
-            Controller.OnPlayerTwoInteract -= onPlayerTwoInteract.Invoke;
+            UIController.OnInteract -= onPlayerOneInteract.Invoke;
+            UIController.OnPlayerTwoInteract -= onPlayerTwoInteract.Invoke;
         }
     }
 }

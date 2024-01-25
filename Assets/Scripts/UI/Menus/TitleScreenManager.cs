@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Controller;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,13 +11,13 @@ public class TitleScreenManager : MonoBehaviour
 
     private void Start()
     {
-        Controller.Instance.SwapToUI();
+        UIController.Instance.SwapToUI();
         menuButtons.EnableButtons();
     }
 
     public void StartGame()
     {
-        Controller.Instance.SwapToGameplay();
+        UIController.Instance.SwapToGameplay();
         StartCoroutine(SceneTools.TransitionToScene(firstLevelIndex));
     }
 

@@ -1,6 +1,7 @@
 ﻿using Sirenix.OdinInspector;
 using System;
 using System.Collections.Generic;
+using Controller;
 using UnityEngine;
 using static DialogueHelperClass;
 
@@ -70,15 +71,15 @@ public class DialogueUIController : MonoBehaviour
         choices = validChoices;
         totalChoices = validChoices.Count;
         currentChoice = 0;
-        Controller.OnSelect += SelectChoice;
-        Controller.OnNavigateMenu += UpdateChoiceSelection;
+        UIController.OnSelect += SelectChoice;
+        UIController.OnNavigateMenu += UpdateChoiceSelection;
     }
 
     private void OnChoiceMenuEnd()
     {
         choicesDisplay.Hide();
-        Controller.OnSelect -= SelectChoice;
-        Controller.OnNavigateMenu -= UpdateChoiceSelection;
+        UIController.OnSelect -= SelectChoice;
+        UIController.OnNavigateMenu -= UpdateChoiceSelection;
     }
 
     private void OnDisable()
@@ -91,8 +92,8 @@ public class DialogueUIController : MonoBehaviour
 
     private void OnDestroy()
     {
-        Controller.OnSelect -= SelectChoice;
-        Controller.OnNavigateMenu -= UpdateChoiceSelection;
+        UIController.OnSelect -= SelectChoice;
+        UIController.OnNavigateMenu -= UpdateChoiceSelection;
         DialogueManager.OnTextUpdated -= textBoxDisplay.UpdateDialogueText;
     }
 }

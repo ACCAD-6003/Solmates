@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Controller;
 using UnityEngine;
 using UnityEngine.Events;
 using static DialogueHelperClass;
@@ -44,13 +45,13 @@ public class DialogueEvents : MonoBehaviour
     {
         imageToDisplay.SetActive(true);
 
-        yield return new WaitUntil(() => Controller.Instance.InGameplay);
-        Controller.Instance.SwapToUI();
-        Controller.OnSelect += AcceptInput;
+        yield return new WaitUntil(() => UIController.Instance.InGameplay);
+        UIController.Instance.SwapToUI();
+        UIController.OnSelect += AcceptInput;
         awaitingInput = true;
         yield return new WaitUntil(() => !awaitingInput);
-        Controller.OnSelect -= AcceptInput;
-        Controller.Instance.SwapToGameplay();
+        UIController.OnSelect -= AcceptInput;
+        UIController.Instance.SwapToGameplay();
 
         imageToDisplay.SetActive(false);
     }

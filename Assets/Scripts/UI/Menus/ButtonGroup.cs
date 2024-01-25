@@ -4,6 +4,7 @@ using System.Linq;
 using UnityEngine;
 using Sirenix.OdinInspector;
 using System;
+using Controller;
 
 public class ButtonGroup : MonoBehaviour
 {
@@ -17,14 +18,14 @@ public class ButtonGroup : MonoBehaviour
     {
         SetButton(0);
 
-        Controller.OnNavigateMenu += SwapButton;
-        Controller.OnSelect += ActivateButton;
+        UIController.OnNavigateMenu += SwapButton;
+        UIController.OnSelect += ActivateButton;
     }
 
     public void DisableButtons()
     {
-        Controller.OnNavigateMenu -= SwapButton;
-        Controller.OnSelect -= ActivateButton;
+        UIController.OnNavigateMenu -= SwapButton;
+        UIController.OnSelect -= ActivateButton;
     }
 
     private void Awake()
@@ -108,7 +109,7 @@ public class ButtonGroup : MonoBehaviour
     {
         buttons.ForEach(button => button.OnSelect -= Button_OnClick);
 
-        Controller.OnNavigateMenu -= SwapButton;
-        Controller.OnSelect -= ActivateButton;
+        UIController.OnNavigateMenu -= SwapButton;
+        UIController.OnSelect -= ActivateButton;
     }
 }
