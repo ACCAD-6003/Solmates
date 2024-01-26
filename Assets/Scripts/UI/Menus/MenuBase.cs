@@ -14,6 +14,12 @@ namespace UI.Menus
         protected abstract Action OpenTrigger { get; set; }
         protected abstract Action CloseTrigger { get; set; }
 
+        private void Awake()
+        {
+            if (display == null) display = transform.GetChild(0).gameObject;
+            if (pages.Count == 0) pages.Add(new Page(display));
+        }
+
         private void OnEnable()
         {
             if(StartOpen) 

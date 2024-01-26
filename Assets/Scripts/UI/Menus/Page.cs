@@ -8,6 +8,11 @@ namespace UI.Menus
     {
         [SerializeField] private GameObject display;
 
+        public Page(GameObject display)
+        {
+            this.display = display;
+        }
+        
         public bool IsMatch(GameObject page)
         {
             return page.Equals(display);
