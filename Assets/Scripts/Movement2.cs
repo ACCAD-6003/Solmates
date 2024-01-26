@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -57,7 +56,7 @@ public class Movement2 : MonoBehaviour
         }
     }
 
-    private Vector3 RadiusVector()
+    public Vector3 RadiusVector()
     {
         return Vector3.Scale(new Vector3(1, 0, 1), otherPlayer.transform.position - transform.position);
     }
