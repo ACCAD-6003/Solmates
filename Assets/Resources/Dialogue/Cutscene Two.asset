@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff4c86d78dfd55d47a03b069c598849c, type: 3}
+  m_Name: Cutscene Two
+  m_EditorClassIdentifier: 
+  conversationData:
+    ID: Cutscene Two
+    Conversant: None
+    DialoguesSeries:
+    - dialogues:
+      - speaker: 0
+        Dialogue: "*GASP* W-What\u2019s going on? It\u2019s so cold, and I feel so
+          heavy."
+      - speaker: 1
+        Dialogue: Whoaaaaaa this is trippy. I feel weird.
+      - speaker: 0
+        Dialogue: "I\u2019m trying, but\u2026I can\u2019t remember anything. Nothing
+          at all. Like everything I have ever known left my head just mere moments
+          ago."
+      - speaker: 1
+        Dialogue: "What am I doing here?...What is this place?...WHERE is this place?...WAIT,
+          who even am I?? HAHAHA! I have no idea what\u2019s going on. This is so
+          funny."
+      - speaker: 0
+        Dialogue: "Who- Who is that across the way? They\u2019re\u2026gorgeous. Huh?
+          Why do they feel so familiar? Like\u2026home."
+      - speaker: 1
+        Dialogue: "AWOOGA! Who is that hottie over there?? I kinda feel like I\u2019ve
+          seen them before. I\u2019ll go over and say \u201Chi\u201D."
+      choices: []

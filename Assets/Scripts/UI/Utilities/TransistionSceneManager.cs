@@ -1,19 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
+using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class TransistionSceneManager : MonoBehaviour
 {
-    [SerializeField] float transitionLength;
+    [SerializeField] float delayBeforeTransition;
+    [SerializeField] private bool autoTransition;
 
-    void Start()
+    private void Start()
     {
-        StartCoroutine(HandleSplashScreen());
+        if(autoTransition)
+            StartCoroutine(HandleTransitions());
     }
 
-    private IEnumerator HandleSplashScreen()
+    [Button]
+    public void TransitionToNextScene()
     {
-        yield return new WaitForSeconds(transitionLength);
+        StartCoroutine(HandleTransitions());
+    }
+    
+    [Button]
+    public void ExitGame()
+    {
+        Application.Quit();
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
+    }
+
+    private IEnumerator HandleTransitions()
+    {
+        yield return new WaitForSeconds(delayBeforeTransition);
 
         var nextScene = SceneTools.NextSceneExists ? SceneTools.NextSceneIndex : 0;
 

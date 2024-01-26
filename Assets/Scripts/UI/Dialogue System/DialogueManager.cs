@@ -4,6 +4,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Controller;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.Audio;
@@ -63,7 +64,7 @@ public class DialogueManager : SingletonMonoBehavior<DialogueManager>
         else if (!inDialogue)
         {
             inDialogue = true;
-            Controller.Instance.SwapToUI();
+            UIController.Instance.SwapToUI();
         }
 
         var ConversationDataPointer = conversationGroup.Find(data => data.Data.ID.ToLower().Equals(dialogueId.ToLower()));
@@ -88,7 +89,7 @@ public class DialogueManager : SingletonMonoBehavior<DialogueManager>
     {
         inDialogue = false;
         OnDialogueEnded?.Invoke();
-        Controller.Instance.SwapToGameplay();
+        UIController.Instance.SwapToGameplay();
     }
 
     private void OnAbort() 
@@ -106,21 +107,25 @@ public class DialogueManager : SingletonMonoBehavior<DialogueManager>
         if (dialogueChain.dialogues.Count >= 1 && !dialogueChain.dialogues[0].Dialogue.IsNullOrWhitespace())
         {
             abortDialogue = false;
-            Controller.OnOverrideSkip += OnAbort;
+            UIController.OnOverrideSkip += OnAbort;
 
             foreach (var dialogue in dialogueChain.dialogues)
             {
-                switch (currentPlayer)
+                if (data.Conversant != PLAYER_SPEAKING_TO_EACH_OTHER_LABEL)
                 {
-                    case ConversantType.PlayerOne when dialogue.speaker == ConversantType.PlayerTwo:
-                    case ConversantType.PlayerTwo when dialogue.speaker == ConversantType.PlayerOne:
-                        continue;
+                    switch (currentPlayer)
+                    {
+                        case ConversantType.PlayerOne when dialogue.speaker == ConversantType.PlayerTwo:
+                        case ConversantType.PlayerTwo when dialogue.speaker == ConversantType.PlayerOne:
+                            continue;
+                    }
                 }
+
                 yield return ProcessDialogue(dialogue, data.Conversant);
                 if (abortDialogue) break;
             }
 
-            Controller.OnOverrideSkip -= OnAbort;
+            UIController.OnOverrideSkip -= OnAbort;
         }
 
         yield return HandleChoices(dialogueChain.choices);
@@ -164,18 +169,18 @@ public class DialogueManager : SingletonMonoBehavior<DialogueManager>
 
         yield return TypewriterDialogue(speakerName, dialogue.Dialogue);
 
-        Controller.OnNextDialogue += OnContinueInput;
+        UIController.OnNextDialogue += OnContinueInput;
 
         yield return new WaitUntil(() => continueInputReceived);
 
-        Controller.OnNextDialogue -= OnContinueInput;
+        UIController.OnNextDialogue -= OnContinueInput;
     }
 
     private IEnumerator TypewriterDialogue(string name, string line)
     {
         currentDialogueSpeed = dialogueSpeed;
         string loadedText = name;
-        Controller.OnNextDialogue += SpeedUpText;
+        UIController.OnNextDialogue += SpeedUpText;
         bool atSpecialCharacter = false;
         foreach(char letter in line)
         {
@@ -187,7 +192,7 @@ public class DialogueManager : SingletonMonoBehavior<DialogueManager>
             yield return new WaitForSeconds(1 / currentDialogueSpeed);
             if (abortDialogue) { OnTextUpdated?.Invoke(name + line); break; }
         }
-        Controller.OnNextDialogue -= SpeedUpText;
+        UIController.OnNextDialogue -= SpeedUpText;
     }
 
     private void SpeedUpText() => currentDialogueSpeed = currentDialogueSpeed == dialogueFastSpeed ? currentDialogueSpeed = dialogueFastSpeed * 10 : dialogueFastSpeed;

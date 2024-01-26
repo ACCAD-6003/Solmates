@@ -20,6 +20,7 @@ public static class DialogueHelperClass
     public static readonly string POTION_MADE_UNLOCK = "ITEMCRAFTED";
     public static readonly string SUCCESS = "SUCCESS";
     public static readonly string FAILURE = "FAIL";
+    public static readonly string PLAYER_SPEAKING_TO_EACH_OTHER_LABEL = "Player";
     public static readonly List<string> PREFIXES = new List<string>() { "F", "B", "A" };
 
     public static List<string> POTION_GIVEN_MARKERS => PREFIXES.Select(p => p + SUCCESS).Concat(PREFIXES.Select(p => p + FAILURE)).Select(p => p.ToLower()).ToList();

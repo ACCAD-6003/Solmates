@@ -20,27 +20,23 @@ MonoBehaviour:
       - speaker: 2
         Dialogue: "Welcome to the Centauri University Observatory. Here, you will
           observe many prestigious findings in astrology. Please be sure to visit
-          the planetarium-this establishment\u2019s greatest achievement. In the
-          stars, you will find love and wonder. Enjoy your time here, and consider
-          engaging with all the exhibits."
+          the rooftop stargazing attraction-this establishment\u2019s greatest achievement.
+          In the stars, you will find love and wonder. Enjoy your time here, and
+          consider engaging with all the exhibits."
       - speaker: 0
-        Dialogue: "Science is really beautiful, but we have to be careful. I hope
-          we don\u2019t go too far."
+        Dialogue: "Science is really beautiful, but we as humans must be careful.
+          I hope we don\u2019t go too far."
       - speaker: 1
-        Dialogue: Nice! Planets are fun to look at. They glow a bunch of different
+        Dialogue: Nice! Stars are fun to look at. They glow a bunch of different
           colors.
-      choices:
-      - yes
-      - no
+      choices: []
     - dialogues:
       - speaker: 2
-        Dialogue: The planetarium is a place of great pride for our organization.
-          Please, consider visiting that exhibit.
+        Dialogue: The rooftop is a place of great pride for our organization. Please,
+          consider visiting that exhibit.
       - speaker: 0
         Dialogue: "The stars are quite calming for me, though I don\u2019t recall
           why.."
       - speaker: 1
         Dialogue: "I don\u2019t really remember why, but I love the stars."
-      choices:
-      - yes
-      - yes!
+      choices: []

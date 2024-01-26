@@ -8,18 +8,26 @@ namespace UI.Menus
     {
         [SerializeField] private GameObject display;
         [SerializeField] private List<Page> pages;
-
+        
         private int currentPage;
+        protected virtual bool StartOpen => false;
+        protected abstract Action OpenTrigger { get; set; }
+        protected abstract Action CloseTrigger { get; set; }
 
         private void OnEnable()
         {
-            CloseMenu();
+            if(StartOpen) 
+                OpenMenu();
+            else 
+                CloseMenu();
+            OpenTrigger += OpenMenu;
         }
 
         public virtual void OpenMenu()
         {
             display.SetActive(true);
             JumpToPage(0);
+            CloseTrigger += CloseMenu;
         }
 
         public void JumpToPage(int pageIndex)
@@ -49,6 +57,13 @@ namespace UI.Menus
         {
             display.SetActive(false);
             HideAllPages();
+            CloseTrigger -= CloseMenu;
+        }
+
+        private void OnDisable()
+        {
+            OpenTrigger -= OpenMenu;
+            CloseTrigger -= CloseMenu;
         }
     }
 }
