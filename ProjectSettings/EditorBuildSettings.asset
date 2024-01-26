@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Title Screen.unity
+    guid: 8cc8359aa9ceb934280cbad5441b18c1
+  - enabled: 1
     path: Assets/Scenes/MovementObservation.unity
     guid: 9b23441567006aa4dbc7be272a3e883e
   m_configObjects: {}

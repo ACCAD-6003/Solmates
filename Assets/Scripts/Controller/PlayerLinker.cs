@@ -19,12 +19,12 @@ namespace Controller
         
         private static void DisablePlayerMovement()
         {
-            Array.ForEach(FindObjectsOfType<Movement>(true), m => m.StopPlayer());
+            Array.ForEach(FindObjectsOfType<Movement2>(true), m => m.Lock());
         }
         
         private static void EnablePlayerMovement()
         {
-            Array.ForEach(FindObjectsOfType<Movement>(true), m => m.StartPlayer());
+            Array.ForEach(FindObjectsOfType<Movement2>(true), m => m.Unlock());
         }
     }
 }

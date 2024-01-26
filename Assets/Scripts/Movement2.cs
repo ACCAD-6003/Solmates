@@ -62,12 +62,12 @@ public class Movement2 : MonoBehaviour
         return Vector3.Scale(new Vector3(1, 0, 1), otherPlayer.transform.position - transform.position);
     }
 
-    private void Lock()
+    public void Lock()
     {
         GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
     }
 
-    private void Unlock()
+    public void Unlock()
     {
         GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
     }
