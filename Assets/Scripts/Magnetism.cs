@@ -28,6 +28,7 @@ public class Magnetism : MonoBehaviour
         {
             if (!playerIsInteracting(player) && playerIsClose(player))
             {
+                Debug.Log("h");
                 player.transform.position +=  Time.deltaTime * SpeedToPull * (transform.position - player.transform.position);
             }
         }
