@@ -26,8 +26,8 @@ public class Movement2 : MonoBehaviour
     public InputActionMap actionMap;
 
     // <0 is clockwise, >0 is counterclockwise, 0 is not moving 
-    private float movementDirection = 0;
-    private float radiusDirection = 0;
+    public float MovementDirection { get; private set; }
+    public float RadiusDirection { get; private set; }
 
     // Start is called before the first frame update
     void Start()
@@ -46,12 +46,12 @@ public class Movement2 : MonoBehaviour
 
         if (action == "Circle")
         {
-            movementDirection = inpAction.ReadValue<float>();
+            MovementDirection = inpAction.ReadValue<float>();
         }
         else if (action == "Radius")
         {
             if (IsNearGrowShrinkStatue()) {
-                radiusDirection = inpAction.ReadValue<float>();
+                RadiusDirection = inpAction.ReadValue<float>();
             }
         }
     }
@@ -97,7 +97,7 @@ public class Movement2 : MonoBehaviour
 
     private void Update()
     {
-        if (movementDirection == 0)
+        if (MovementDirection == 0)
         {
             Lock();
         } 
@@ -106,12 +106,12 @@ public class Movement2 : MonoBehaviour
             Unlock();
         }
 
-        GetComponent<Rigidbody>().velocity = movementDirection * moveSpeed * Vector3.Cross(Vector3.up, Vector3.Normalize(RadiusVector())) * RadiusVector().magnitude;
+        GetComponent<Rigidbody>().velocity = MovementDirection * moveSpeed * Vector3.Cross(Vector3.up, Vector3.Normalize(RadiusVector())) * RadiusVector().magnitude;
 
-        if (radiusDirection != 0)
+        if (RadiusDirection != 0)
         {
             Lock();
-            ChangeRadius(radiusDirection * Time.deltaTime * pullPushSpeed);
+            ChangeRadius(RadiusDirection * Time.deltaTime * pullPushSpeed);
         }
         else
         {
