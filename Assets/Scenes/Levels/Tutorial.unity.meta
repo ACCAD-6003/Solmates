@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Prefabs/HelperBox.prefab.meta
+guid: c252f7dcf11c72345b3eafa70499c43a
+PrefabImporter:
+========
 guid: d48ff33a969c7c942b4b61c8ca1b4380
 DefaultImporter:
+>>>>>>>> be4f72d462195546ea02555655f3c08540842468:Assets/Scenes/Tutorial.unity.meta
   externalObjects: {}
   userData: 
   assetBundleName: 

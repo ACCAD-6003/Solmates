@@ -286,7 +286,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.25
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -5112,7 +5112,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.25
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -9677,7 +9677,7 @@ Transform:
   m_GameObject: {fileID: 5384289920360328787}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -15.847284, y: 8.973091, z: 9.369976}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1248749516354301899}
@@ -9748,6 +9748,10 @@ PrefabInstance:
       propertyPath: otherPlayer
       value: 
       objectReference: {fileID: 1248749516354301940}
+    - target: {fileID: 1283561729632177310, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}
+      propertyPath: initialRadius
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3045479165410398864, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}
       propertyPath: LookAt
       value: 
@@ -9798,15 +9802,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4812032995375782632, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.912466
+      value: -6.5
       objectReference: {fileID: 0}
     - target: {fileID: 4812032995375782632, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.973091
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4812032995375782632, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10.696274
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4812032995375782632, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -9922,6 +9926,10 @@ PrefabInstance:
       propertyPath: otherPlayer
       value: 
       objectReference: {fileID: 37246532402133032}
+    - target: {fileID: 1283561729632177310, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}
+      propertyPath: initialRadius
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3045479165410398864, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}
       propertyPath: LookAt
       value: 
@@ -9972,15 +9980,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4812032995375782632, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.809511
+      value: -2.5
       objectReference: {fileID: 0}
     - target: {fileID: 4812032995375782632, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.9730906
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4812032995375782632, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.44993782
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4812032995375782632, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -10041,8 +10049,8 @@ SpringJoint:
   serializedVersion: 2
   m_Spring: 9999
   m_Damper: 0
-  m_MinDistance: 5
-  m_MaxDistance: 5
+  m_MinDistance: 6.5
+  m_MaxDistance: 6.5
   m_Tolerance: 0.025
   m_BreakForce: Infinity
   m_BreakTorque: Infinity

@@ -5,15 +5,18 @@ using UnityEngine;
 [RequireComponent(typeof(ParticleSystem))]
 public class RadiusParticles : MonoBehaviour
 {
-    private readonly float scalingFactor = 40f;
+    private readonly float scalingFactor = 120f;
     
     [SerializeField] private Movement2 player;
+    [SerializeField] private float particleScale;
 
     private ParticleSystem particles;
     
     private void Awake()
     {
         particles = GetComponent<ParticleSystem>();
+        var temp = particles.main;
+        temp.startSize = particleScale;
     }
     
     private void OnEnable()
