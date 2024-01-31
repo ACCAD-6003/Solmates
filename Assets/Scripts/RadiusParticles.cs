@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(ParticleSystem))]
 public class RadiusParticles : MonoBehaviour
 {
-    private readonly float scalingFactor = 40f;
+    private readonly float scalingFactor = 120f;
     
     [SerializeField] private Movement2 player;
 
