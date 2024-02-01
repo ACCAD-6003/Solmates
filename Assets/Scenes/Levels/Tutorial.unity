@@ -977,7 +977,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4525352739796752989, guid: a34f74dc6457f3248b9894d65596e7e1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -19.1
+      value: -0.57
       objectReference: {fileID: 0}
     - target: {fileID: 4525352739796752989, guid: a34f74dc6457f3248b9894d65596e7e1, type: 3}
       propertyPath: m_LocalPosition.y
@@ -985,7 +985,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4525352739796752989, guid: a34f74dc6457f3248b9894d65596e7e1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -26.36
+      value: -0.45
       objectReference: {fileID: 0}
     - target: {fileID: 4525352739796752989, guid: a34f74dc6457f3248b9894d65596e7e1, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3758,7 +3758,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1967204779071184042, guid: 03aabef73683c8644ac6414d7ec77e8c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -26
+      value: -26.4
       objectReference: {fileID: 0}
     - target: {fileID: 1967204779071184042, guid: 03aabef73683c8644ac6414d7ec77e8c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3792,13 +3792,23 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button
       objectReference: {fileID: 0}
+    - target: {fileID: 6722431923839805955, guid: 03aabef73683c8644ac6414d7ec77e8c, type: 3}
+      propertyPath: door
+      value: 
+      objectReference: {fileID: 8176951582473675800}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03aabef73683c8644ac6414d7ec77e8c, type: 3}
---- !u!1 &1967204779376930732 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1967204779071184214, guid: 03aabef73683c8644ac6414d7ec77e8c, type: 3}
+--- !u!114 &1967204779376930733 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6722431923839805955, guid: 03aabef73683c8644ac6414d7ec77e8c, type: 3}
   m_PrefabInstance: {fileID: 1967204779376930731}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0705e28f4b0bd694aa56114b6ed199a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &2086051621445934622
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3954,6 +3964,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 5771198210424922788, guid: c5b46b0cbca3b494e97eee2039ece217, type: 3}
+      propertyPath: doorStayOpen
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5771198210424922788, guid: c5b46b0cbca3b494e97eee2039ece217, type: 3}
       propertyPath: shouldStayOpen
       value: 1
       objectReference: {fileID: 0}
@@ -3962,9 +3976,13 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5771198210424922788, guid: c5b46b0cbca3b494e97eee2039ece217, type: 3}
+      propertyPath: requiresBothButtons
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5771198210424922788, guid: c5b46b0cbca3b494e97eee2039ece217, type: 3}
       propertyPath: buttons.Array.data[0]
       value: 
-      objectReference: {fileID: 1967204779376930732}
+      objectReference: {fileID: 1967204779376930733}
     - target: {fileID: 8176951583162310819, guid: c5b46b0cbca3b494e97eee2039ece217, type: 3}
       propertyPath: m_Name
       value: Door
@@ -4015,6 +4033,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5b46b0cbca3b494e97eee2039ece217, type: 3}
+--- !u!114 &8176951582473675800 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5771198210424922788, guid: c5b46b0cbca3b494e97eee2039ece217, type: 3}
+  m_PrefabInstance: {fileID: 8176951582473675799}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13fea483ba31d624eaec3664e12f2d9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!33 &8760265736261332492
 MeshFilter:
   m_ObjectHideFlags: 0
