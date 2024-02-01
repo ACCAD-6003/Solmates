@@ -5,11 +5,13 @@ using UnityEngine;
 public class ButtonController : MonoBehaviour
 {
     public bool isPressed = false;
+    public DoorController door;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             isPressed = true;
+            door.CheckIfDoorShouldOpen();
         }
     }
 
@@ -18,6 +20,7 @@ public class ButtonController : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isPressed = false;
+            door.CheckIfDoorShouldClose();
         }
     }
 }

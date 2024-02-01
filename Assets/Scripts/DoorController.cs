@@ -4,40 +4,59 @@ using UnityEngine;
 
 public class DoorController : MonoBehaviour
 {
-    public bool shouldStayOpen = false;
-    public bool isOpen = false;
-    public GameObject[] buttons;
+    public bool requiresBothButtons = false;
+    public bool doorStayOpen = false;
+    public bool doorIsOpen = false;
 
-    private bool allButtonsPressed = false;
+    public ButtonController[] buttons;
 
-    private void Update()
+    public void CheckIfDoorShouldOpen()
     {
-        // Check if all buttons are pressed
-        allButtonsPressed = true;
-        foreach (GameObject button in buttons)
+        bool allButtonsPressed = true;
+        foreach (ButtonController button in buttons)
         {
-            if (!button.GetComponent<ButtonController>().isPressed)
+            if (button.isPressed)
             {
-                allButtonsPressed = false;
-                break;
+                if (!requiresBothButtons)
+                {
+                    doorIsOpen = true;
+                    gameObject.SetActive(false);
+                }
+            }
+            else
+            {
+                if (requiresBothButtons)
+                {
+                    allButtonsPressed = false;
+                }
             }
         }
 
-        // Deactivate door if all buttons are pressed
-        if (allButtonsPressed)
+        if (allButtonsPressed && requiresBothButtons)
         {
-            isOpen = false;
+            doorIsOpen = true;
             gameObject.SetActive(false);
         }
-        // Reactivate door if any button is released
-        else if (!isOpen && gameObject.activeSelf == false)
+    }
+
+    public void CheckIfDoorShouldClose()
+    {
+        foreach (ButtonController button in buttons)
         {
-            if (shouldStayOpen)
+            if (button.isPressed)
             {
-                isOpen = true;
-                gameObject.SetActive(true);
+                doorIsOpen = true;
+                gameObject.SetActive(false);
+                break;
             }
-            // Add other conditions for closing the door if needed
+            else
+            {
+                if (!doorStayOpen && doorIsOpen)
+                {
+                    doorIsOpen = false;
+                    gameObject.SetActive(true);
+                }
+            }
         }
     }
 }

@@ -977,7 +977,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4525352739796752989, guid: a34f74dc6457f3248b9894d65596e7e1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.61
+      value: -19.1
       objectReference: {fileID: 0}
     - target: {fileID: 4525352739796752989, guid: a34f74dc6457f3248b9894d65596e7e1, type: 3}
       propertyPath: m_LocalPosition.y
@@ -985,7 +985,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4525352739796752989, guid: a34f74dc6457f3248b9894d65596e7e1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.47
+      value: -26.36
       objectReference: {fileID: 0}
     - target: {fileID: 4525352739796752989, guid: a34f74dc6457f3248b9894d65596e7e1, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3754,7 +3754,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1967204779071184042, guid: 03aabef73683c8644ac6414d7ec77e8c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.15
+      value: -0.108
       objectReference: {fileID: 0}
     - target: {fileID: 1967204779071184042, guid: 03aabef73683c8644ac6414d7ec77e8c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3794,6 +3794,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03aabef73683c8644ac6414d7ec77e8c, type: 3}
+--- !u!1 &1967204779376930732 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1967204779071184214, guid: 03aabef73683c8644ac6414d7ec77e8c, type: 3}
+  m_PrefabInstance: {fileID: 1967204779376930731}
+  m_PrefabAsset: {fileID: 0}
 --- !u!23 &2086051621445934622
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3948,6 +3953,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5771198210424922788, guid: c5b46b0cbca3b494e97eee2039ece217, type: 3}
+      propertyPath: shouldStayOpen
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5771198210424922788, guid: c5b46b0cbca3b494e97eee2039ece217, type: 3}
+      propertyPath: buttons.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5771198210424922788, guid: c5b46b0cbca3b494e97eee2039ece217, type: 3}
+      propertyPath: buttons.Array.data[0]
+      value: 
+      objectReference: {fileID: 1967204779376930732}
     - target: {fileID: 8176951583162310819, guid: c5b46b0cbca3b494e97eee2039ece217, type: 3}
       propertyPath: m_Name
       value: Door
