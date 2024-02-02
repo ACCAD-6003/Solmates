@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff4c86d78dfd55d47a03b069c598849c, type: 3}
+  m_Name: Cutscene Five
+  m_EditorClassIdentifier: 
+  conversationData:
+    ID: Cutscene Five
+    Conversant: Player
+    DialoguesSeries:
+    - dialogues:
+      - speaker: 1
+        Dialogue: ...
+      - speaker: 0
+        Dialogue: ...
+      - speaker: 1
+        Dialogue: "We\u2019re the missing stars\u2026aren\u2019t we?"
+      - speaker: 0
+        Dialogue: So you finally see.
+      - speaker: 1
+        Dialogue: "It didn\u2019t take THAT long!"
+      - speaker: 0
+        Dialogue: Haha. Only a little while longer than me.
+      - speaker: 1
+        Dialogue: "So\u2026we did it then?"
+      - speaker: 0
+        Dialogue: Yes. I have finally returned to you and we can retake our place
+          as bright, beautiful, and infinite.
+      - speaker: 1
+        Dialogue: You were always that to me. Even down here.
+      - speaker: 0
+        Dialogue: I know.
+      - speaker: 1
+        Dialogue: "\u2026To the skies?"
+      - speaker: 0
+        Dialogue: To the skies. Where I get to look at your pretty face for eternity.
+      - speaker: 1
+        Dialogue: DAW! Shucks.
+      choices: []

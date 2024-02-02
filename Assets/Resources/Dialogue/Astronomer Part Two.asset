@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff4c86d78dfd55d47a03b069c598849c, type: 3}
+  m_Name: Astronomer Part Two
+  m_EditorClassIdentifier: 
+  conversationData:
+    ID: Astronomer Part Two
+    Conversant: Player
+    DialoguesSeries:
+    - dialogues:
+      - speaker: 1
+        Dialogue: "I like listening to this guy. Stars are pretty. There\u2019s a
+          lot of them too."
+      - speaker: 0
+        Dialogue: The stars are grander and more beautiful than I could ever dream
+          to be.
+      - speaker: 1
+        Dialogue: "Shut up, you\u2019re breathtaking."
+      - speaker: 0
+        Dialogue: Oh! Thank you.
+      - speaker: 1
+        Dialogue: I on the other hand-
+      - speaker: 0
+        Dialogue: "Don\u2019t. You\u2019re lovely too."
+      - speaker: 1
+        Dialogue: "OH\u2026U-uh thank you?"
+      - speaker: 0
+        Dialogue: You are welcome.
+      - speaker: 1
+        Dialogue: "I didn\u2019t- I- Uh- Oh, nevermind! Let\u2019s just pay attention!"
+      choices: []

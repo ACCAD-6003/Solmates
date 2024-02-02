@@ -1,25 +1,34 @@
 ﻿using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class TextBoxDisplay : MonoBehaviour
+namespace UI.Dialogue_System
 {
-    [SerializeField] TextMeshProUGUI dialogueTextField;
-
-    public void Display() => ToggleChildrenDisplay(true);
-
-    public void UpdateDialogueText(string text)
+    public class TextBoxDisplay : MonoBehaviour
     {
-        dialogueTextField.text = text;
-    }
+        [SerializeField] TextMeshProUGUI dialogueTextField;
 
-    public void Hide() => ToggleChildrenDisplay(false);
+        private DialogueHelperClass.ConversantType conversant;
 
-    private void ToggleChildrenDisplay(bool shouldDisplay)
-    {
-        foreach (Transform child in transform)
+        public void Display(DialogueHelperClass.ConversantType conversantToShow)
         {
-            child.gameObject.SetActive(shouldDisplay);
+            ToggleChildrenDisplay(true);
+            conversant = conversantToShow;
+        }
+
+        public void UpdateDialogueText(string text, DialogueHelperClass.ConversantType playerListening)
+        {
+            if (playerListening != conversant) return;
+            dialogueTextField.text = text;
+        }
+
+        public void Hide() => ToggleChildrenDisplay(false);
+
+        private void ToggleChildrenDisplay(bool shouldDisplay)
+        {
+            foreach (Transform child in transform)
+            {
+                child.gameObject.SetActive(shouldDisplay);
+            }
         }
     }
 }
