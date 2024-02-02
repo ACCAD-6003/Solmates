@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff4c86d78dfd55d47a03b069c598849c, type: 3}
+  m_Name: Convo Two A
+  m_EditorClassIdentifier: 
+  conversationData:
+    ID: Convo Two A
+    Conversant: Player
+    DialoguesSeries:
+    - dialogues:
+      - speaker: 1
+        Dialogue: "With this new ability\u2026we\u2019re closer together than ever
+          before."
+      - speaker: 0
+        Dialogue: "It\u2019s still not enough\u2026something is missing."
+      - speaker: 1
+        Dialogue: "Well, sure, but we\u2019re one step closer!"
+      - speaker: 0
+        Dialogue: I admire your optimism.
+      - speaker: 1
+        Dialogue: Years of practice.
+      choices: []

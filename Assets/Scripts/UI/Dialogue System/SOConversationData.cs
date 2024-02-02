@@ -1,16 +1,18 @@
-﻿using System.Collections;
-using UnityEngine;
-using static DialogueHelperClass;
+﻿using UnityEngine;
+using static UI.Dialogue_System.DialogueHelperClass;
 
-[CreateAssetMenu(fileName = "New Data", menuName = "Dialogue/Data")]
-public class SOConversationData : ScriptableObject
+namespace UI.Dialogue_System
 {
-    [SerializeField] ConversationData conversationData;
-
-    public void SetConversation(ConversationData conversation)
+    [CreateAssetMenu(fileName = "New Data", menuName = "Dialogue/Data")]
+    public class SOConversationData : ScriptableObject
     {
-        conversationData = conversation;
-    }
+        [SerializeField] ConversationData conversationData;
 
-    public ConversationData Data => conversationData;
+        public void SetConversation(ConversationData conversation)
+        {
+            conversationData = conversation;
+        }
+
+        public ConversationData Data => conversationData;
+    }
 }

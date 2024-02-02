@@ -1,199 +1,212 @@
-﻿using Sirenix.OdinInspector;
-using Sirenix.Utilities;
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Controller;
-using UnityEngine.SceneManagement;
+using Sirenix.OdinInspector;
 using UnityEngine;
-using UnityEngine.Audio;
-using static DialogueHelperClass;
+using static UI.Dialogue_System.DialogueHelperClass;
 
-public class DialogueManager : SingletonMonoBehavior<DialogueManager>
+namespace UI.Dialogue_System
 {
-    public static Action<ConversationData> OnDialogueStarted;
-    public static Action OnDialogueEnded;
-    public static Action<string> OnTextUpdated;
-    public static Action<List<string>> OnChoiceMenuOpen;
-    public static Action OnChoiceMenuClose;
+    public class DialogueManager : SingletonMonoBehavior<DialogueManager>
+    {
+        public static Action<ConversationData, ConversantType> OnDialogueStarted;
+        public static Action OnDialogueEnded;
+        public static Action<string, ConversantType> OnTextUpdated;
 
-    [SerializeField, Tooltip("Chars/Second")] float dialogueSpeed;
-    [SerializeField, Tooltip("Chars/Second")] float dialogueFastSpeed;
-    [SerializeField, ReadOnly] List<SOConversationData> conversationGroup;
+        [SerializeField, Tooltip("Chars/Second")] float dialogueSpeed;
+        [SerializeField, Tooltip("Chars/Second")] float dialogueFastSpeed;
+        [SerializeField, ReadOnly] List<SOConversationData> conversationGroup;
+
+        private readonly Dictionary<string, int> dialogueProgress = new();
     
-    private ConversantType currentPlayer;
-
-    private Dictionary<ConversationData, int> conversationProgress = new();
-    private float currentDialogueSpeed;
-    private bool inDialogue;
-    private bool continueInputReceived;
-    private bool abortDialogue;
-    private string choiceSelected;
-    public bool InDialogue => inDialogue;
-    public bool ValidateID(string id) => conversationGroup.Find(data => data.Data.ID.ToLower().Equals(id.ToLower()));
+        private float currentDialogueSpeed;
+        private bool inDialogue;
+        private bool continueInputReceived;
+        private bool abortDialogue;
+        public bool InDialogue => inDialogue;
+        public bool ValidateID(string id) => conversationGroup.Find(data => data.Data.ID.ToLower().Equals(id.ToLower()));
+        private int playersReady;
     
 
-    protected override void Awake()
-    {
-        base.Awake();
-        conversationGroup = Resources.LoadAll<SOConversationData>("Dialogue").ToList();
-    }
-
-    [Button(ButtonStyle.Box)]
-    public void StartPlayerOneDialogue(SOConversationData conversation)
-    {
-        currentPlayer = ConversantType.PlayerOne;
-        StartDialogue(conversation.Data.ID);
-    }
-
-    [Button(ButtonStyle.Box)]
-    public void StartPlayerTwoDialogue(SOConversationData conversation)
-    {
-        currentPlayer = ConversantType.PlayerTwo;
-        StartDialogue(conversation.Data.ID);
-    }
-
-    public void StartDialogue(string dialogueId)
-    {
-        if (dialogueId == null || dialogueId.ToLowerInvariant().Equals("exit"))
+        protected override void Awake()
         {
-            ExitDialogue();
-            return;
-        }
-        else if (!inDialogue)
-        {
-            inDialogue = true;
-            UIController.Instance.SwapToUI();
+            base.Awake();
+            conversationGroup = Resources.LoadAll<SOConversationData>("Dialogue").ToList();
         }
 
-        var ConversationDataPointer = conversationGroup.Find(data => data.Data.ID.ToLower().Equals(dialogueId.ToLower()));
-        if (ConversationDataPointer == null)
+        [Button(ButtonStyle.Box)]
+        public void StartDialogue(SOConversationData conversation)
         {
-            Debug.LogError("Could not find " + dialogueId + " in database");
-            return;
+            AdvanceDialogue(conversation.Data.ID);
+            StartDialogue(conversation.Data.ID, ConversantType.PlayerOne);
+            StartDialogue(conversation.Data.ID, ConversantType.PlayerTwo);
         }
-        if (conversationProgress.ContainsKey(ConversationDataPointer.Data))
-        {
-            conversationProgress[ConversationDataPointer.Data]++;
+    
+        private void AdvanceDialogue(string data)
+        { 
+            if (dialogueProgress.ContainsKey(data))
+            {
+                dialogueProgress[data]++;
+            }
+            else
+            {
+                dialogueProgress.Add(data, 0);
+            }
         }
-        else
+
+        public void StartDialogue(string dialogueId, ConversantType player)
         {
-            conversationProgress.Add(ConversationDataPointer.Data, 0);
+            if (dialogueId == null || dialogueId.ToLowerInvariant().Equals("exit"))
+            {
+                ExitDialogue();
+                return;
+            }
+            
+            if (!inDialogue)
+            {
+                inDialogue = true;
+                UIController.Instance.SwapToUI();
+            }
+
+            var ConversationDataPointer = conversationGroup.Find(data => data.Data.ID.ToLower().Equals(dialogueId.ToLower()));
+            if (ConversationDataPointer == null)
+            {
+                Debug.LogError("Could not find " + dialogueId + " in database");
+                return;
+            }
+
+            StartCoroutine(HandleConversation(ConversationDataPointer.Data, player));
         }
 
-        StartCoroutine(HandleConversation(ConversationDataPointer.Data));
-    }
-
-    private void ExitDialogue()
-    {
-        inDialogue = false;
-        OnDialogueEnded?.Invoke();
-        UIController.Instance.SwapToGameplay();
-    }
-
-    private void OnAbort() 
-    {
-        abortDialogue = true;
-        OnContinueInput();
-    }
-
-    private IEnumerator HandleConversation(ConversationData data)
-    {
-        OnDialogueStarted?.Invoke(data);
-        var dialogueChain = conversationProgress[data] < data.DialoguesSeries.Count ? 
-            data.DialoguesSeries[conversationProgress[data]] : data.DialoguesSeries[^1];
-
-        if (dialogueChain.dialogues.Count >= 1 && !dialogueChain.dialogues[0].Dialogue.IsNullOrWhitespace())
+        private void ExitDialogue()
         {
+            inDialogue = false;
+            OnDialogueEnded?.Invoke();
+            UIController.Instance.SwapToGameplay();
+        }
+
+        private void OnAbort() 
+        {
+            abortDialogue = true;
+            OnContinueInput();
+        }
+
+        private IEnumerator HandleConversation(ConversationData data, ConversantType player)
+        {
+            OnDialogueStarted?.Invoke(data, player);
+
             abortDialogue = false;
             UIController.OnOverrideSkip += OnAbort;
+        
+            var dialogueIndex = dialogueProgress.TryGetValue(data.ID, out var progress)
+                ? Mathf.Min(progress, data.DialoguesSeries.Count - 1)
+                : 0;
+            var dialogues = data.DialoguesSeries[dialogueIndex].dialogues;
+        
 
-            foreach (var dialogue in dialogueChain.dialogues)
+            foreach (var dialogue in dialogues)
             {
                 if (data.Conversant != PLAYER_SPEAKING_TO_EACH_OTHER_LABEL)
                 {
-                    switch (currentPlayer)
+                    switch (player)
                     {
                         case ConversantType.PlayerOne when dialogue.speaker == ConversantType.PlayerTwo:
                         case ConversantType.PlayerTwo when dialogue.speaker == ConversantType.PlayerOne:
                             continue;
                     }
                 }
+                playersReady = 0;
 
-                yield return ProcessDialogue(dialogue, data.Conversant);
+                yield return ProcessDialogue(dialogue, player, data.Conversant);
                 if (abortDialogue) break;
             }
 
             UIController.OnOverrideSkip -= OnAbort;
+
+            if(data.LeadsTo.ToLower().StartsWith("end"))
+                ExitDialogue();
+            else
+                StartDialogue(data.LeadsTo, player);
         }
+    
+        private void OnContinueInput() => continueInputReceived = true;
 
-        yield return HandleChoices(dialogueChain.choices);
-        ExitDialogue();
-    }
-
-    public void SelectChoice(string choice) => choiceSelected = choice;
-
-    private IEnumerator HandleChoices(List<string> choices)
-    {
-        choiceSelected = null;
-        if (choices.Count == 0) yield break;
-
-        OnChoiceMenuOpen?.Invoke(choices);
-        yield return new WaitUntil(() => choiceSelected != null);
-        OnChoiceMenuClose?.Invoke();
-    }
-
-    private void OnContinueInput() => continueInputReceived = true;
-
-    private IEnumerator ProcessDialogue(DialogueData dialogue, string conversant)
-    {
-        string Underline(string text) => "<u>" + text + "</u>";
-        OnTextUpdated?.Invoke("");
-        yield return new WaitUntil(() => FadeToBlackSystem.FadeOutComplete);
-
-        continueInputReceived = false;
-        var speakerName = "";
-
-        if (dialogue.speaker != ConversantType.Other)
+        private IEnumerator ProcessDialogue(DialogueData dialogue, ConversantType player, string conversant)
         {
-            speakerName = dialogue.speaker switch
+            string Underline(string text) => "<u>" + text + "</u>";
+            OnTextUpdated?.Invoke("", player);
+            yield return new WaitUntil(() => FadeToBlackSystem.FadeOutComplete);
+
+            continueInputReceived = false;
+            var speakerName = "";
+
+            if (dialogue.speaker != ConversantType.Other)
             {
-                ConversantType.PlayerOne => PLAYER_MARKER,
-                ConversantType.PlayerTwo => PLAYER_TWO_MARKER,
-                ConversantType.Conversant => conversant,
-                _ => speakerName
-            };
-            speakerName = Underline(speakerName) + "\n";
+                speakerName = dialogue.speaker switch
+                {
+                    ConversantType.PlayerOne => PLAYER_MARKER,
+                    ConversantType.PlayerTwo => PLAYER_TWO_MARKER,
+                    ConversantType.Conversant => conversant,
+                    _ => speakerName
+                };
+                speakerName = Underline(speakerName) + "\n";
+            }
+
+            yield return TypewriterDialogue(speakerName, player, dialogue.Dialogue);
+            playersReady++;
+
+            if(playersReady == 2) UIController.OnNextDialogue += OnContinueInput;
+
+            yield return new WaitUntil(() => continueInputReceived);
+
+            UIController.OnNextDialogue -= OnContinueInput;
         }
 
-        yield return TypewriterDialogue(speakerName, dialogue.Dialogue);
-
-        UIController.OnNextDialogue += OnContinueInput;
-
-        yield return new WaitUntil(() => continueInputReceived);
-
-        UIController.OnNextDialogue -= OnContinueInput;
-    }
-
-    private IEnumerator TypewriterDialogue(string name, string line)
-    {
-        currentDialogueSpeed = dialogueSpeed;
-        string loadedText = name;
-        UIController.OnNextDialogue += SpeedUpText;
-        bool atSpecialCharacter = false;
-        foreach(char letter in line)
+        private IEnumerator TypewriterDialogue(string name, ConversantType player, string line)
         {
-            loadedText += letter;
-            atSpecialCharacter = letter == '<' || atSpecialCharacter;
-            if (atSpecialCharacter && letter != '>') continue;
-            atSpecialCharacter = false;
-            OnTextUpdated?.Invoke(loadedText);
-            yield return new WaitForSeconds(1 / currentDialogueSpeed);
-            if (abortDialogue) { OnTextUpdated?.Invoke(name + line); break; }
-        }
-        UIController.OnNextDialogue -= SpeedUpText;
-    }
+            currentDialogueSpeed = dialogueSpeed;
+            var loadedText = name;
+            UIController.OnNextDialogue += SpeedUpText;
+            var atSpecialCharacter = false;
+            var charsInRow = 0;
 
-    private void SpeedUpText() => currentDialogueSpeed = currentDialogueSpeed == dialogueFastSpeed ? currentDialogueSpeed = dialogueFastSpeed * 10 : dialogueFastSpeed;
+            for (var index = 0; index < line.Length; index++)
+            {
+                var letter = line[index];
+                var nextSpace = line.IndexOf(' ', index);
+                var willClipLine = (nextSpace != -1 && charsInRow + (nextSpace - index) > 50) || (charsInRow > 50 && letter == ' ');
+                if (willClipLine)
+                {
+                    loadedText += "\n";
+                    charsInRow = 0;
+                    if (letter == ' ')
+                    {
+                        continue;
+                    }
+                }
+                else
+                {
+                    charsInRow++;
+                }
+            
+                loadedText += letter;
+                atSpecialCharacter = letter == '<' || atSpecialCharacter;
+                if (atSpecialCharacter && letter != '>') continue;
+                atSpecialCharacter = false;
+                OnTextUpdated?.Invoke(loadedText, player);
+                yield return new WaitForSeconds(1 / currentDialogueSpeed);
+                if (abortDialogue)
+                {
+                    OnTextUpdated?.Invoke(name + line, player);
+                    break;
+                }
+            }
+
+            UIController.OnNextDialogue -= SpeedUpText;
+        }
+
+        private void SpeedUpText() => currentDialogueSpeed = currentDialogueSpeed == dialogueFastSpeed ? currentDialogueSpeed = dialogueFastSpeed * 10 : dialogueFastSpeed;
+    }
 }

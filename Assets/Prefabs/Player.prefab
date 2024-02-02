@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 1283561729632177310}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -216,8 +216,8 @@ MonoBehaviour:
   moveSpeed: 2
   pullPushSpeed: 5
   initialRadius: 5
-  minRadius: 2
-  maxRadius: 20
+  minRadius: 1
+  maxRadius: 5
   otherPlayer: {fileID: 0}
   joint: {fileID: 0}
   input: {fileID: -944628639613478452, guid: a54bed459ab5a8a42b5a408f15051ecc, type: 3}

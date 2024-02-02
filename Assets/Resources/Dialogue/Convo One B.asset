@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff4c86d78dfd55d47a03b069c598849c, type: 3}
+  m_Name: Convo One B
+  m_EditorClassIdentifier: 
+  conversationData:
+    ID: Convo One B
+    Conversant: None
+    DialoguesSeries:
+    - dialogues:
+      - speaker: 0
+        Dialogue: "This person called Uri\u2026they\u2019re so strange, but without
+          them, I feel like a part of me is missing."
+      - speaker: 1
+        Dialogue: This Centa girl is amazing. I bet she digs my style.
+      - speaker: 0
+        Dialogue: "Perhaps if we\u2019re working together like this, I\u2019ll be
+          able to make it back to her."
+      - speaker: 1
+        Dialogue: "I was like, \u201CI guess I\u2019m attracted to you,\u201D and
+          she was probably like, \u201CWoah, she\u2019s cool.\u201D"
+      choices: []
+    - dialogues:
+      - speaker: 0
+        Dialogue: Um
+      - speaker: 1
+        Dialogue: Whatt...
+      choices: []
