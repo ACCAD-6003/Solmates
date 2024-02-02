@@ -36,4 +36,5 @@ MonoBehaviour:
       - speaker: 1
         Dialogue: "AWOOGA! Who is that hottie over there?? I kinda feel like I\u2019ve
           seen them before. I\u2019ll go over and say \u201Chi\u201D."
-      choices: []
+    LeadsTo:
+    - End

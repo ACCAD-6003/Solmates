@@ -35,4 +35,5 @@ MonoBehaviour:
         Dialogue: "Ugh. I\u2019m Centa by the way."
       - speaker: 1
         Dialogue: "And I\u2019m Uri, baby."
-      choices: []
+    LeadsTo:
+    - End

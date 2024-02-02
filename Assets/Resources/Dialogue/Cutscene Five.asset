@@ -44,4 +44,5 @@ MonoBehaviour:
         Dialogue: To the skies. Where I get to look at your pretty face for eternity.
       - speaker: 1
         Dialogue: DAW! Shucks.
-      choices: []
+    LeadsTo:
+    - End

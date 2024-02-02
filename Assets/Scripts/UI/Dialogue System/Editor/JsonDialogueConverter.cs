@@ -89,8 +89,15 @@ public static class JsonDialogueConverter
         }
         
         AssertMarker(NextLine(), LEADS_TO_MARKER);
-        conversation.LeadsTo = NextLine()[LEADS_TO_MARKER.Length..];
+        if(!NextLine().Trim().EndsWith(LEADS_TO_MARKER))
+            conversation.LeadsTo.Add(NextLine()[LEADS_TO_MARKER.Length..].Trim());
         RemoveLine();
+
+        while (MoreLinesToProcess())
+        {
+            conversation.LeadsTo.Add(NextLine());
+            RemoveLine();
+        }
 
         return conversation;
     }

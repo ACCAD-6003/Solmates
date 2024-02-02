@@ -33,4 +33,5 @@ MonoBehaviour:
         Dialogue: You will see.
       - speaker: 1
         Dialogue: I guess I will?
-      choices: []
+    LeadsTo:
+    - End

@@ -24,4 +24,5 @@ MonoBehaviour:
         Dialogue: We will be one again with all we have learned here.
       - speaker: 1
         Dialogue: "Ok\u2026?"
-      choices: []
+    LeadsTo:
+    - End

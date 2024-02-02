@@ -22,4 +22,5 @@ MonoBehaviour:
           to her.
       - speaker: 1
         Dialogue: "Centa is scaring me a little\u2026what did she realize?"
-      choices: []
+    LeadsTo:
+    - End

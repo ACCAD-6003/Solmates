@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ff4c86d78dfd55d47a03b069c598849c, type: 3}
-  m_Name: Astronomer Part Five
+  m_Name: Astronomer 1 Part One
   m_EditorClassIdentifier: 
   conversationData:
-    ID: Astronomer Part Five
+    ID: Astronomer 1 Part One
     Conversant: Astronomer
     DialoguesSeries:
     - dialogues:
       - speaker: 2
-        Dialogue: Centauri is what we call a binary star system. What appears as
-          one star through our human eyes, is actually two.
+        Dialogue: "The stars tell stories\u2013stories of our past, present, and
+          future. I have always believed the stars to be feeling."
       - speaker: 2
-        Dialogue: "But, currently, Centauri has gone missing. Wiped out by a cosmic
-          disaster, hidden by other entities, or dissolved into space\u2013we don\u2019t
-          know."
+        Dialogue: 'Many in my field believe them to be too large and too toxic to
+          be living, but what is to say: they are not conscious?'
       - speaker: 2
-        Dialogue: Until we do, two holes remain in the heavens.
-      choices: []
+        Dialogue: Perhaps consciousness is bigger than we can fathom.
+    LeadsTo:
+    - Astronomer 1 Part Two

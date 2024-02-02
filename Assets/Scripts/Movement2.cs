@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -25,16 +26,25 @@ public class Movement2 : MonoBehaviour
     public InputActionAsset input;
     public InputActionMap actionMap;
 
+    private float currentSpeed;
+    private Rigidbody rb;
+
     // <0 is clockwise, >0 is counterclockwise, 0 is not moving 
     public float MovementDirection { get; private set; }
     public float RadiusDirection { get; private set; }
+
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
 
     // Start is called before the first frame update
     void Start()
     {
         joint.minDistance = initialRadius;
         joint.maxDistance = initialRadius;
-
+        currentSpeed = moveSpeed;
+        
         actionMap = input.FindActionMap("Movement");
         actionMap.actionTriggered += ActionTriggered;
         actionMap.Enable();
@@ -63,12 +73,22 @@ public class Movement2 : MonoBehaviour
 
     public void Lock()
     {
-        GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
+        rb.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
     }
 
     public void Unlock()
     {
-        GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+        rb.constraints = RigidbodyConstraints.FreezeRotation;
+    }
+
+    public void Freeze()
+    {
+        currentSpeed = 0;
+    }
+    
+    public void Unfreeze()
+    {
+        currentSpeed = moveSpeed;
     }
 
     private bool IsNearGrowShrinkStatue()
@@ -106,7 +126,7 @@ public class Movement2 : MonoBehaviour
             Unlock();
         }
 
-        GetComponent<Rigidbody>().velocity = MovementDirection * moveSpeed * Vector3.Cross(Vector3.up, Vector3.Normalize(RadiusVector())) * RadiusVector().magnitude;
+        rb.velocity = Vector3.Cross(Vector3.up, Vector3.Normalize(RadiusVector())) * (MovementDirection * currentSpeed * RadiusVector().magnitude);
 
         if (RadiusDirection != 0)
         {
