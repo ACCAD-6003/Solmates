@@ -7,20 +7,13 @@ namespace UI.InteractionSystem
 {
     public class Interactable : MonoBehaviour
     {
-        private const string PLAYER_ONE_TAG = "PlayerOne";
-        private const string PLAYER_TWO_TAG = "PlayerTwo";
+        private const string PLAYER_TAG = "Player";
         
         [SerializeField] private UnityEvent onInRange;
         [SerializeField] private UnityEvent onOutOfRange;
-        [SerializeField] private UnityEvent onPlayerOneInteract;
-        [SerializeField] private UnityEvent onPlayerTwoInteract;
+        [SerializeField] private UnityEvent onInteract;
 
         private int playersInRange;
-
-        private static bool IsPlayer(GameObject other)
-        {
-            return HasTag(other, PLAYER_ONE_TAG) || HasTag(other, PLAYER_TWO_TAG);
-        }
         
         private static bool HasTag(GameObject objectToCheck, string tagToCheck)
         {
@@ -29,10 +22,9 @@ namespace UI.InteractionSystem
         
         private void OnTriggerEnter(Collider other)
         {
-            if (!IsPlayer(other.gameObject)) return;
+            if (!HasTag(other.gameObject, PLAYER_TAG)) return;
             
-            if (HasTag(other.gameObject, PLAYER_ONE_TAG)) UIController.OnInteract += onPlayerOneInteract.Invoke;
-            else if (HasTag(other.gameObject, PLAYER_TWO_TAG)) UIController.OnPlayerTwoInteract += onPlayerTwoInteract.Invoke;
+            UIController.OnInteract += onInteract.Invoke;
             
             if (playersInRange == 0) onInRange.Invoke();
             playersInRange++;
@@ -40,10 +32,9 @@ namespace UI.InteractionSystem
         
         private void OnTriggerExit(Collider other)
         {
-            if (!IsPlayer(other.gameObject)) return;
+            if (!HasTag(other.gameObject, PLAYER_TAG)) return;
             
-            if (HasTag(other.gameObject, PLAYER_ONE_TAG)) UIController.OnInteract -= onPlayerOneInteract.Invoke;
-            else if (HasTag(other.gameObject, PLAYER_TWO_TAG)) UIController.OnPlayerTwoInteract -= onPlayerTwoInteract.Invoke;
+            UIController.OnInteract -= onInteract.Invoke;
             
             playersInRange--;
             if (playersInRange == 0) onOutOfRange.Invoke();
@@ -51,8 +42,7 @@ namespace UI.InteractionSystem
 
         private void OnDestroy()
         {
-            UIController.OnInteract -= onPlayerOneInteract.Invoke;
-            UIController.OnPlayerTwoInteract -= onPlayerTwoInteract.Invoke;
+            UIController.OnInteract -= onInteract.Invoke;
         }
     }
 }

@@ -1,4 +1,5 @@
 using System;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -25,7 +26,7 @@ namespace Controller
         public Action OnSwapToUI;
         public Action OnSwapToGameplay;
 
-        private bool inGameplay = true;
+        [SerializeField, ReadOnly] private bool inGameplay = true;
         public bool InGameplay => inGameplay;
 
         [SerializeField] PlayerInput playerInput;

@@ -8,7 +8,7 @@ public class RadiusParticles : MonoBehaviour
     private readonly float scalingFactor = 120f;
     
     [SerializeField] private Movement2 player;
-    [SerializeField] private float particleScale;
+    [SerializeField] private float particleScale = 1f;
 
     private ParticleSystem particles;
     
