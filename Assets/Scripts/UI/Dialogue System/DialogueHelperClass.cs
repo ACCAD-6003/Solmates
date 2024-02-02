@@ -14,7 +14,7 @@ namespace UI.Dialogue_System
         public static readonly string PLAYER_TWO_MARKER = "Uri: ";
         public static readonly string VOICE_MARKER = "Voice: ";
         public static readonly string CHOICES_MARKER = "Choices:";
-        public static readonly string LEADS_TO_MARKER = "Leads To: ";
+        public static readonly string LEADS_TO_MARKER = "Leads To:";
         public static readonly string SOUND_MARKER = "Music:";
         public static readonly string EMPTY_MARKER = "N/A";
         public static readonly string POTION_MADE_UNLOCK = "ITEMCRAFTED";
@@ -47,14 +47,13 @@ namespace UI.Dialogue_System
             public string ID;
             public string Conversant;
             public List<DialogueChain> DialoguesSeries = new();
-            public string LeadsTo;
+            public List<string> LeadsTo = new();
         }
 
         [System.Serializable]
         public class DialogueChain
         {
             public List<DialogueData> dialogues = new();
-            //public List<string> choices = new();
         }
     }
 }

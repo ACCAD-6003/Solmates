@@ -10,20 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ff4c86d78dfd55d47a03b069c598849c, type: 3}
-  m_Name: Cutscene One
+  m_Name: Astronomer 3 Part One
   m_EditorClassIdentifier: 
   conversationData:
-    ID: Cutscene One
-    Conversant: Player
+    ID: Astronomer 3 Part One
+    Conversant: Astronomer
     DialoguesSeries:
     - dialogues:
-      - speaker: 0
-        Dialogue: "You\u2019re so far\u2026"
-      - speaker: 1
-        Dialogue: "I\u2019m sorry\u2026I don\u2019t know what happened\u2026"
-      - speaker: 0
-        Dialogue: We must try to come back together.
-      - speaker: 1
-        Dialogue: "Yeah let\u2019s do this!"
+      - speaker: 2
+        Dialogue: Centauri is a great mystery within the astronomist community.
+      - speaker: 2
+        Dialogue: Where have they gone? What has become of those great stars?
     LeadsTo:
-    - End
+    - Astronomer 3 Part Two

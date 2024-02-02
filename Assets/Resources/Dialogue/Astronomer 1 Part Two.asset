@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ff4c86d78dfd55d47a03b069c598849c, type: 3}
-  m_Name: Astronomer Part Two
+  m_Name: Astronomer 1 Part Two
   m_EditorClassIdentifier: 
   conversationData:
-    ID: Astronomer Part Two
+    ID: Astronomer 1 Part Two
     Conversant: Player
     DialoguesSeries:
     - dialogues:
@@ -37,4 +37,5 @@ MonoBehaviour:
         Dialogue: You are welcome.
       - speaker: 1
         Dialogue: "I didn\u2019t- I- Uh- Oh, nevermind! Let\u2019s just pay attention!"
-      choices: []
+    LeadsTo:
+    - Astronomer 1 Part Three

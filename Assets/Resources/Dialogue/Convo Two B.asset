@@ -27,4 +27,5 @@ MonoBehaviour:
           come to light.
       - speaker: 1
         Dialogue: We just gotta keep going. Onward! To romance!
-      choices: []
+    LeadsTo:
+    - End

@@ -10,13 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ff4c86d78dfd55d47a03b069c598849c, type: 3}
-  m_Name: Astronomer Part Three
+  m_Name: Astronomer 2 Part Three
   m_EditorClassIdentifier: 
   conversationData:
-    ID: Astronomer Part Three
+    ID: Astronomer 2 Part Three
     Conversant: Astronomer
     DialoguesSeries:
     - dialogues:
       - speaker: 2
-        Dialogue: 'Some stars come in pairs. You could say: they are in love!'
-      choices: []
+        Dialogue: "Centauri is one of those wondrous double stars, but she\u2019s
+          gone\u2026"
+    LeadsTo:
+    - End
