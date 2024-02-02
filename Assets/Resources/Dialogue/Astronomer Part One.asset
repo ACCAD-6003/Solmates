@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff4c86d78dfd55d47a03b069c598849c, type: 3}
+  m_Name: Astronomer Part One
+  m_EditorClassIdentifier: 
+  conversationData:
+    ID: Astronomer Part One
+    Conversant: Astronomer
+    DialoguesSeries:
+    - dialogues:
+      - speaker: 2
+        Dialogue: "The stars tell stories\u2013stories of our past, present, and
+          future. I have always believed the stars to be feeling."
+      - speaker: 2
+        Dialogue: 'Many in my field believe them to be too large and too toxic to
+          be living, but what is to say: they are not conscious?'
+      - speaker: 2
+        Dialogue: Perhaps consciousness is bigger than we can fathom.
+      choices: []

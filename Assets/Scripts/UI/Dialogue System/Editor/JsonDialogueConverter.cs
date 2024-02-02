@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using Sirenix.Utilities;
+using UI.Dialogue_System;
 using UnityEditor;
-using static DialogueHelperClass;
+using static UI.Dialogue_System.DialogueHelperClass;
 
 public static class JsonDialogueConverter
 { 
@@ -54,7 +55,8 @@ public static class JsonDialogueConverter
         void CreateNewChain() => conversation.DialoguesSeries.Add(new DialogueChain());
         bool ReachedChoices() => NextLine().StartsWith(CHOICES_MARKER);
         bool ReachedDialogue() => NextLine().StartsWith(DIALOGUE_MARKER);
-        void AddChoicesToChain() => conversation.DialoguesSeries[^1].choices.Add(NextLine());
+        bool ReachedLeadsTo() => NextLine().StartsWith(LEADS_TO_MARKER);
+        //void AddChoicesToChain() => conversation.DialoguesSeries[^1].choices.Add(NextLine());
 
         conversation.ID = NextLine();
         Debug.Log($"Converting {NextLine()}");
@@ -64,7 +66,7 @@ public static class JsonDialogueConverter
         conversation.Conversant = NextLine()[CONVERSANT_MARKER.Length..];
         RemoveLine();
 
-        while (MoreLinesToProcess())
+        while (!ReachedLeadsTo())
         {
             AssertMarker(NextLine(), DIALOGUE_MARKER);
             RemoveLine();
@@ -79,12 +81,16 @@ public static class JsonDialogueConverter
             
             RemoveLine();
             
-            while (MoreLinesToProcess() && !ReachedDialogue())
+            while (!ReachedDialogue() && !ReachedLeadsTo())
             {
-                AddChoicesToChain();
+                //AddChoicesToChain();
                 RemoveLine();
             }
         }
+        
+        AssertMarker(NextLine(), LEADS_TO_MARKER);
+        conversation.LeadsTo = NextLine()[LEADS_TO_MARKER.Length..];
+        RemoveLine();
 
         return conversation;
     }

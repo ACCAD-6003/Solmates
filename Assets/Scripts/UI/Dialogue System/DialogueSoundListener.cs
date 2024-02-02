@@ -1,28 +1,31 @@
 ﻿using UnityEngine;
-using static DialogueHelperClass;
+using static UI.Dialogue_System.DialogueHelperClass;
 
-[RequireComponent(typeof(AudioSource))]
-public class DialogueSoundListener : MonoBehaviour
+namespace UI.Dialogue_System
 {
-    [SerializeField] DialogueSoundDatabase soundDatabase;
-    new AudioSource audio;
-
-    private void Start()
+    [RequireComponent(typeof(AudioSource))]
+    public class DialogueSoundListener : MonoBehaviour
     {
-        audio = GetComponent<AudioSource>();
-        DialogueManager.OnDialogueStarted += TriggerAudio;
-    }
+        [SerializeField] DialogueSoundDatabase soundDatabase;
+        new AudioSource audio;
 
-    private void TriggerAudio(ConversationData dialogueNode)
-    {
-        if (soundDatabase.GetClip(dialogueNode.Conversant, out var clip))
+        private void Start()
         {
-            audio.PlayOneShot(clip);
+            audio = GetComponent<AudioSource>();
+            DialogueManager.OnDialogueStarted += TriggerAudio;
         }
-    }
 
-    private void OnDestroy()
-    {
-        DialogueManager.OnDialogueStarted -= TriggerAudio;
+        private void TriggerAudio(ConversationData dialogueNode, ConversantType _)
+        {
+            if (soundDatabase.GetClip(dialogueNode.Conversant, out var clip))
+            {
+                audio.PlayOneShot(clip);
+            }
+        }
+
+        private void OnDestroy()
+        {
+            DialogueManager.OnDialogueStarted -= TriggerAudio;
+        }
     }
 }

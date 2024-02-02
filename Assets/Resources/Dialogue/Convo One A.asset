@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff4c86d78dfd55d47a03b069c598849c, type: 3}
+  m_Name: Convo One A
+  m_EditorClassIdentifier: 
+  conversationData:
+    ID: Convo One A
+    Conversant: Player
+    DialoguesSeries:
+    - dialogues:
+      - speaker: 0
+        Dialogue: "You\u2019re\u2026orbiting around me."
+      - speaker: 1
+        Dialogue: "You know it! I guess I\u2019m just attracted to you. Heh! Get
+          it?"
+      - speaker: 0
+        Dialogue: But, how is this happening?
+      - speaker: 1
+        Dialogue: "Ahhh, she\u2019s unaware of her beauty. How poetic."
+      - speaker: 0
+        Dialogue: Are you even listening to me?
+      - speaker: 1
+        Dialogue: 'If by that you mean: hearing your silky voice, but not comprehending
+          a thing, then yes.'
+      - speaker: 0
+        Dialogue: "Ugh. I\u2019m Centa by the way."
+      - speaker: 1
+        Dialogue: "And I\u2019m Uri, baby."
+      choices: []

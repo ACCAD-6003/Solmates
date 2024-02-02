@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff4c86d78dfd55d47a03b069c598849c, type: 3}
+  m_Name: Cutscene Three
+  m_EditorClassIdentifier: 
+  conversationData:
+    ID: Cutscene Three
+    Conversant: Player
+    DialoguesSeries:
+    - dialogues:
+      - speaker: 1
+        Dialogue: "We\u2019re back\u2026"
+      - speaker: 0
+        Dialogue: This is all so strange.
+      - speaker: 1
+        Dialogue: "Hey, don\u2019t panic. Maybe, now there\u2019s a way we can be
+          closer together."
+      - speaker: 0
+        Dialogue: I never said I was panicking.
+      - speaker: 1
+        Dialogue: "Oh, so you don\u2019t need a big strong woman to rescue you?"
+      - speaker: 0
+        Dialogue: "\u2026I didn\u2019t say that\u2026But I\u2019m not afraid."
+      - speaker: 1
+        Dialogue: "Don\u2019t worry, darling, I\u2019ll come back to you soon."
+      - speaker: 0
+        Dialogue: "Let\u2019s just see what\u2019s going on here."
+      choices: []

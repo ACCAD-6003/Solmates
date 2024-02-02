@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff4c86d78dfd55d47a03b069c598849c, type: 3}
+  m_Name: Convo Three A
+  m_EditorClassIdentifier: 
+  conversationData:
+    ID: Convo Three A
+    Conversant: Player
+    DialoguesSeries:
+    - dialogues:
+      - speaker: 1
+        Dialogue: With these abilities combined, we have a chance at reaching the
+          end of all this weird stuff!
+      - speaker: 0
+        Dialogue: We will be one again with all we have learned here.
+      - speaker: 1
+        Dialogue: "Ok\u2026?"
+      choices: []
