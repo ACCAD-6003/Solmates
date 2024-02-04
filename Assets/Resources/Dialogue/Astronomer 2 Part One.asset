@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff4c86d78dfd55d47a03b069c598849c, type: 3}
+  m_Name: Astronomer 2 Part One
+  m_EditorClassIdentifier: 
+  conversationData:
+    ID: Astronomer 2 Part One
+    Conversant: Astronomer
+    DialoguesSeries:
+    - dialogues:
+      - speaker: 2
+        Dialogue: Binary star systems are created by a variation in the star formation
+          process.
+      - speaker: 2
+        Dialogue: Whirlwinds of gas and glass come together at the epicenter to create
+          a bright star.
+      - speaker: 2
+        Dialogue: "There are rare moments\u2026when a smaller star can form within
+          the cyclone, growing larger until it becomes equal to its pair."
+      - speaker: 2
+        Dialogue: The two stars are then bound together in orbit.
+    LeadsTo:
+    - Astronomer 2 Part Two

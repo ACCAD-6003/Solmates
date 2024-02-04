@@ -125,10 +125,15 @@ namespace UI.Dialogue_System
 
             UIController.OnOverrideSkip -= OnAbort;
 
-            if(data.LeadsTo.ToLower().StartsWith("end"))
+            var nextDialogueIndex = dialogueProgress.TryGetValue(data.ID, out var p)
+                ? Mathf.Min(p, data.LeadsTo.Count - 1)
+                : 0;
+            var nextDialogue = data.LeadsTo[nextDialogueIndex];
+            
+            if(nextDialogue.ToLower().StartsWith("end"))
                 ExitDialogue();
             else
-                StartDialogue(data.LeadsTo, player);
+                StartDialogue(nextDialogue, player);
         }
     
         private void OnContinueInput() => continueInputReceived = true;

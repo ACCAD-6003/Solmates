@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Checkpoint_System;
 using UnityEngine;
 
 public class TeleportScript : MonoBehaviour
@@ -8,6 +10,7 @@ public class TeleportScript : MonoBehaviour
     public GameObject players;
 
     public int numOfPlayersInZone = 0;
+    
 
     void OnTriggerEnter(Collider other)
     {

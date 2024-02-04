@@ -32,6 +32,7 @@ namespace UI.Menus
         public virtual void OpenMenu()
         {
             display.SetActive(true);
+            Controller.UIController.Instance.SwapToUI();
             JumpToPage(0);
             CloseTrigger += CloseMenu;
         }
@@ -63,6 +64,7 @@ namespace UI.Menus
         {
             display.SetActive(false);
             HideAllPages();
+            Controller.UIController.Instance.SwapToGameplay();
             CloseTrigger -= CloseMenu;
         }
 

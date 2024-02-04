@@ -34,4 +34,5 @@ MonoBehaviour:
         Dialogue: "Don\u2019t worry, darling, I\u2019ll come back to you soon."
       - speaker: 0
         Dialogue: "Let\u2019s just see what\u2019s going on here."
-      choices: []
+    LeadsTo:
+    - End

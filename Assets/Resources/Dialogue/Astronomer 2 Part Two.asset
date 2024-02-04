@@ -10,23 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ff4c86d78dfd55d47a03b069c598849c, type: 3}
-  m_Name: Convo Two A
+  m_Name: Astronomer 2 Part Two
   m_EditorClassIdentifier: 
   conversationData:
-    ID: Convo Two A
+    ID: Astronomer 2 Part Two
     Conversant: Player
     DialoguesSeries:
     - dialogues:
       - speaker: 1
-        Dialogue: "With this new ability\u2026we\u2019re closer together than ever
-          before."
+        Dialogue: "That\u2019s\u2026kinda scary, I\u2019m not gonna lie."
       - speaker: 0
-        Dialogue: "It\u2019s still not enough\u2026something is missing."
+        Dialogue: "Scary? I think that\u2019s extraordinary."
       - speaker: 1
-        Dialogue: "Well, sure, but we\u2019re one step closer!"
+        Dialogue: One star forming only to result in the creation of a littler one
+          that just randomly pops up in its orbit and gets bigger and bigger?
       - speaker: 0
-        Dialogue: I admire your optimism.
+        Dialogue: "Oh the irony\u2026"
       - speaker: 1
-        Dialogue: Years of practice.
+        Dialogue: "Wait\u2026what do you mean?"
+      - speaker: 0
+        Dialogue: Haha
     LeadsTo:
-    - End
+    - Astronomer 2 Part Three

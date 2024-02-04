@@ -28,10 +28,5 @@ MonoBehaviour:
       - speaker: 1
         Dialogue: "I was like, \u201CI guess I\u2019m attracted to you,\u201D and
           she was probably like, \u201CWoah, she\u2019s cool.\u201D"
-      choices: []
-    - dialogues:
-      - speaker: 0
-        Dialogue: Um
-      - speaker: 1
-        Dialogue: Whatt...
-      choices: []
+    LeadsTo:
+    - End
