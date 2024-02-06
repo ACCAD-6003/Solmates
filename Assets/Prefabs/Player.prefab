@@ -204,6 +204,7 @@ GameObject:
   - component: {fileID: 6211207690728154814}
   - component: {fileID: 471639381722143428}
   - component: {fileID: 3045479165410398864}
+  - component: {fileID: 4777278595303689068}
   m_Layer: 0
   m_Name: Camera
   m_TagString: RedCamera
@@ -290,6 +291,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LookAt: {fileID: 0}
+--- !u!45 &4777278595303689068
+Skybox:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4893522093879167614}
+  m_Enabled: 1
+  m_CustomSkybox: {fileID: 2100000, guid: df92675f69745be4e8eb3e81beafe926, type: 2}
 --- !u!1 &6248346946498515303
 GameObject:
   m_ObjectHideFlags: 0
