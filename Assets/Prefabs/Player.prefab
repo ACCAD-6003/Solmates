@@ -182,7 +182,7 @@ MonoBehaviour:
   pullPushSpeed: 5
   initialRadius: 5
   minRadius: 3
-  maxRadius: 25
+  maxRadius: 28
   otherPlayer: {fileID: 0}
   joint: {fileID: 0}
   input: {fileID: -944628639613478452, guid: a54bed459ab5a8a42b5a408f15051ecc, type: 3}
