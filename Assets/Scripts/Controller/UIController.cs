@@ -10,6 +10,7 @@ namespace Controller
         public static Action OnClick;
         public static Action OnInteract;
         public static Action OnPause;
+        public static Action OnChitChat;
 
         public static Action<Vector2> OnNavigateMenu;
         public static Action OnSelect;
@@ -83,6 +84,14 @@ namespace Controller
             if (context.started)
             {
                 OnGoBack?.Invoke();
+            }
+        }
+        
+        public void ChitChat(InputAction.CallbackContext context)
+        {
+            if (context.started)
+            {
+                OnChitChat?.Invoke();
             }
         }
 
