@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9085b17a37f67e94e9d08e8d410a2b29, type: 2}
+  - {fileID: 2100000, guid: a00d8f95d9b7bec4998cd3d3294751bc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -110,6 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13fea483ba31d624eaec3664e12f2d9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shouldStayOpen: 0
-  isOpen: 0
+  requiresBothButtons: 0
+  doorStayOpen: 0
+  doorIsOpen: 0
   buttons: []
