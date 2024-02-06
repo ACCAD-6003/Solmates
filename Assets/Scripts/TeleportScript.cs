@@ -3,26 +3,43 @@ using System.Collections;
 using System.Collections.Generic;
 using Checkpoint_System;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class TeleportScript : MonoBehaviour
 {
-    public GameObject toPoint;
-    public GameObject players;
+    public GameObject toPointNormal;
+    public GameObject toPointPlayerNotInTPZone;
+    private GameObject playerInTPZone;
+    public GameObject[] players;
 
-    public int numOfPlayersInZone = 0;
-    
+    public bool moreThanOneTeleportPoint = false;
+    private int numOfPlayersInZone = 0;
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !moreThanOneTeleportPoint)
         {
             numOfPlayersInZone++;
+        }
+        else if (moreThanOneTeleportPoint)
+        {
+            playerInTPZone = other.gameObject;
+            playerInTPZone.transform.position = toPointNormal.transform.position;
+
+            foreach (GameObject player in players)
+            {
+                if (player != playerInTPZone)
+                {
+                    player.transform.position = toPointPlayerNotInTPZone.transform.position;
+                    break;
+                }
+            }
         }
     }
 
     void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !moreThanOneTeleportPoint)
         {
             numOfPlayersInZone--;
         }
@@ -30,9 +47,12 @@ public class TeleportScript : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (numOfPlayersInZone == 2)
+        if (numOfPlayersInZone == 2 && !moreThanOneTeleportPoint)
         {
-            players.transform.position = toPoint.transform.position;
+            foreach (GameObject player in players)
+            {
+                player.transform.position = toPointNormal.transform.position;
+            }            
         }
     }
 }

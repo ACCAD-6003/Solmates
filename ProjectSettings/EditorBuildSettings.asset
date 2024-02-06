@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/Title Screen.unity
     guid: 8cc8359aa9ceb934280cbad5441b18c1
   - enabled: 1
-    path: Assets/Scenes/Test Scenes/Interaction White Box.unity
+    path: Assets/Resources/Dialogue/Astronomer 1 Part One.asset
     guid: 65ab8fc486c924f4f94a6e8c64b23323
   - enabled: 1
     path: Assets/Scenes/Test Scenes/MovementObservation.unity
