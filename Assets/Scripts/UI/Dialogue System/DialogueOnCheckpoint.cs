@@ -15,6 +15,7 @@ namespace UI.Dialogue_System
         
         private void PrepDialogue(Checkpoint_System.Checkpoint checkpoint)
         {
+            if (checkpoint.Conversation == null) return;
             iconToTrigger.SetActive(true);
             Controller.UIController.OnChitChat -= StartDialogue;
             Controller.UIController.OnChitChat += StartDialogue;
