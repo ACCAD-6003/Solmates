@@ -9,14 +9,18 @@ public class Magnetism : MonoBehaviour
     [SerializeField]
     public float SpeedToPull = 1;
 
+    private float MinDistanceToPull = 0.1f;
+
     bool playerIsInteracting(Movement2 player)
     {
-        return player.MovementDirection != 0 && player.RadiusDirection != 0;
+        return player.MovementDirection != 0 || player.RadiusDirection != 0;
     }
 
     bool playerIsClose(Movement2 player)
     {
-        return (player.transform.position - transform.position).magnitude <= MaxDistanceToPull;
+        float distanceFrom = (player.transform.position - transform.position).magnitude;
+
+        return distanceFrom <= MaxDistanceToPull && distanceFrom >= MinDistanceToPull;
     }
 
     // Update is called once per frame
@@ -28,7 +32,6 @@ public class Magnetism : MonoBehaviour
         {
             if (!playerIsInteracting(player) && playerIsClose(player))
             {
-                Debug.Log("h");
                 player.transform.position +=  Time.deltaTime * SpeedToPull * (transform.position - player.transform.position);
             }
         }
