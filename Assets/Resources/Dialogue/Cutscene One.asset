@@ -26,4 +26,4 @@ MonoBehaviour:
       - speaker: 1
         Dialogue: "Yeah let\u2019s do this!"
     LeadsTo:
-    - End
+    - Tutorial One

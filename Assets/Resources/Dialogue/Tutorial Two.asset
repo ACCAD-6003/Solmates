@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff4c86d78dfd55d47a03b069c598849c, type: 3}
+  m_Name: Tutorial Two
+  m_EditorClassIdentifier: 
+  conversationData:
+    ID: Tutorial Two
+    Conversant: Player
+    DialoguesSeries:
+    - dialogues:
+      - speaker: 3
+        Dialogue: Great work so far! Next we have a new mechanic of growing and shrinking
+      - speaker: 3
+        Dialogue: In this level, you will see pillars that when one of the two players
+          is near by will allow you to change the radius between you two
+      - speaker: 3
+        Dialogue: If the player on the Left is adjacent then they will use the W/D
+          keys
+      - speaker: 3
+        Dialogue: If the player on the Right is adjacent then they will use the Up
+          / Down Keys
+    LeadsTo:
+    - End
