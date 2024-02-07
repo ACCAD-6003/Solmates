@@ -266,8 +266,95 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b55c3ff65c1a04f45baba3819189e8ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 21300000, guid: c3e07613884304942b0fe507ac120594, type: 3}
+    - {fileID: 21300000, guid: e83e1c3f1579f3d4a9a855f1e538b07e, type: 3}
+    - {fileID: 21300000, guid: 97d6f6449e01a184ab9405cc0997b05a, type: 3}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: dialogueBackgrounds
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[UI.Dialogue_System.DialogueHelperClass+ConversantType,
+        Assembly-CSharp],[UnityEngine.Sprite, UnityEngine.CoreModule]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[UI.Dialogue_System.DialogueHelperClass+ConversantType,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 4
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 1
+    - Name: $v
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 0
+    - Name: $v
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 2
+    - Name: $v
+      Entry: 10
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 3
+    - Name: $v
+      Entry: 10
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
   textBoxDisplay: {fileID: 8441142609205374154}
   player: 0
+  dialogueBackground: {fileID: 8441142608091088440}
 --- !u!1 &2833441234338105379
 GameObject:
   m_ObjectHideFlags: 0
@@ -358,8 +445,95 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b55c3ff65c1a04f45baba3819189e8ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 21300000, guid: c3e07613884304942b0fe507ac120594, type: 3}
+    - {fileID: 21300000, guid: e83e1c3f1579f3d4a9a855f1e538b07e, type: 3}
+    - {fileID: 21300000, guid: 97d6f6449e01a184ab9405cc0997b05a, type: 3}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: dialogueBackgrounds
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[UI.Dialogue_System.DialogueHelperClass+ConversantType,
+        Assembly-CSharp],[UnityEngine.Sprite, UnityEngine.CoreModule]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[UI.Dialogue_System.DialogueHelperClass+ConversantType,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 4
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 1
+    - Name: $v
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 0
+    - Name: $v
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 2
+    - Name: $v
+      Entry: 10
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 3
+    - Name: $v
+      Entry: 10
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
   textBoxDisplay: {fileID: 4673422769681098657}
   player: 1
+  dialogueBackground: {fileID: 3609080546251979238}
 --- !u!1 &3658119115953172647
 GameObject:
   m_ObjectHideFlags: 0

@@ -24,9 +24,12 @@ namespace UI.InteractionSystem
         {
             if (!HasTag(other.gameObject, PLAYER_TAG)) return;
             
-            UIController.OnInteract += onInteract.Invoke;
+            if (playersInRange == 0)
+            {
+                onInRange.Invoke();
+                UIController.OnInteract += onInteract.Invoke;
+            }
             
-            if (playersInRange == 0) onInRange.Invoke();
             playersInRange++;
         }
         
@@ -34,10 +37,12 @@ namespace UI.InteractionSystem
         {
             if (!HasTag(other.gameObject, PLAYER_TAG)) return;
             
-            UIController.OnInteract -= onInteract.Invoke;
-            
             playersInRange--;
-            if (playersInRange == 0) onOutOfRange.Invoke();
+            if (playersInRange == 0)
+            {
+                onOutOfRange.Invoke();
+                UIController.OnInteract -= onInteract.Invoke;
+            }
         }
 
         private void OnDestroy()
