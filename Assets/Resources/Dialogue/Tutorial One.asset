@@ -24,7 +24,9 @@ MonoBehaviour:
         Dialogue: To move, the player on the left will use A/D and the player on
           the right will use Left / Right arrow
       - speaker: 3
+        Dialogue: Also, if you get stuck on a level and want to skip it, press '0'.
+      - speaker: 3
         Dialogue: Good luck and if you have any questions raise your hand and we
-          will come over
+          will come over.
     LeadsTo:
     - End
