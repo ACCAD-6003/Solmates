@@ -13,7 +13,7 @@ namespace UI.Dialogue_System
     {
         public static Action<ConversationData, ConversantType> OnDialogueStarted;
         public static Action OnDialogueEnded;
-        public static Action<string, ConversantType> OnTextUpdated;
+        public static Action<string, ConversantType, ConversantType> OnTextUpdated;
 
         [SerializeField, Tooltip("Chars/Second")] float dialogueSpeed;
         [SerializeField, Tooltip("Chars/Second")] float dialogueFastSpeed;
@@ -140,26 +140,15 @@ namespace UI.Dialogue_System
 
         private IEnumerator ProcessDialogue(DialogueData dialogue, ConversantType player, string conversant)
         {
-            string Underline(string text) => "<u>" + text + "</u>";
-            OnTextUpdated?.Invoke("", player);
+            OnTextUpdated?.Invoke("", player, dialogue.speaker);
             yield return new WaitUntil(() => FadeToBlackSystem.FadeOutComplete);
 
             continueInputReceived = false;
             var speakerName = "";
 
-            if (dialogue.speaker != ConversantType.Other)
-            {
-                speakerName = dialogue.speaker switch
-                {
-                    ConversantType.PlayerOne => PLAYER_MARKER,
-                    ConversantType.PlayerTwo => PLAYER_TWO_MARKER,
-                    ConversantType.Conversant => conversant,
-                    _ => speakerName
-                };
-                speakerName = Underline(speakerName) + "\n";
-            }
+            speakerName = SpeakerName(dialogue, conversant);
 
-            yield return TypewriterDialogue(speakerName, player, dialogue.Dialogue);
+            yield return TypewriterDialogue(speakerName, player, dialogue);
             playersReady++;
 
             if(playersReady == 2) UIController.OnNextDialogue += OnContinueInput;
@@ -169,13 +158,33 @@ namespace UI.Dialogue_System
             UIController.OnNextDialogue -= OnContinueInput;
         }
 
-        private IEnumerator TypewriterDialogue(string name, ConversantType player, string line)
+        private static string SpeakerName(DialogueData dialogue, string conversant)
+        {
+            var speakerName = "";
+            if (dialogue.speaker == ConversantType.Other) return speakerName;
+            
+            speakerName = dialogue.speaker switch
+            {
+                ConversantType.PlayerOne => PLAYER_MARKER,
+                ConversantType.PlayerTwo => PLAYER_TWO_MARKER,
+                ConversantType.Conversant => conversant + ": ",
+                _ => speakerName
+            };
+            speakerName = Underline(speakerName) + "\n";
+
+            return speakerName;
+
+            string Underline(string text) => "<u>" + text + "</u>";
+        }
+
+        private IEnumerator TypewriterDialogue(string name, ConversantType player, DialogueData dialogue)
         {
             currentDialogueSpeed = dialogueSpeed;
             var loadedText = name;
             UIController.OnNextDialogue += SpeedUpText;
             var atSpecialCharacter = false;
             var charsInRow = 0;
+            var line = dialogue.Dialogue;
 
             for (var index = 0; index < line.Length; index++)
             {
@@ -200,11 +209,11 @@ namespace UI.Dialogue_System
                 atSpecialCharacter = letter == '<' || atSpecialCharacter;
                 if (atSpecialCharacter && letter != '>') continue;
                 atSpecialCharacter = false;
-                OnTextUpdated?.Invoke(loadedText, player);
+                OnTextUpdated?.Invoke(loadedText, player, dialogue.speaker);
                 yield return new WaitForSeconds(1 / currentDialogueSpeed);
                 if (abortDialogue)
                 {
-                    OnTextUpdated?.Invoke(name + line, player);
+                    OnTextUpdated?.Invoke(name + line, player, dialogue.speaker);
                     break;
                 }
             }

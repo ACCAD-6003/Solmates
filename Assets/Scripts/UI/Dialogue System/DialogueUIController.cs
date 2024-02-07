@@ -1,14 +1,17 @@
 ﻿using System.Collections.Generic;
-using Controller;
+using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.UI;
 using static UI.Dialogue_System.DialogueHelperClass;
 
 namespace UI.Dialogue_System
 {
-    public class DialogueUIController : MonoBehaviour
+    public class DialogueUIController : SerializedMonoBehaviour
     {
         [SerializeField] private TextBoxDisplay textBoxDisplay;
         [SerializeField] private ConversantType player;
+        [SerializeField] private Dictionary<ConversantType, Sprite> dialogueBackgrounds;
+        [SerializeField] private Image dialogueBackground;
 
         private void OnEnable()
         {
@@ -25,7 +28,7 @@ namespace UI.Dialogue_System
             }
         
             textBoxDisplay.Hide();
-            DialogueManager.OnTextUpdated -= textBoxDisplay.UpdateDialogueText;
+            DialogueManager.OnTextUpdated -= UpdateDialogue;
         }
 
         private void DisplayUI(ConversationData conversation, ConversantType playerWhoEnteredDialogue)
@@ -38,7 +41,13 @@ namespace UI.Dialogue_System
             }
         
             textBoxDisplay.Display(player);
-            DialogueManager.OnTextUpdated += textBoxDisplay.UpdateDialogueText;
+            DialogueManager.OnTextUpdated += UpdateDialogue;
+        }
+
+        private void UpdateDialogue(string text, ConversantType playerListener, ConversantType speaker)
+        {
+            textBoxDisplay.UpdateDialogueText(text, playerListener);
+            dialogueBackground.sprite = dialogueBackgrounds[speaker];
         }
 
         private void OnDisable()
@@ -49,7 +58,7 @@ namespace UI.Dialogue_System
 
         private void OnDestroy()
         {
-            DialogueManager.OnTextUpdated -= textBoxDisplay.UpdateDialogueText;
+            DialogueManager.OnTextUpdated -= UpdateDialogue;
         }
     }
 }
