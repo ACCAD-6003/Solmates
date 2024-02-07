@@ -11,6 +11,7 @@ namespace Controller
         public static Action OnInteract;
         public static Action OnPause;
         public static Action OnChitChat;
+        public static Action OnSkipScene;
 
         public static Action<Vector2> OnNavigateMenu;
         public static Action OnSelect;
@@ -58,6 +59,14 @@ namespace Controller
             if (context.started)
             {
                 OnClick?.Invoke();
+            }
+        }
+        
+        public void SkipScene(InputAction.CallbackContext context)
+        {
+            if (context.started)
+            {
+                OnSkipScene?.Invoke();
             }
         }
 

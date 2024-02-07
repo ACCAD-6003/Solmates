@@ -21,12 +21,23 @@ namespace Checkpoint_System
         
         private readonly List<Collider> playersWhoReachedZone = new();
 
+        private void OnEnable()
+        {
+            if(endSpot) Controller.UIController.OnSkipScene += HandleTransition;
+        }
+
         [Button("DEBUG Jump To Point"), ShowIf("@!endSpot")]
         private void DebugJumpToPoint()
         {
             playersWhoReachedZone.Add(null);
             playersWhoReachedZone.Add(null);
             OnCheckpointReached?.Invoke(this);
+        }
+
+        private void HandleTransition()
+        {
+            int nextSceneIndex = SceneTools.NextSceneExists ? SceneTools.NextSceneIndex : 0;
+            StartCoroutine(SceneTools.TransitionToScene(nextSceneIndex));
         }
         
         private void OnTriggerEnter(Collider other)
@@ -38,7 +49,7 @@ namespace Checkpoint_System
                 {
                     if (endSpot)
                     {
-                        StartCoroutine(SceneTools.TransitionToScene(SceneTools.NextSceneIndex));
+                        HandleTransition();
                     }
                     else
                     {
@@ -46,6 +57,11 @@ namespace Checkpoint_System
                     }
                 }
             }
+        }
+
+        private void OnDisable()
+        {
+            if(endSpot) Controller.UIController.OnSkipScene -= HandleTransition;
         }
     }
 }
