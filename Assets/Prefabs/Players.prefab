@@ -9815,16 +9815,12 @@ PrefabInstance:
       value: BlueCamera
       objectReference: {fileID: 0}
     - target: {fileID: 6211207690728154814, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}
+      propertyPath: m_TargetDisplay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6211207690728154814, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}
       propertyPath: m_CullingMask.m_Bits
-      value: 119
-      objectReference: {fileID: 0}
-    - target: {fileID: 6211207690728154814, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}
-      propertyPath: m_NormalizedViewPortRect.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6211207690728154814, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}
-      propertyPath: m_NormalizedViewPortRect.width
-      value: 0.5
+      value: 631
       objectReference: {fileID: 0}
     - target: {fileID: 7097201078441668713, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}
       propertyPath: m_RootOrder
@@ -9869,9 +9865,31 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4812032995375782615, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}
   m_PrefabInstance: {fileID: 4774823880867226367}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6757581586720854303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 37246532402133032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe35e373cc941254eadbb6a319c250a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCamera: {fileID: 1473012948957004865}
+  material: {fileID: 2100000, guid: eb8d24356030b5a40acd8684d84554ef, type: 2}
+  mask:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!54 &37246532402133035 stripped
 Rigidbody:
   m_CorrespondingSourceObject: {fileID: 4812032995375782612, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}
+  m_PrefabInstance: {fileID: 4774823880867226367}
+  m_PrefabAsset: {fileID: 0}
+--- !u!20 &1473012948957004865 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 6211207690728154814, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}
   m_PrefabInstance: {fileID: 4774823880867226367}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &6022356766101581409 stripped
@@ -9981,8 +9999,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6211207690728154814, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}
-      propertyPath: m_NormalizedViewPortRect.width
-      value: 0.5
+      propertyPath: m_CullingMask.m_Bits
+      value: 439
       objectReference: {fileID: 0}
     - target: {fileID: 7097201078441668713, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}
       propertyPath: m_RootOrder
@@ -10010,6 +10028,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}
+--- !u!20 &405625158551638941 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 6211207690728154814, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}
+  m_PrefabInstance: {fileID: 6022356766458131747}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1248749516354301899 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4812032995375782632, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}
@@ -10044,6 +10067,23 @@ SpringJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &5982889985810712554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1248749516354301940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe35e373cc941254eadbb6a319c250a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCamera: {fileID: 405625158551638941}
+  material: {fileID: 2100000, guid: 8702eeac0b0603f4499bc91b44350dc3, type: 2}
+  mask:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!114 &4774823881089956285 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1283561729632177310, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}

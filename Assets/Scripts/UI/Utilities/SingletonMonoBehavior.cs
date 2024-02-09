@@ -21,6 +21,10 @@ public abstract class SingletonMonoBehavior<T> : MonoBehaviour where T : Singlet
     {
         if(Instance.Equals(this))
         {
+            if(instance.transform.parent != null)
+            {
+                instance = null;
+            }
             DontDestroyOnLoad(gameObject);
         }
         else
