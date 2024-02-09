@@ -47,6 +47,7 @@ public class ReloadSceneWhenTouched : MonoBehaviour
         currentRotation.y = rotation;
         players.rotation = Quaternion.Euler(currentRotation);
         players.GetComponentsInChildren<SpringJoint>().ForEach(x => { x.minDistance = distance; x.maxDistance = distance; });
+        players.GetComponentsInChildren<Movement2>().ForEach(x => { x.StopGrowing(); });
     }
     
     private void OnDisable()

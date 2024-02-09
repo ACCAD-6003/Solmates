@@ -115,6 +115,11 @@ public class Movement2 : MonoBehaviour
         joint.minDistance = newRadius;
     }
 
+    public void StopGrowing()
+    {
+        RadiusDirection = 0;
+    }
+
     private void Update()
     {
         if (MovementDirection == 0)
