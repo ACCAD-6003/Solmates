@@ -131,7 +131,7 @@ public class Movement2 : MonoBehaviour
             Unlock();
         }
 
-        rb.velocity = Vector3.Cross(Vector3.up, Vector3.Normalize(RadiusVector())) * (MovementDirection * currentSpeed * RadiusVector().magnitude);
+        rb.velocity = Vector3.Cross(Vector3.up, Vector3.Normalize(RadiusVector())) * (MovementDirection * currentSpeed);
 
         if (RadiusDirection != 0)
         {
