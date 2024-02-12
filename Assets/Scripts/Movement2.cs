@@ -95,7 +95,7 @@ public class Movement2 : MonoBehaviour
     {
         GameObject[] statues = GameObject.FindGameObjectsWithTag("Totem");
 
-        float interactRadius = 2f;
+        float interactRadius = 5f;
 
         foreach(GameObject statue in statues)
         {
