@@ -872,9 +872,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 849921649, guid: a34f74dc6457f3248b9894d65596e7e1, type: 3}
+      propertyPath: particleScale
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 1856648402, guid: a34f74dc6457f3248b9894d65596e7e1, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1856648405, guid: a34f74dc6457f3248b9894d65596e7e1, type: 3}
+      propertyPath: particleScale
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 37246532402133015, guid: a34f74dc6457f3248b9894d65596e7e1, type: 3}
       propertyPath: m_LocalPosition.x
