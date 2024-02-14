@@ -39,6 +39,8 @@ namespace UI.Dialogue_System
         [Button(ButtonStyle.Box)]
         public void StartDialogue(SOConversationData conversation)
         {
+            if (inDialogue) return;
+            
             AdvanceDialogue(conversation.Data.ID);
             StartDialogue(conversation.Data.ID, ConversantType.PlayerOne);
             StartDialogue(conversation.Data.ID, ConversantType.PlayerTwo);

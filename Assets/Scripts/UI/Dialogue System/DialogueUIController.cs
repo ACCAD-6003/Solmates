@@ -1,5 +1,8 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Sirenix.OdinInspector;
+using Sirenix.Utilities;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using static UI.Dialogue_System.DialogueHelperClass;
@@ -10,8 +13,7 @@ namespace UI.Dialogue_System
     {
         [SerializeField] private TextBoxDisplay textBoxDisplay;
         [SerializeField] private ConversantType player;
-        [SerializeField] private Dictionary<ConversantType, Sprite> dialogueBackgrounds;
-        [SerializeField] private Image dialogueBackground;
+        [SerializeField] private Dictionary<ConversantType, DialogueDisplay> dialogueBackgrounds;
 
         private void OnEnable()
         {
@@ -46,8 +48,12 @@ namespace UI.Dialogue_System
 
         private void UpdateDialogue(string text, ConversantType playerListener, ConversantType speaker)
         {
+            if (player != playerListener) return;
+            
             textBoxDisplay.UpdateDialogueText(text, playerListener);
-            dialogueBackground.sprite = dialogueBackgrounds[speaker];
+            dialogueBackgrounds.Values.Select(x => x.background).ForEach(x => x.SetActive(false));
+            dialogueBackgrounds[speaker].background.SetActive(true);
+            textBoxDisplay.SwapDialogueTextField(dialogueBackgrounds[speaker].textField);
         }
 
         private void OnDisable()
@@ -59,6 +65,13 @@ namespace UI.Dialogue_System
         private void OnDestroy()
         {
             DialogueManager.OnTextUpdated -= UpdateDialogue;
+        }
+
+        [System.Serializable]
+        public class DialogueDisplay
+        {
+            public TMP_Text textField;
+            public GameObject background;
         }
     }
 }

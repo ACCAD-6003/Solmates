@@ -23,7 +23,7 @@ public abstract class SingletonMonoBehavior<T> : MonoBehaviour where T : Singlet
         {
             if(instance.transform.parent != null)
             {
-                instance = null;
+                instance.transform.parent = null;
             }
             DontDestroyOnLoad(gameObject);
         }

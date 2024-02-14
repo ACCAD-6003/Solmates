@@ -1,5 +1,6 @@
 ﻿using System;
 using Controller;
+using UI.Dialogue_System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -11,7 +12,7 @@ namespace UI.InteractionSystem
         
         [SerializeField] private UnityEvent onInRange;
         [SerializeField] private UnityEvent onOutOfRange;
-        [SerializeField] private UnityEvent onInteract;
+        [SerializeField] private SOConversationData conversation;
 
         private int playersInRange;
         
@@ -27,7 +28,7 @@ namespace UI.InteractionSystem
             if (playersInRange == 0)
             {
                 onInRange.Invoke();
-                UIController.OnInteract += onInteract.Invoke;
+                UIController.OnInteract += TriggerDialogue;
             }
             
             playersInRange++;
@@ -41,13 +42,18 @@ namespace UI.InteractionSystem
             if (playersInRange == 0)
             {
                 onOutOfRange.Invoke();
-                UIController.OnInteract -= onInteract.Invoke;
+                UIController.OnInteract -= TriggerDialogue;
             }
+        }
+
+        private void TriggerDialogue()
+        {
+            DialogueManager.Instance.StartDialogue(conversation);
         }
 
         private void OnDestroy()
         {
-            UIController.OnInteract -= onInteract.Invoke;
+            UIController.OnInteract -= TriggerDialogue;
         }
     }
 }
