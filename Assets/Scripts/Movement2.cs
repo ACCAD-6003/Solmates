@@ -95,7 +95,7 @@ public class Movement2 : MonoBehaviour
     {
         GameObject[] statues = GameObject.FindGameObjectsWithTag("Totem");
 
-        float interactRadius = 2f;
+        float interactRadius = 5f;
 
         foreach(GameObject statue in statues)
         {
@@ -115,6 +115,11 @@ public class Movement2 : MonoBehaviour
         joint.minDistance = newRadius;
     }
 
+    public void StopGrowing()
+    {
+        RadiusDirection = 0;
+    }
+
     private void Update()
     {
         if (MovementDirection == 0)
@@ -126,7 +131,7 @@ public class Movement2 : MonoBehaviour
             Unlock();
         }
 
-        rb.velocity = Vector3.Cross(Vector3.up, Vector3.Normalize(RadiusVector())) * (MovementDirection * currentSpeed * RadiusVector().magnitude);
+        rb.velocity = Vector3.Cross(Vector3.up, Vector3.Normalize(RadiusVector())) * (MovementDirection * currentSpeed);
 
         if (RadiusDirection != 0)
         {
