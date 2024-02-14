@@ -48,6 +48,8 @@ namespace UI.Dialogue_System
 
         private void UpdateDialogue(string text, ConversantType playerListener, ConversantType speaker)
         {
+            if (player != playerListener) return;
+            
             textBoxDisplay.UpdateDialogueText(text, playerListener);
             dialogueBackgrounds.Values.Select(x => x.background).ForEach(x => x.SetActive(false));
             dialogueBackgrounds[speaker].background.SetActive(true);
