@@ -5,7 +5,7 @@ namespace UI.Dialogue_System
 {
     public class TextBoxDisplay : MonoBehaviour
     {
-        [SerializeField] TextMeshProUGUI dialogueTextField;
+        [SerializeField] TMP_Text dialogueTextField;
 
         private DialogueHelperClass.ConversantType conversant;
 
@@ -19,6 +19,12 @@ namespace UI.Dialogue_System
         {
             if (playerListening != conversant) return;
             dialogueTextField.text = text;
+        }
+        
+        public void SwapDialogueTextField(TMP_Text newDialogueTextField)
+        {
+            newDialogueTextField.text = dialogueTextField.text;
+            dialogueTextField = newDialogueTextField;
         }
 
         public void Hide() => ToggleChildrenDisplay(false);
