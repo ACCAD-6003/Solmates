@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2281182009916360294}
   - component: {fileID: 2340648401177336983}
   m_Layer: 7
-  m_Name: Cylinder
+  m_Name: VisualA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4812032995375782632}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!212 &2281182009916360294
 SpriteRenderer:
@@ -129,8 +129,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2097159651706504647}
   - {fileID: 6389433723264245228}
+  - {fileID: 2097159651706504647}
   - {fileID: 7097201078441668713}
   - {fileID: 145587338204831649}
   m_Father: {fileID: 0}
@@ -225,7 +225,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4812032995375782632}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &6211207690728154814
 Camera:
