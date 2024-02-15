@@ -178,9 +178,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5fecf942e7e2654aa6d7e7ab7c9975d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
+  moveSpeed: 10
   pullPushSpeed: 5
-  initialRadius: 5
+  initialRadius: 4
   minRadius: 3
   maxRadius: 28
   otherPlayer: {fileID: 0}

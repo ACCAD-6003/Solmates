@@ -131,7 +131,7 @@ public class Movement2 : MonoBehaviour
             Unlock();
         }
 
-        rb.velocity = Vector3.Scale(Vector3.Cross(Vector3.up, Vector3.Normalize(RadiusVector())) * (MovementDirection * currentSpeed), new Vector3(1, 0, 1)) + rb.velocity.y * Vector3.up;
+        rb.velocity = Vector3.Scale(Vector3.Cross(Vector3.up, Vector3.Normalize(RadiusVector())) * (MovementDirection * currentSpeed), new Vector3(1, 0, 1)) + Mathf.Min(0, rb.velocity.y) * Vector3.up;
 
         if (RadiusDirection != 0)
         {
