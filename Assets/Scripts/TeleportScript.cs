@@ -7,7 +7,6 @@ public class TeleportScript : MonoBehaviour
 {
     public GameObject toPointNormal;
     public GameObject toPointPlayerNotInTPZone;
-    private GameObject playerInTPZone;
     public GameObject[] players;
     public GameObject maze1;
     public GameObject maze2;
