@@ -1,15 +1,16 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class SeeThroughShaderTracker : MonoBehaviour
 {
+    public static Action<LayerMask, bool> SeeThroughChange;
     private static readonly int Size = Shader.PropertyToID("size");
     
     [SerializeField] Camera playerCamera;
-    [SerializeField] private Material material;
-    [SerializeField] LayerMask mask;
-    
+    [SerializeField] private List<Material> material;
+    [SerializeField] private LayerMask mask;
 
     private void Update()
     {
@@ -27,6 +28,8 @@ public class SeeThroughShaderTracker : MonoBehaviour
     
     private void ToggleSeeThrough(bool shouldSeeThrough)
     {
-        material.SetFloat(Size, shouldSeeThrough ? 1.5f : 0);
+        material.ForEach(x => x.SetFloat(Size, shouldSeeThrough ? 1.5f : 0));
+        SeeThroughChange?.Invoke(mask, shouldSeeThrough);
+        Debug.Log("SeeThroughChange invoked + " + mask.value);
     }
 }

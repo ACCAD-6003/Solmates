@@ -7,6 +7,8 @@ namespace Utilities
     [RequireComponent(typeof(MeshCollider))]
     public class MeshCombiner : MonoBehaviour
     {
+        [SerializeField] bool hideChildren = true;
+    
         void Start()
         {
             MeshFilter[] meshFilters = GetComponentsInChildren<MeshFilter>();
@@ -17,7 +19,7 @@ namespace Utilities
             {
                 combine[i].mesh = meshFilters[i].sharedMesh;
                 combine[i].transform = meshFilters[i].transform.localToWorldMatrix;
-                meshFilters[i].gameObject.SetActive(false);
+                meshFilters[i].gameObject.SetActive(!hideChildren);
 
                 i++;
             }
