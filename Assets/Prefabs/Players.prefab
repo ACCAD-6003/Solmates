@@ -9886,10 +9886,6 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8742017338084542243, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: -2432090755550338912, guid: f06f22ba8af21f548a50ebc01f6211e7, type: 3}
     m_RemovedComponents:
     - {fileID: 0}
     - {fileID: 0}
@@ -10122,10 +10118,6 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8742017338084542243, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: -2432090755550338912, guid: f06f22ba8af21f548a50ebc01f6211e7, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}
 --- !u!20 &405625158551638941 stripped
