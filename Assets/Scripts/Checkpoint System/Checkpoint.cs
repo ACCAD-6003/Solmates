@@ -59,6 +59,15 @@ namespace Checkpoint_System
             }
         }
 
+        private void OnTriggerExit(Collider other)
+        {
+            // make sure both players are in the end spot
+            if (other.CompareTag("Player") && endSpot)
+            {
+                playersWhoReachedZone.Remove(other);
+            }
+        }
+
         private void OnDisable()
         {
             if(endSpot) Controller.UIController.OnSkipScene -= HandleTransition;
