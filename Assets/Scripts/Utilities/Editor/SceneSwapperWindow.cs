@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Sirenix.OdinInspector;
+using Sirenix.OdinInspector.Editor;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
@@ -8,6 +10,32 @@ using UnityEngine.SceneManagement;
 
 namespace Utilities.Editor
 {
+    public class ColliderDestroyer : OdinEditorWindow
+    {
+        [Button]
+        private static void DestroyMesh(GameObject go)
+        {
+            foreach (Transform child in go.transform)
+            {
+                if (child.TryGetComponent<Collider>(out var collider))
+                {
+                    DestroyImmediate(collider, true);
+                }
+
+                if (child != go.transform)
+                {
+                    DestroyMesh(child.gameObject);
+                }
+            }
+        }
+        
+        [MenuItem("Tools/Destroy Colliders")]
+        public static void ShowWindow()
+        {
+            GetWindow(typeof(ColliderDestroyer));
+        }
+    }
+    
     /// <summary>
     /// Provides a custom unity editor window to facilitate quick transitioning between scenes.
     /// Included Options:
