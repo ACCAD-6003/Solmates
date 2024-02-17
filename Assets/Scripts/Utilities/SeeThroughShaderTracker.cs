@@ -30,6 +30,5 @@ public class SeeThroughShaderTracker : MonoBehaviour
     {
         material.ForEach(x => x.SetFloat(Size, shouldSeeThrough ? 1.5f : 0));
         SeeThroughChange?.Invoke(mask, shouldSeeThrough);
-        Debug.Log("SeeThroughChange invoked + " + mask.value);
     }
 }

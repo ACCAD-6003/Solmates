@@ -9906,7 +9906,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 1473012948957004865}
-  material: {fileID: 2100000, guid: eb8d24356030b5a40acd8684d84554ef, type: 2}
+  material:
+  - {fileID: 2100000, guid: 0b526b96fe000ec47989b9922cbb8b7d, type: 2}
+  - {fileID: 2100000, guid: 52c61f4b168ca14459d8b19266e471ad, type: 2}
+  - {fileID: 2100000, guid: db9c0f1c649cac84cab6b1e3da507509, type: 2}
   mask:
     serializedVersion: 2
     m_Bits: 512
@@ -10160,7 +10163,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 405625158551638941}
-  material: {fileID: 2100000, guid: 8702eeac0b0603f4499bc91b44350dc3, type: 2}
+  material:
+  - {fileID: 2100000, guid: 780580910c102b142afd5c0ebcc3bebe, type: 2}
+  - {fileID: 2100000, guid: bd56fb7a163002f45b67680ac79ba988, type: 2}
+  - {fileID: 2100000, guid: a7d00cdaa16a5dc49908159b46cb029e, type: 2}
   mask:
     serializedVersion: 2
     m_Bits: 256
