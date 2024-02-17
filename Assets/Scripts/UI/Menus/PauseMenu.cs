@@ -20,6 +20,7 @@ namespace UI.Menus
         [Button]
         public void Restart()
         {
+            CloseMenu();
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     

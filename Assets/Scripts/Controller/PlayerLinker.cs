@@ -1,10 +1,13 @@
 ﻿using System;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace Controller
 {
     public class PlayerLinker : MonoBehaviour
     {
+        [SerializeField, ReadOnly] private bool inGameplay = true;
+        
         private void OnEnable()
         {
             UIController.Instance.OnSwapToUI += DisablePlayerMovement;
@@ -17,13 +20,15 @@ namespace Controller
             UIController.Instance.OnSwapToGameplay -= EnablePlayerMovement;
         }
         
-        private static void DisablePlayerMovement()
+        private void DisablePlayerMovement()
         {
+            inGameplay = false;
             Array.ForEach(FindObjectsOfType<Movement2>(true), m => m.Freeze());
         }
         
-        private static void EnablePlayerMovement()
+        private void EnablePlayerMovement()
         {
+            inGameplay = true;
             Array.ForEach(FindObjectsOfType<Movement2>(true), m => m.Unfreeze());
         }
     }
