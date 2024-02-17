@@ -9778,6 +9778,14 @@ PrefabInstance:
       propertyPath: LookAt
       value: 
       objectReference: {fileID: 1248749516354301899}
+    - target: {fileID: 4715244840729976880, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4715244840729976880, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 4812032995375782612, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}
       propertyPath: m_Constraints
       value: 80
@@ -10009,6 +10017,14 @@ PrefabInstance:
       propertyPath: LookAt
       value: 
       objectReference: {fileID: 37246532402133015}
+    - target: {fileID: 4715244840729976880, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4715244840729976880, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 4812032995375782613, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}
       propertyPath: m_Radius
       value: 0.22
