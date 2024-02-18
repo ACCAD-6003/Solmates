@@ -15,6 +15,8 @@ namespace UI.Dialogue_System
         [SerializeField] private ConversantType player;
         [SerializeField] private Dictionary<ConversantType, DialogueDisplay> dialogueBackgrounds;
 
+        bool isDialogueActive;
+        
         private void OnEnable()
         {
             DialogueManager.OnDialogueStarted += DisplayUI;
@@ -24,18 +26,23 @@ namespace UI.Dialogue_System
 
         private void HideUI()
         {
+            DialogueManager.OnTextUpdated -= UpdateDialogue;
+            Debug.Log("Hiding UI");
+            isDialogueActive = false;
+            
             foreach (Transform child in transform)
             {
                 child.gameObject.SetActive(false);
             }
         
             textBoxDisplay.Hide();
-            DialogueManager.OnTextUpdated -= UpdateDialogue;
         }
 
         private void DisplayUI(ConversationData conversation, ConversantType playerWhoEnteredDialogue)
         {
             if (player != playerWhoEnteredDialogue) return;
+            Debug.Log("Displaying UI");
+            isDialogueActive = true;
         
             foreach (Transform child in transform)
             {
