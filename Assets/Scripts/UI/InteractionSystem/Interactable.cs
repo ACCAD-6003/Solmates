@@ -1,5 +1,6 @@
 ﻿using System;
 using Controller;
+using Sirenix.OdinInspector;
 using UI.Dialogue_System;
 using UnityEngine;
 using UnityEngine.Events;
@@ -12,7 +13,9 @@ namespace UI.InteractionSystem
         
         [SerializeField] private UnityEvent onInRange;
         [SerializeField] private UnityEvent onOutOfRange;
-        [SerializeField] private SOConversationData conversation;
+        [SerializeField] private bool goToNextScene;
+        [SerializeField, HideIf("goToNextScene")] private SOConversationData conversation;
+        [SerializeField, HideIf("goToNextScene")] private UnityEvent onTriggerDialogue;
 
         private int playersInRange;
         
@@ -28,10 +31,19 @@ namespace UI.InteractionSystem
             if (playersInRange == 0)
             {
                 onInRange.Invoke();
-                UIController.OnInteract += TriggerDialogue;
+                UIController.OnInteract += goToNextScene switch
+                {
+                    false => TriggerDialogue,
+                    true => GoToNextScene
+                };
             }
             
             playersInRange++;
+        }
+        
+        private void GoToNextScene()
+        {
+            StartCoroutine(SceneTools.TransitionToScene(SceneTools.NextSceneExists ? SceneTools.NextSceneIndex : 0));
         }
         
         private void OnTriggerExit(Collider other)
@@ -39,15 +51,19 @@ namespace UI.InteractionSystem
             if (!HasTag(other.gameObject, PLAYER_TAG)) return;
             
             playersInRange--;
-            if (playersInRange == 0)
+            if (playersInRange != 0) return;
+            
+            onOutOfRange.Invoke();
+            UIController.OnInteract -= goToNextScene switch
             {
-                onOutOfRange.Invoke();
-                UIController.OnInteract -= TriggerDialogue;
-            }
+                false => TriggerDialogue,
+                true => GoToNextScene
+            };
         }
 
         private void TriggerDialogue()
         {
+            onTriggerDialogue.Invoke();
             DialogueManager.Instance.StartDialogue(conversation);
         }
 
