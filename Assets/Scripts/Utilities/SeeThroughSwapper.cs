@@ -26,7 +26,7 @@ public class SeeThroughSwapper : MonoBehaviour
     private void HandleSeeThroughChange(LayerMask layerMask, bool shouldSeeThrough)
     {
         if (layerMask.value >> mask.value != 1) return;
-        meshRenderer.materials = shouldSeeThrough ? seeThroughMaterials : opaqueMaterials;
+        meshRenderer.materials = shouldSeeThrough ? seeThroughMaterials : seeThroughMaterials;
     }
     
     private void OnDestroy()
