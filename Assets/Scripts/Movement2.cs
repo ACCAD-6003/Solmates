@@ -95,11 +95,11 @@ public class Movement2 : MonoBehaviour
     {
         GameObject[] statues = GameObject.FindGameObjectsWithTag("Totem");
 
-        float interactRadius = 5f;
+        float interactRadius = 2f;
 
         foreach(GameObject statue in statues)
         {
-            if (Mathf.Abs((transform.position - statue.transform.position).magnitude) < interactRadius) {
+            if (Mathf.Abs(Vector3.Scale(transform.position - statue.transform.position, new Vector3(1,0,1)).magnitude) < interactRadius) {
                 return true;
             }
         }

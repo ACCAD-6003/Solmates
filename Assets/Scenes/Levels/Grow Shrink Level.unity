@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -627,7 +627,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-23706
+  m_Name: pb_Mesh-93732
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -817,7 +817,6 @@ Transform:
   - {fileID: 660865482}
   - {fileID: 1291942283}
   - {fileID: 1543542269}
-  - {fileID: 501574357}
   - {fileID: 1961849341}
   m_Father: {fileID: 0}
   m_RootOrder: 10
@@ -1078,39 +1077,39 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1373921069}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 5659867570247269633, guid: cef22a599f6d70841921cc0116a1fe4f, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5659867570247269633, guid: cef22a599f6d70841921cc0116a1fe4f, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.20000002
+      value: 1.2000004
       objectReference: {fileID: 0}
     - target: {fileID: 5659867570247269633, guid: cef22a599f6d70841921cc0116a1fe4f, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.3
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 5659867570247269633, guid: cef22a599f6d70841921cc0116a1fe4f, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.20000002
+      value: 1.2000004
       objectReference: {fileID: 0}
     - target: {fileID: 5659867570247269633, guid: cef22a599f6d70841921cc0116a1fe4f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 15.657
+      value: -24.88787
       objectReference: {fileID: 0}
     - target: {fileID: 5659867570247269633, guid: cef22a599f6d70841921cc0116a1fe4f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.751
+      value: 8.886
       objectReference: {fileID: 0}
     - target: {fileID: 5659867570247269633, guid: cef22a599f6d70841921cc0116a1fe4f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -16.279
+      value: -77.502815
       objectReference: {fileID: 0}
     - target: {fileID: 5659867570247269633, guid: cef22a599f6d70841921cc0116a1fe4f, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9952457
+      value: -0.10275151
       objectReference: {fileID: 0}
     - target: {fileID: 5659867570247269633, guid: cef22a599f6d70841921cc0116a1fe4f, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1118,7 +1117,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5659867570247269633, guid: cef22a599f6d70841921cc0116a1fe4f, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.09739668
+      value: -0.9947071
       objectReference: {fileID: 0}
     - target: {fileID: 5659867570247269633, guid: cef22a599f6d70841921cc0116a1fe4f, type: 3}
       propertyPath: m_LocalRotation.z
@@ -1150,11 +1149,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cef22a599f6d70841921cc0116a1fe4f, type: 3}
---- !u!4 &425560242 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5659867570247269633, guid: cef22a599f6d70841921cc0116a1fe4f, type: 3}
-  m_PrefabInstance: {fileID: 425560241}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &471466929
 GameObject:
   m_ObjectHideFlags: 0
@@ -1285,11 +1279,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &501574357 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5659867570247269633, guid: cef22a599f6d70841921cc0116a1fe4f, type: 3}
-  m_PrefabInstance: {fileID: 1729048288}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &524159339
 GameObject:
   m_ObjectHideFlags: 0
@@ -2300,46 +2289,6 @@ PrefabInstance:
       propertyPath: serializationData.PrefabModificationsReferencedUnityObjects.Array.data[5]
       value: 
       objectReference: {fileID: 683665990}
-    - target: {fileID: 0}
-      propertyPath: m_Pivot.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Pivot.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c8b9e992168c234a94bf96f2296e0ff, type: 3}
 --- !u!114 &683665984 stripped
@@ -2459,7 +2408,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4525352739796752989, guid: a34f74dc6457f3248b9894d65596e7e1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -24.3
+      value: -3.6
       objectReference: {fileID: 0}
     - target: {fileID: 4525352739796752989, guid: a34f74dc6457f3248b9894d65596e7e1, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2598,7 +2547,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-23716
+  m_Name: pb_Mesh-93742
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2845,9 +2794,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 793858610}
-  m_LocalRotation: {x: -0, y: -0.4189952, z: -0, w: 0.9079885}
-  m_LocalPosition: {x: 19.112, y: -1.837, z: -19.389}
-  m_LocalScale: {x: 0.5, y: 0.1, z: 0.5}
+  m_LocalRotation: {x: -0, y: -0.41899517, z: -0, w: 0.9079885}
+  m_LocalPosition: {x: 114.672005, y: -7.3480005, z: -116.334}
+  m_LocalScale: {x: 3, y: 0.4, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1373921069}
@@ -2860,6 +2809,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1816997866}
     m_Modifications:
+    - target: {fileID: 3882904730403196768, guid: b749e44e14047cd46b1e8506c4aa30ce, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5393726400004876756, guid: b749e44e14047cd46b1e8506c4aa30ce, type: 3}
       propertyPath: m_Name
       value: Totem of Love
@@ -2874,7 +2827,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5393726400004876760, guid: b749e44e14047cd46b1e8506c4aa30ce, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.113
+      value: 1.6754999
       objectReference: {fileID: 0}
     - target: {fileID: 5393726400004876760, guid: b749e44e14047cd46b1e8506c4aa30ce, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3082,9 +3035,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 884658025}
-  m_LocalRotation: {x: -0, y: -0.54268765, z: -0, w: 0.83993465}
-  m_LocalPosition: {x: 15.106, y: -1.953, z: -16.092}
-  m_LocalScale: {x: 1, y: 0.1, z: 0.5}
+  m_LocalRotation: {x: -0, y: -0.5426876, z: -0, w: 0.8399347}
+  m_LocalPosition: {x: 90.636, y: -7.8119993, z: -96.55198}
+  m_LocalScale: {x: 6, y: 0.4, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1373921069}
@@ -3594,6 +3547,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1380593037}
     m_Modifications:
+    - target: {fileID: 3882904730403196768, guid: b749e44e14047cd46b1e8506c4aa30ce, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5393726400004876756, guid: b749e44e14047cd46b1e8506c4aa30ce, type: 3}
       propertyPath: m_Name
       value: Totem of Love
@@ -3604,15 +3561,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5393726400004876760, guid: b749e44e14047cd46b1e8506c4aa30ce, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 18.122
+      value: 18.546
       objectReference: {fileID: 0}
     - target: {fileID: 5393726400004876760, guid: b749e44e14047cd46b1e8506c4aa30ce, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.1600018
+      value: 1.679
       objectReference: {fileID: 0}
     - target: {fileID: 5393726400004876760, guid: b749e44e14047cd46b1e8506c4aa30ce, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.89600015
+      value: 0.811
       objectReference: {fileID: 0}
     - target: {fileID: 5393726400004876760, guid: b749e44e14047cd46b1e8506c4aa30ce, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3811,9 +3768,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1260489951}
-  m_LocalRotation: {x: -0.010275748, y: -0.44056234, z: 0.015354521, w: 0.8975319}
-  m_LocalPosition: {x: 15.834, y: -1.817, z: -16.549}
-  m_LocalScale: {x: 1, y: 0.09999999, z: 0.5}
+  m_LocalRotation: {x: -0.010275748, y: -0.44056237, z: 0.015354521, w: 0.8975319}
+  m_LocalPosition: {x: 95.00398, y: -7.2680006, z: -99.294}
+  m_LocalScale: {x: 5.9973216, y: 0.40027297, z: 2.9999774}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1373921069}
@@ -4061,7 +4018,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-24430
+  m_Name: pb_Mesh-94528
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4244,16 +4201,15 @@ Transform:
   m_GameObject: {fileID: 1373921068}
   m_LocalRotation: {x: -0, y: -0.9999855, z: -0, w: -0.0053818254}
   m_LocalPosition: {x: 70.1, y: 15.89, z: -174.16}
-  m_LocalScale: {x: 6, y: 4, z: 6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 425560242}
+  - {fileID: 1470799667}
   - {fileID: 1260489952}
   - {fileID: 793858614}
   - {fileID: 2119429380}
   - {fileID: 2123607212759161721}
   - {fileID: 884658029}
-  - {fileID: 1470799667}
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: -180.617, z: 0}
@@ -4304,7 +4260,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-24402
+  m_Name: pb_Mesh-94452
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4474,6 +4430,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1816997866}
     m_Modifications:
+    - target: {fileID: 3882904730403196768, guid: b749e44e14047cd46b1e8506c4aa30ce, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5393726400004876756, guid: b749e44e14047cd46b1e8506c4aa30ce, type: 3}
       propertyPath: m_Name
       value: Totem of Love
@@ -4488,7 +4448,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5393726400004876760, guid: b749e44e14047cd46b1e8506c4aa30ce, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.09
+      value: 1.683
       objectReference: {fileID: 0}
     - target: {fileID: 5393726400004876760, guid: b749e44e14047cd46b1e8506c4aa30ce, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4618,31 +4578,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5393726400004876760, guid: b749e44e14047cd46b1e8506c4aa30ce, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5393726400004876760, guid: b749e44e14047cd46b1e8506c4aa30ce, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.16666663
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5393726400004876760, guid: b749e44e14047cd46b1e8506c4aa30ce, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5393726400004876760, guid: b749e44e14047cd46b1e8506c4aa30ce, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.16666663
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5393726400004876760, guid: b749e44e14047cd46b1e8506c4aa30ce, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 15.407809
+      value: 93.96
       objectReference: {fileID: 0}
     - target: {fileID: 5393726400004876760, guid: b749e44e14047cd46b1e8506c4aa30ce, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.4325001
+      value: -7.64
       objectReference: {fileID: 0}
     - target: {fileID: 5393726400004876760, guid: b749e44e14047cd46b1e8506c4aa30ce, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -16.22258
+      value: -98.02
       objectReference: {fileID: 0}
     - target: {fileID: 5393726400004876760, guid: b749e44e14047cd46b1e8506c4aa30ce, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4847,83 +4807,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1727258426}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &1729048288
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 321451761}
-    m_Modifications:
-    - target: {fileID: 5659867570247269633, guid: cef22a599f6d70841921cc0116a1fe4f, type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5659867570247269633, guid: cef22a599f6d70841921cc0116a1fe4f, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5659867570247269633, guid: cef22a599f6d70841921cc0116a1fe4f, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5659867570247269633, guid: cef22a599f6d70841921cc0116a1fe4f, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5659867570247269633, guid: cef22a599f6d70841921cc0116a1fe4f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 16.424
-      objectReference: {fileID: 0}
-    - target: {fileID: 5659867570247269633, guid: cef22a599f6d70841921cc0116a1fe4f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.923
-      objectReference: {fileID: 0}
-    - target: {fileID: 5659867570247269633, guid: cef22a599f6d70841921cc0116a1fe4f, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -6.945
-      objectReference: {fileID: 0}
-    - target: {fileID: 5659867570247269633, guid: cef22a599f6d70841921cc0116a1fe4f, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9952457
-      objectReference: {fileID: 0}
-    - target: {fileID: 5659867570247269633, guid: cef22a599f6d70841921cc0116a1fe4f, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5659867570247269633, guid: cef22a599f6d70841921cc0116a1fe4f, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.09739668
-      objectReference: {fileID: 0}
-    - target: {fileID: 5659867570247269633, guid: cef22a599f6d70841921cc0116a1fe4f, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5659867570247269633, guid: cef22a599f6d70841921cc0116a1fe4f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5659867570247269633, guid: cef22a599f6d70841921cc0116a1fe4f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -11.179
-      objectReference: {fileID: 0}
-    - target: {fileID: 5659867570247269633, guid: cef22a599f6d70841921cc0116a1fe4f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5659867570247269634, guid: cef22a599f6d70841921cc0116a1fe4f, type: 3}
-      propertyPath: MaxDistanceToPull
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5659867570247269635, guid: cef22a599f6d70841921cc0116a1fe4f, type: 3}
-      propertyPath: m_Name
-      value: HelperBox (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5659867570247269639, guid: cef22a599f6d70841921cc0116a1fe4f, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: cef22a599f6d70841921cc0116a1fe4f, type: 3}
 --- !u!1001 &1731640874
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4931,6 +4814,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1380593037}
     m_Modifications:
+    - target: {fileID: 3882904730403196768, guid: b749e44e14047cd46b1e8506c4aa30ce, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5393726400004876756, guid: b749e44e14047cd46b1e8506c4aa30ce, type: 3}
       propertyPath: m_Name
       value: Totem of Love
@@ -4941,15 +4828,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5393726400004876760, guid: b749e44e14047cd46b1e8506c4aa30ce, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 15.864161
+      value: 16.259
       objectReference: {fileID: 0}
     - target: {fileID: 5393726400004876760, guid: b749e44e14047cd46b1e8506c4aa30ce, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.1600876
+      value: 1.674
       objectReference: {fileID: 0}
     - target: {fileID: 5393726400004876760, guid: b749e44e14047cd46b1e8506c4aa30ce, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.7757943
+      value: 2.75
       objectReference: {fileID: 0}
     - target: {fileID: 5393726400004876760, guid: b749e44e14047cd46b1e8506c4aa30ce, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5144,33 +5031,37 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 321451761}
     m_Modifications:
+    - target: {fileID: 3882904730403196768, guid: b749e44e14047cd46b1e8506c4aa30ce, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5393726400004876756, guid: b749e44e14047cd46b1e8506c4aa30ce, type: 3}
       propertyPath: m_Name
       value: Totem of Love
       objectReference: {fileID: 0}
     - target: {fileID: 5393726400004876760, guid: b749e44e14047cd46b1e8506c4aa30ce, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5393726400004876760, guid: b749e44e14047cd46b1e8506c4aa30ce, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.16666667
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5393726400004876760, guid: b749e44e14047cd46b1e8506c4aa30ce, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.6666667
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5393726400004876760, guid: b749e44e14047cd46b1e8506c4aa30ce, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.16666667
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5393726400004876760, guid: b749e44e14047cd46b1e8506c4aa30ce, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 16.215
+      value: 16.429
       objectReference: {fileID: 0}
     - target: {fileID: 5393726400004876760, guid: b749e44e14047cd46b1e8506c4aa30ce, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.1205001
+      value: 0.796
       objectReference: {fileID: 0}
     - target: {fileID: 5393726400004876760, guid: b749e44e14047cd46b1e8506c4aa30ce, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5218,6 +5109,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 129792561}
     m_Modifications:
+    - target: {fileID: 3882904730403196768, guid: b749e44e14047cd46b1e8506c4aa30ce, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5393726400004876756, guid: b749e44e14047cd46b1e8506c4aa30ce, type: 3}
       propertyPath: m_Name
       value: Totem of Love
@@ -5232,7 +5127,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5393726400004876760, guid: b749e44e14047cd46b1e8506c4aa30ce, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.094
+      value: 1.677
       objectReference: {fileID: 0}
     - target: {fileID: 5393726400004876760, guid: b749e44e14047cd46b1e8506c4aa30ce, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5681,27 +5576,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3ea8b35043415bb4a8b6b5dd1a5e9e31, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3ea8b35043415bb4a8b6b5dd1a5e9e31, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3ea8b35043415bb4a8b6b5dd1a5e9e31, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3ea8b35043415bb4a8b6b5dd1a5e9e31, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 15.65
+      value: 93.89997
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3ea8b35043415bb4a8b6b5dd1a5e9e31, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.12
+      value: -8.48
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3ea8b35043415bb4a8b6b5dd1a5e9e31, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -16.33
+      value: -97.98
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3ea8b35043415bb4a8b6b5dd1a5e9e31, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5802,9 +5697,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2123607212759161717}
-  m_LocalRotation: {x: 0.00009725228, y: 0.19661205, z: 0.00045147078, w: 0.9804813}
-  m_LocalPosition: {x: 15.598, y: -1.369, z: -16.355}
-  m_LocalScale: {x: 0.25000003, y: 1, z: 0.25}
+  m_LocalRotation: {x: 0.000097252276, y: 0.19661203, z: 0.00045147075, w: 0.98048127}
+  m_LocalPosition: {x: 93.588005, y: -5.476, z: -98.12999}
+  m_LocalScale: {x: 1.5000002, y: 4, z: 1.5000004}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1373921069}
