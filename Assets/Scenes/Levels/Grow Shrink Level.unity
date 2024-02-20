@@ -2400,15 +2400,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4525352739796752989, guid: a34f74dc6457f3248b9894d65596e7e1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -42.8
+      value: -42.7
       objectReference: {fileID: 0}
     - target: {fileID: 4525352739796752989, guid: a34f74dc6457f3248b9894d65596e7e1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.8131104
+      value: 5.93
       objectReference: {fileID: 0}
     - target: {fileID: 4525352739796752989, guid: a34f74dc6457f3248b9894d65596e7e1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.6
+      value: 84.4
       objectReference: {fileID: 0}
     - target: {fileID: 4525352739796752989, guid: a34f74dc6457f3248b9894d65596e7e1, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5215,7 +5215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endSpot: 0
-  pointToRespawn: {x: 61.55, y: 6.3, z: -24.42}
+  pointToRespawn: {x: -45.15, y: 8.391, z: -58.66}
   rotation: 0
   conversation: {fileID: 11400000, guid: 2ffdb1f2411893242bcc6d7c0231207b, type: 2}
 --- !u!65 &1991062654
