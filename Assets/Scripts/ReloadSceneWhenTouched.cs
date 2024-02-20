@@ -23,7 +23,7 @@ public class ReloadSceneWhenTouched : MonoBehaviour
         respawnPoint = players.transform.position;
         rotation = players.transform.rotation.eulerAngles.y;
         distance = players.GetComponentInChildren<Movement2>().initialRadius;
-    
+
         players.GetComponentsInChildren<Transform>().ForEach(x => playersTransforms.Add(x, x.localPosition));
     }
 
@@ -53,5 +53,11 @@ public class ReloadSceneWhenTouched : MonoBehaviour
     private void OnDisable()
     {
         Checkpoint.OnCheckpointReached -= UpdateLastCheckpoint;
+    }
+
+    private void Stuff()
+    {
+        FadeToBlackSystem.TryCueFadeInToBlack(3f);
+        FadeToBlackSystem.TryCueFadeOutOfBlack(3f);
     }
 }
