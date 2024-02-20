@@ -63,6 +63,11 @@ public class Movement2 : MonoBehaviour
             if (IsNearGrowShrinkStatue()) {
                 RadiusDirection = inpAction.ReadValue<float>();
             }
+
+            if (inpAction.ReadValue<float>() == 0)
+            {
+                RadiusDirection = 0;
+            }
         }
     }
 
