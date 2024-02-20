@@ -6,13 +6,18 @@ using UnityEngine;
 public class ButtonController : MonoBehaviour
 {
     public bool isPressed = false;
-    public DoorController door;
+    [SerializeField] DoorController door;
+    [SerializeField] GameObject pressedButton;
+    [SerializeField] GameObject unpressedButton;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             isPressed = true;
             door.CheckIfDoorShouldOpen();
+            pressedButton.SetActive(true);
+            unpressedButton.SetActive(false);
         }
     }
 
@@ -22,6 +27,8 @@ public class ButtonController : MonoBehaviour
         {
             isPressed = false;
             door.CheckIfDoorShouldClose();
+            pressedButton.SetActive(false);
+            unpressedButton.SetActive(true);
         }
     }
 }

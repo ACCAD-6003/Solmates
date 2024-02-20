@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class DoorController : MonoBehaviour
 {
-    public bool requiresBothButtons = false;
-    public bool doorStayOpen = false;
-    public bool doorIsOpen = false;
+    [SerializeField] bool requiresBothButtons = false;
+    [SerializeField] bool doorStayOpen = false;
+    [SerializeField] bool doorIsOpen = false;
 
     public ButtonController[] buttons;
 
