@@ -16,6 +16,8 @@ public class ReloadSceneWhenTouched : MonoBehaviour
     [SerializeField, ReadOnly] private Transform players;
 
     private Dictionary<Transform, Vector3> playersTransforms = new();
+    private float timeToWait = 3f;
+    private IEnumerator fadeToBlack;
 
     private void Awake()
     {
@@ -41,13 +43,8 @@ public class ReloadSceneWhenTouched : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        playersTransforms.ForEach(x => x.Key.localPosition = x.Value);
-        players.position = respawnPoint;
-        var currentRotation = players.rotation.eulerAngles;
-        currentRotation.y = rotation;
-        players.rotation = Quaternion.Euler(currentRotation);
-        players.GetComponentsInChildren<SpringJoint>().ForEach(x => { x.minDistance = distance; x.maxDistance = distance; });
-        players.GetComponentsInChildren<Movement2>().ForEach(x => { x.StopGrowing(); });
+        StartCoroutine(FadeInThenOutOfBlack());
+        // players.GetComponentsInChildren<SpringJoint>().ForEach(x => { x.breakForce = 0; });
     }
     
     private void OnDisable()
@@ -55,9 +52,20 @@ public class ReloadSceneWhenTouched : MonoBehaviour
         Checkpoint.OnCheckpointReached -= UpdateLastCheckpoint;
     }
 
-    private void Stuff()
+    IEnumerator FadeInThenOutOfBlack()
     {
-        FadeToBlackSystem.TryCueFadeInToBlack(3f);
-        FadeToBlackSystem.TryCueFadeOutOfBlack(3f);
+        fadeToBlack = FadeToBlackSystem.TryCueFadeInToBlack(timeToWait); // Start the coroutine and keep a reference
+        yield return fadeToBlack; // Wait until the coroutine is finished
+
+        playersTransforms.ForEach(x => x.Key.localPosition = x.Value);
+        players.position = respawnPoint;
+        var currentRotation = players.rotation.eulerAngles;
+        currentRotation.y = rotation;
+        players.rotation = Quaternion.Euler(currentRotation);
+        players.GetComponentsInChildren<SpringJoint>().ForEach(x => { x.minDistance = distance; x.maxDistance = distance; });
+        players.GetComponentsInChildren<Movement2>().ForEach(x => { x.StopGrowing(); });
+        players.GetComponentsInChildren<Rigidbody>().ForEach(x => { x.velocity = new Vector3(0,0,0); });
+
+        StartCoroutine(FadeToBlackSystem.TryCueFadeOutOfBlack(timeToWait));
     }
 }
