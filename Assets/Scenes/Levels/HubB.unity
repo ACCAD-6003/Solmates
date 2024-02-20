@@ -1868,10 +1868,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: BlueCamera
       objectReference: {fileID: 0}
-    - target: {fileID: 405625158551638941, guid: a34f74dc6457f3248b9894d65596e7e1, type: 3}
-      propertyPath: near clip plane
-      value: 7.5
-      objectReference: {fileID: 0}
     - target: {fileID: 1187540697207127901, guid: a34f74dc6457f3248b9894d65596e7e1, type: 3}
       propertyPath: m_TagString
       value: RedCamera
@@ -1887,10 +1883,6 @@ PrefabInstance:
     - target: {fileID: 1248749516354301899, guid: a34f74dc6457f3248b9894d65596e7e1, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1473012948957004865, guid: a34f74dc6457f3248b9894d65596e7e1, type: 3}
-      propertyPath: near clip plane
-      value: 7.5
       objectReference: {fileID: 0}
     - target: {fileID: 1935508487259028181, guid: a34f74dc6457f3248b9894d65596e7e1, type: 3}
       propertyPath: m_MaxDistance
@@ -7513,14 +7505,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7412801846192107566, guid: 89d426e2df4281f44b8fc769e3ffef86, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7412801846615296241, guid: 89d426e2df4281f44b8fc769e3ffef86, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7412801846689914673, guid: 89d426e2df4281f44b8fc769e3ffef86, type: 3}
       propertyPath: m_Name
       value: Observatory
