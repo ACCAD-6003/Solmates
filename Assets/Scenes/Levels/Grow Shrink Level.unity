@@ -129,7 +129,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-90716
+  m_Name: pb_Mesh-122786
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1215,7 +1215,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-84896
+  m_Name: pb_Mesh-122814
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3958,7 +3958,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-89718
+  m_Name: pb_Mesh-123514
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4122,7 +4122,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-76986
+  m_Name: pb_Mesh-123896
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4502,7 +4502,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endSpot: 0
-  pointToRespawn: {x: 62.05, y: 6.23, z: 11.8}
+  pointToRespawn: {x: -41.84, y: 6.26, z: 11.57}
   rotation: 0
   conversation: {fileID: 11400000, guid: 07ecbc1a9561dd74e897b630e709477c, type: 2}
 --- !u!65 &1448676739
@@ -4816,7 +4816,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endSpot: 0
-  pointToRespawn: {x: 62.05, y: 6.23, z: 58.14}
+  pointToRespawn: {x: -41.84, y: 6.26, z: 57.67}
   rotation: 0
   conversation: {fileID: 11400000, guid: d529feed0d44e274d8d2a40a117b969b, type: 2}
 --- !u!65 &1727258429
@@ -5260,7 +5260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endSpot: 0
-  pointToRespawn: {x: 61.55, y: 6.3, z: -24.42}
+  pointToRespawn: {x: -42.57, y: 6.26, z: -24.95}
   rotation: 0
   conversation: {fileID: 11400000, guid: 2ffdb1f2411893242bcc6d7c0231207b, type: 2}
 --- !u!65 &1991062654
