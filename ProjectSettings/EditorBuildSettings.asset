@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/HubB.unity
     guid: 3e1b754451945084f87d6148046f9dfb
+  - enabled: 1
+    path: Assets/Scenes/Levels/Final Level.unity
+    guid: ed93373c047ef1146a76d5b37b695f0a
   m_configObjects: {}
