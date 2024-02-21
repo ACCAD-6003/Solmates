@@ -2433,7 +2433,7 @@ MonoBehaviour:
   endSpot: 0
   pointToRespawn: {x: 73.67, y: -0.73, z: -55.84}
   rotation: 90
-  conversation: {fileID: 0}
+  conversation: {fileID: 11400000, guid: eefe70b0d82a70040a76918c56cefffa, type: 2}
 --- !u!65 &287310315
 BoxCollider:
   m_ObjectHideFlags: 0

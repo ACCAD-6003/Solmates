@@ -18,7 +18,9 @@ MonoBehaviour:
     DialoguesSeries:
     - dialogues:
       - speaker: 1
-        Dialogue: I think we should go talk to that person near the doors first before
-          we keep going
+        Dialogue: "Check it out! A lecture is happening near the doors! I\u2019ve
+          always wanted to attend one."
+      - speaker: 0
+        Dialogue: We should go listen to that individual before we keep going.
     LeadsTo:
     - End

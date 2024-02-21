@@ -18,24 +18,29 @@ MonoBehaviour:
     DialoguesSeries:
     - dialogues:
       - speaker: 1
-        Dialogue: "I like listening to this guy. Stars are pretty. There\u2019s a
-          lot of them too."
+        Dialogue: "I like listening to this guy. Stars are amazing. There\u2019s
+          a lot of them too."
       - speaker: 0
-        Dialogue: The stars are grander and more beautiful than I could ever dream
-          to be.
+        Dialogue: The stars are grand and powerful entities.
       - speaker: 1
-        Dialogue: "Shut up, you\u2019re breathtaking."
+        Dialogue: And they light up and stuff.
       - speaker: 0
-        Dialogue: Oh! Thank you.
+        Dialogue: They do...
       - speaker: 1
-        Dialogue: I on the other hand-
+        Dialogue: I light up when I see you.
       - speaker: 0
-        Dialogue: "Don\u2019t. You\u2019re lovely too."
+        Dialogue: "\u2026That was decent."
       - speaker: 1
-        Dialogue: "OH\u2026U-uh thank you?"
+        Dialogue: Why thank you!
       - speaker: 0
         Dialogue: You are welcome.
       - speaker: 1
-        Dialogue: "I didn\u2019t- I- Uh- Oh, nevermind! Let\u2019s just pay attention!"
+        Dialogue: "If I was a star, I\u2019d be a pink one."
+      - speaker: 0
+        Dialogue: What would you be called?
+      - speaker: 1
+        Dialogue: Regina.
+      - speaker: 0
+        Dialogue: "That\u2019s not really a name for a star\u2026"
     LeadsTo:
     - Astronomer 1 Part Three

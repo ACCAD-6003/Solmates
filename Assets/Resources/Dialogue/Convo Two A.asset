@@ -27,6 +27,6 @@ MonoBehaviour:
       - speaker: 0
         Dialogue: I admire your optimism.
       - speaker: 1
-        Dialogue: Years of practice.
+        Dialogue: "Years of practice\u2026"
     LeadsTo:
     - End

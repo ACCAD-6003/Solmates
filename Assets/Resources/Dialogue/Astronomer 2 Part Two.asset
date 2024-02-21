@@ -28,7 +28,5 @@ MonoBehaviour:
         Dialogue: "Oh the irony\u2026"
       - speaker: 1
         Dialogue: "Wait\u2026what do you mean?"
-      - speaker: 0
-        Dialogue: Haha
     LeadsTo:
     - Astronomer 2 Part Three

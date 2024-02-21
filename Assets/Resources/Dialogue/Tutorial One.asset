@@ -18,13 +18,10 @@ MonoBehaviour:
     DialoguesSeries:
     - dialogues:
       - speaker: 3
-        Dialogue: Welcome to Dual Moons, in this game you are trying to work your
-          way through puzzles until you can reunite the pair
+        Dialogue: Work your way through the puzzles until you can reunite the pair.
       - speaker: 3
-        Dialogue: To move, the player on the left will use A/D and the player on
-          the right will use Left / Right arrow
-      - speaker: 3
-        Dialogue: Also, if you get stuck on a level and want to skip it, press '0'.
+        Dialogue: "To move, use A/D if you\u2019re the player on the left and use
+          Left/Right arrow if you\u2019re the player on the right."
       - speaker: 3
         Dialogue: Good luck and if you have any questions raise your hand and we
           will come over.

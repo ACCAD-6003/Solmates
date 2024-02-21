@@ -18,6 +18,8 @@ MonoBehaviour:
     DialoguesSeries:
     - dialogues:
       - speaker: 2
+        Dialogue: There is a such thing as binary stars. One of them is Centauri.
+      - speaker: 2
         Dialogue: Centauri is what we call a binary star system. What appears as
           one star through our human eyes, is actually two.
       - speaker: 2

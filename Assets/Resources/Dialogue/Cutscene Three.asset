@@ -18,7 +18,7 @@ MonoBehaviour:
     DialoguesSeries:
     - dialogues:
       - speaker: 1
-        Dialogue: "We\u2019re back\u2026"
+        Dialogue: "We\u2019re back in the weird, starry place again\u2026"
       - speaker: 0
         Dialogue: This is all so strange.
       - speaker: 1
