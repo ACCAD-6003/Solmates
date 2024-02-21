@@ -39,6 +39,7 @@ public class ReloadSceneWhenTouched : MonoBehaviour
         Debug.Log("Checkpoint Reached");
         respawnPoint = checkpoint.PointToRespawn;
         rotation = checkpoint.Rotation;
+        players.GetComponentsInChildren<SpringJoint>().ForEach(x => { x.minDistance = distance; x.maxDistance = distance; });
     }
     
     private void OnTriggerEnter(Collider other)
