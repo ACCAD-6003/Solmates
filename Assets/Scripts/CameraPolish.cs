@@ -16,5 +16,9 @@ public class CameraPolish : MonoBehaviour
     void Update()
     {
         transform.LookAt(LookAt);
+
+        float r = transform.parent.GetComponent<Movement2>().RadiusVector().magnitude;
+
+        transform.localPosition = Vector3.Scale(transform.localPosition, new Vector3(1, 1, 0)) + -Vector3.forward * (0.25f * r + 6) ;
     }
 }
