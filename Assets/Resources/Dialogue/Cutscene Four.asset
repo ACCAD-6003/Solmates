@@ -17,21 +17,21 @@ MonoBehaviour:
     Conversant: Player
     DialoguesSeries:
     - dialogues:
-      - speaker: 0
+      - speaker: 1
         Dialogue: "It\u2019s clearer to me now."
-      - speaker: 1
+      - speaker: 0
         Dialogue: It is??
-      - speaker: 0
+      - speaker: 1
         Dialogue: I must get back to you.
-      - speaker: 1
+      - speaker: 0
         Dialogue: Well, yeah. That was the plan.
-      - speaker: 0
+      - speaker: 1
         Dialogue: We are bigger than we could ever imagine.
-      - speaker: 1
-        Dialogue: What?
       - speaker: 0
-        Dialogue: You will see.
+        Dialogue: What?
       - speaker: 1
+        Dialogue: You will see.
+      - speaker: 0
         Dialogue: I guess I will?
     LeadsTo:
     - End

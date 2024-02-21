@@ -17,9 +17,9 @@ MonoBehaviour:
     Conversant: None
     DialoguesSeries:
     - dialogues:
-      - speaker: 0
-        Dialogue: "Those stars\u2026could they be?"
       - speaker: 1
+        Dialogue: "Those stars\u2026could they be?"
+      - speaker: 0
         Dialogue: "Gosh, they just disappeared one day? That\u2019s creepy."
     LeadsTo:
     - End

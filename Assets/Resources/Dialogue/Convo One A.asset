@@ -17,23 +17,23 @@ MonoBehaviour:
     Conversant: Player
     DialoguesSeries:
     - dialogues:
-      - speaker: 0
-        Dialogue: "You\u2019re\u2026orbiting around me."
       - speaker: 1
+        Dialogue: "You\u2019re\u2026orbiting around me."
+      - speaker: 0
         Dialogue: "You know it! I guess I\u2019m just attracted to you. Heh! Get
           it?"
-      - speaker: 0
+      - speaker: 1
         Dialogue: But, how is this happening?
-      - speaker: 1
-        Dialogue: "Ahhh, she\u2019s unaware of her beauty. How poetic."
       - speaker: 0
-        Dialogue: Are you even listening to me?
+        Dialogue: "Ahhh, she\u2019s unaware of her beauty. How poetic."
       - speaker: 1
+        Dialogue: Are you even listening to me?
+      - speaker: 0
         Dialogue: 'If by that you mean: hearing your silky voice, but not comprehending
           a thing, then yes.'
-      - speaker: 0
-        Dialogue: "Ugh. I\u2019m Centa by the way."
       - speaker: 1
+        Dialogue: "Ugh. I\u2019m Centa by the way."
+      - speaker: 0
         Dialogue: "And I\u2019m Uri, baby."
     LeadsTo:
     - End

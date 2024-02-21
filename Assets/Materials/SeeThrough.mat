@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: SeeThrough
-  m_Shader: {fileID: -6465566751694194690, guid: 4bd962e3e376427479cff40a56505ed5, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 908705d455df99844afff39031497053, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -69,32 +69,31 @@ Material:
     - _BUILTIN_QueueControl: 0
     - _BUILTIN_QueueOffset: 0
     - _BumpScale: 1
-    - _ChunkSize: 0.94
+    - _ChunkSize: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 10
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _GradientStrength: 0.5
-    - _Intensity: 1.62
+    - _GradientStrength: 0
+    - _Intensity: 20
+    - _Is_Door: 0
     - _Metallic: 0
-    - _MinBoost: 0.525
+    - _MinBoost: 0.304
     - _Mode: 3
     - _OcclusionStrength: 1
     - _Opacity: 1
     - _Parallax: 0.02
-    - _PositionIntensity: 5
-    - _Range: 3.21
-    - _Roughness: 0.5
-    - _Size: 0.23
-    - _Smoothness: 2
+    - _PositionIntensity: 1
+    - _Range: 2.1
+    - _Size: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _Speed: 1
+    - _Speed: 0
     - _SrcBlend: 1
     - _UVSec: 0
-    - _Vertical_Offset: 1.02
+    - _Vertical_Offset: -2.54
     - _ZWrite: 0
     - size: 1
     m_Colors:
@@ -102,7 +101,7 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - position: {r: 0.5, g: 0.5, b: 0, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &175304381969320431
+--- !u!114 &1510757398786542600
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

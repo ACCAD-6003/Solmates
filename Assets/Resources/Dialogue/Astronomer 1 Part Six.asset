@@ -17,11 +17,11 @@ MonoBehaviour:
     Conversant: Player
     DialoguesSeries:
     - dialogues:
-      - speaker: 0
-        Dialogue: Uri, where could they have gone?
       - speaker: 1
-        Dialogue: Heck if I know!
+        Dialogue: Uri, where could they have gone?
       - speaker: 0
+        Dialogue: Heck if I know!
+      - speaker: 1
         Dialogue: "Two stars\u2026"
     LeadsTo:
     - End

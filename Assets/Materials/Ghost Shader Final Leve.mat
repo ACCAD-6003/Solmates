@@ -58,10 +58,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - Vertical_Offset: 2.98
     - _BUILTIN_QueueControl: 0
     - _BUILTIN_QueueOffset: 0
     - _BumpScale: 1
-    - _ChunkSize: 0.94
+    - _ChunkSize: 0.25
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
@@ -69,13 +70,13 @@ Material:
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _GradientStrength: 0.5
-    - _Intensity: 1.62
+    - _Intensity: 2
     - _Metallic: 0
     - _MinBoost: 0.525
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _PositionIntensity: 5
+    - _PositionIntensity: 7.71
     - _Range: 3.21
     - _Size: 0.23
     - _Smoothness: 2

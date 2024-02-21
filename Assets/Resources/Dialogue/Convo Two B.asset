@@ -17,15 +17,15 @@ MonoBehaviour:
     Conversant: None
     DialoguesSeries:
     - dialogues:
-      - speaker: 0
-        Dialogue: What is this feeling I get when I look at her?
       - speaker: 1
+        Dialogue: What is this feeling I get when I look at her?
+      - speaker: 0
         Dialogue: "Our connection is deeper than I could\u2019ve imagined\u2026I
           mean I\u2019m not complaining."
-      - speaker: 0
+      - speaker: 1
         Dialogue: Perhaps, if we just continue to move forward, all answers will
           come to light.
-      - speaker: 1
+      - speaker: 0
         Dialogue: We just gotta keep going. Onward! To romance!
     LeadsTo:
     - End

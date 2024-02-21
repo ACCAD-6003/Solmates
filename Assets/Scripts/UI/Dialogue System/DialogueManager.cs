@@ -176,11 +176,12 @@ namespace UI.Dialogue_System
             continueInputReceived = false;
 
             var speakerName = SpeakerName(dialogue, conversant);
+            var speakerNameTwo = SpeakerName(dialogueTwo, conversant);
 
             UIController.OnNextDialogue += SpeedUpText;
             playersReady = 0; 
             StartCoroutine(TypewriterDialogue(speakerName, PlayerOne, dialogue));
-            StartCoroutine(TypewriterDialogue(speakerName, PlayerTwo, dialogueTwo));
+            StartCoroutine(TypewriterDialogue(speakerNameTwo, PlayerTwo, dialogueTwo));
             yield return new WaitUntil(() => playersReady == 2);
             UIController.OnNextDialogue -= SpeedUpText;
 

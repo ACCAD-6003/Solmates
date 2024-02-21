@@ -17,32 +17,32 @@ MonoBehaviour:
     Conversant: Player
     DialoguesSeries:
     - dialogues:
-      - speaker: 1
-        Dialogue: ...
       - speaker: 0
         Dialogue: ...
       - speaker: 1
+        Dialogue: ...
+      - speaker: 0
         Dialogue: "We\u2019re the missing stars\u2026aren\u2019t we?"
-      - speaker: 0
+      - speaker: 1
         Dialogue: So you finally see.
-      - speaker: 1
+      - speaker: 0
         Dialogue: "It didn\u2019t take THAT long!"
-      - speaker: 0
-        Dialogue: Haha. Only a little while longer than me.
       - speaker: 1
-        Dialogue: "So\u2026we did it then?"
+        Dialogue: Haha. Only a little while longer than me.
       - speaker: 0
+        Dialogue: "So\u2026we did it then?"
+      - speaker: 1
         Dialogue: Yes. I have finally returned to you and we can retake our place
           as bright, beautiful, and infinite.
-      - speaker: 1
+      - speaker: 0
         Dialogue: You were always that to me. Even down here.
-      - speaker: 0
+      - speaker: 1
         Dialogue: I know.
-      - speaker: 1
-        Dialogue: "\u2026To the skies?"
       - speaker: 0
-        Dialogue: To the skies. Where I get to look at your pretty face for eternity.
+        Dialogue: "\u2026To the skies?"
       - speaker: 1
+        Dialogue: To the skies. Where I get to look at your pretty face for eternity.
+      - speaker: 0
         Dialogue: DAW! Shucks.
     LeadsTo:
     - End

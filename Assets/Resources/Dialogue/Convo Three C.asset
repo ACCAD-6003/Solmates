@@ -17,13 +17,13 @@ MonoBehaviour:
     Conversant: Player
     DialoguesSeries:
     - dialogues:
-      - speaker: 0
+      - speaker: 1
         Dialogue: Remember how Centauri went missing?
-      - speaker: 1
-        Dialogue: "Yeah\u2026what, do you know where she is or something? Haha!"
       - speaker: 0
-        Dialogue: You could say that, yes. Hehe.
+        Dialogue: "Yeah\u2026what, do you know where she is or something? Haha!"
       - speaker: 1
+        Dialogue: You could say that, yes. Hehe.
+      - speaker: 0
         Dialogue: Oh?
     LeadsTo:
     - End

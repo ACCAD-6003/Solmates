@@ -17,15 +17,15 @@ MonoBehaviour:
     Conversant: None
     DialoguesSeries:
     - dialogues:
-      - speaker: 0
+      - speaker: 1
         Dialogue: "This person called Uri\u2026they\u2019re so strange, but without
           them, I feel like a part of me is missing."
-      - speaker: 1
-        Dialogue: This Centa girl is amazing. I bet she digs my style.
       - speaker: 0
+        Dialogue: This Centa girl is amazing. I bet she digs my style.
+      - speaker: 1
         Dialogue: "Perhaps if we\u2019re working together like this, I\u2019ll be
           able to make it back to her."
-      - speaker: 1
+      - speaker: 0
         Dialogue: "I was like, \u201CI guess I\u2019m attracted to you,\u201D and
           she was probably like, \u201CWoah, she\u2019s cool.\u201D"
     LeadsTo:

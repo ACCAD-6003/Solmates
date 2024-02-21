@@ -17,13 +17,13 @@ MonoBehaviour:
     Conversant: Player
     DialoguesSeries:
     - dialogues:
-      - speaker: 0
+      - speaker: 1
         Dialogue: "You\u2019re so far\u2026"
-      - speaker: 1
-        Dialogue: "I\u2019m sorry\u2026I don\u2019t know what happened\u2026"
       - speaker: 0
-        Dialogue: We must try to come back together.
+        Dialogue: "I\u2019m sorry\u2026I don\u2019t know what happened\u2026"
       - speaker: 1
+        Dialogue: We must try to come back together.
+      - speaker: 0
         Dialogue: "Yeah let\u2019s do this!"
     LeadsTo:
     - Tutorial One
