@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.05404596, g: 0.049422577, b: 0.04528757, a: 1}
+  m_IndirectSpecularColor: {r: 0.054193288, g: 0.04986178, b: 0.045733012, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -129,7 +129,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-47882
+  m_Name: pb_Mesh-115334
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -293,7 +293,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-39570
+  m_Name: pb_Mesh-114372
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1382,7 +1382,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-39598
+  m_Name: pb_Mesh-114406
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1957,7 +1957,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-68456
+  m_Name: pb_Mesh-115208
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3778,7 +3778,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-68480
+  m_Name: pb_Mesh-115232
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4271,7 +4271,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-40298
+  m_Name: pb_Mesh-115112
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4435,7 +4435,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-40680
+  m_Name: pb_Mesh-115604
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4923,8 +4923,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1448676736}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 31.95, y: 6.82, z: 5.35}
-  m_LocalScale: {x: 12, y: 2, z: 0.6415}
+  m_LocalPosition: {x: 31.5, y: 6.82, z: 34.98}
+  m_LocalScale: {x: 21.29, y: 2, z: 0.6415}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1117569188}
@@ -4943,7 +4943,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endSpot: 0
-  pointToRespawn: {x: -41.84, y: 6.26, z: 11.57}
+  pointToRespawn: {x: -41.97, y: 6.26, z: 41.41}
   rotation: 0
   conversation: {fileID: 11400000, guid: 07ecbc1a9561dd74e897b630e709477c, type: 2}
 --- !u!65 &1448676739
@@ -5174,7 +5174,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-47906
+  m_Name: pb_Mesh-115358
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5523,7 +5523,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1727258426}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 31.95, y: 6.82, z: 51.2}
+  m_LocalPosition: {x: 32.09, y: 6.82, z: 65.38}
   m_LocalScale: {x: 12, y: 2, z: 0.6415}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5543,7 +5543,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endSpot: 0
-  pointToRespawn: {x: -41.84, y: 6.26, z: 57.67}
+  pointToRespawn: {x: -41.48, y: 6.26, z: 69.31}
   rotation: 0
   conversation: {fileID: 11400000, guid: d529feed0d44e274d8d2a40a117b969b, type: 2}
 --- !u!65 &1727258429
@@ -5786,6 +5786,7 @@ MonoBehaviour:
   rotation: 0
   distance: 0
   players: {fileID: 0}
+  doors: []
 --- !u!64 &1821634922
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5966,8 +5967,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1991062651}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 30.95, y: 6.82, z: -31.34}
-  m_LocalScale: {x: 6, y: 2, z: 2}
+  m_LocalPosition: {x: 31.33, y: 6.82, z: 14.76}
+  m_LocalScale: {x: 15.9, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1117569188}
@@ -5986,7 +5987,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endSpot: 0
-  pointToRespawn: {x: -42.57, y: 6.26, z: -24.95}
+  pointToRespawn: {x: -42.74, y: 6.26, z: 21.25}
   rotation: 0
   conversation: {fileID: 11400000, guid: 2ffdb1f2411893242bcc6d7c0231207b, type: 2}
 --- !u!65 &1991062654
