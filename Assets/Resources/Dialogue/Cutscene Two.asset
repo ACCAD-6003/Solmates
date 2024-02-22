@@ -17,23 +17,23 @@ MonoBehaviour:
     Conversant: None
     DialoguesSeries:
     - dialogues:
-      - speaker: 0
+      - speaker: 1
         Dialogue: "*GASP* W-What\u2019s going on? It\u2019s so cold, and I feel so
           heavy. what is this place?"
-      - speaker: 1
-        Dialogue: Whoaaaaaa this is trippy. I feel weird. Where are we?
       - speaker: 0
+        Dialogue: Whoaaaaaa this is trippy. I feel weird. Where are we?
+      - speaker: 1
         Dialogue: "I\u2019m trying, but\u2026I can\u2019t remember anything. Nothing
           at all. Like everything I have ever known left my head just mere moments
           ago."
-      - speaker: 1
+      - speaker: 0
         Dialogue: "What am I doing here?...What is this place?...WHERE is this place?...WAIT,
           who even am I?? HAHAHA! I have no idea what\u2019s going on. This is so
           funny."
-      - speaker: 0
+      - speaker: 1
         Dialogue: "This Uri\u2026they\u2019re\u2026gorgeous. Why do they feel so
           familiar? Like\u2026home."
-      - speaker: 1
+      - speaker: 0
         Dialogue: "AWOOGA! Cents is a hottie!! I kinda feel like I\u2019ve seen them
           before."
     LeadsTo:

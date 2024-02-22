@@ -9,7 +9,8 @@ public class ButtonController : MonoBehaviour
     [SerializeField] DoorController door;
     [SerializeField] GameObject pressedButton;
     [SerializeField] GameObject unpressedButton;
-
+    [SerializeField] private Material doorShader;
+        
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))

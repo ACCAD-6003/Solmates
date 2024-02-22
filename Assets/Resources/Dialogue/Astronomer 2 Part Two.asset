@@ -17,16 +17,16 @@ MonoBehaviour:
     Conversant: Player
     DialoguesSeries:
     - dialogues:
-      - speaker: 1
-        Dialogue: "That\u2019s\u2026kinda scary, I\u2019m not gonna lie."
       - speaker: 0
-        Dialogue: "Scary? I think that\u2019s extraordinary."
+        Dialogue: "That\u2019s\u2026kinda scary, I\u2019m not gonna lie."
       - speaker: 1
+        Dialogue: "Scary? I think that\u2019s extraordinary."
+      - speaker: 0
         Dialogue: One star forming only to result in the creation of a littler one
           that just randomly pops up in its orbit and gets bigger and bigger?
-      - speaker: 0
-        Dialogue: "Oh the irony\u2026"
       - speaker: 1
+        Dialogue: "Oh the irony\u2026"
+      - speaker: 0
         Dialogue: "Wait\u2026what do you mean?"
     LeadsTo:
     - Astronomer 2 Part Three

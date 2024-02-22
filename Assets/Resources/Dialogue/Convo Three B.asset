@@ -17,10 +17,10 @@ MonoBehaviour:
     Conversant: None
     DialoguesSeries:
     - dialogues:
-      - speaker: 0
+      - speaker: 1
         Dialogue: There is a reason I will be forever drawn to Uri. I must return
           to her.
-      - speaker: 1
+      - speaker: 0
         Dialogue: "Centa is scaring me a little\u2026what did she realize?"
     LeadsTo:
     - End

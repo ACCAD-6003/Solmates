@@ -17,9 +17,9 @@ MonoBehaviour:
     Conversant: Player
     DialoguesSeries:
     - dialogues:
-      - speaker: 0
-        Dialogue: Pairs?
       - speaker: 1
+        Dialogue: Pairs?
+      - speaker: 0
         Dialogue: Shhhhh!
     LeadsTo:
     - Astronomer 1 Part Five

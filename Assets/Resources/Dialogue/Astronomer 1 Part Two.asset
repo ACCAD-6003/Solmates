@@ -17,30 +17,30 @@ MonoBehaviour:
     Conversant: Player
     DialoguesSeries:
     - dialogues:
-      - speaker: 1
+      - speaker: 0
         Dialogue: "I like listening to this guy. Stars are amazing. There\u2019s
           a lot of them too."
-      - speaker: 0
+      - speaker: 1
         Dialogue: The stars are grand and powerful entities.
-      - speaker: 1
+      - speaker: 0
         Dialogue: And they light up and stuff.
-      - speaker: 0
+      - speaker: 1
         Dialogue: They do...
-      - speaker: 1
+      - speaker: 0
         Dialogue: I light up when I see you.
-      - speaker: 0
+      - speaker: 1
         Dialogue: "\u2026That was decent."
-      - speaker: 1
+      - speaker: 0
         Dialogue: Why thank you!
-      - speaker: 0
+      - speaker: 1
         Dialogue: You are welcome.
-      - speaker: 1
+      - speaker: 0
         Dialogue: "If I was a star, I\u2019d be a pink one."
-      - speaker: 0
-        Dialogue: What would you be called?
       - speaker: 1
-        Dialogue: Regina.
+        Dialogue: What would you be called?
       - speaker: 0
+        Dialogue: Regina.
+      - speaker: 1
         Dialogue: "That\u2019s not really a name for a star\u2026"
     LeadsTo:
     - Astronomer 1 Part Three

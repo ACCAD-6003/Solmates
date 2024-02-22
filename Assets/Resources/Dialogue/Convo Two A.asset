@@ -17,16 +17,16 @@ MonoBehaviour:
     Conversant: Player
     DialoguesSeries:
     - dialogues:
-      - speaker: 1
+      - speaker: 0
         Dialogue: "With this new ability\u2026we\u2019re closer together than ever
           before."
-      - speaker: 0
+      - speaker: 1
         Dialogue: "It\u2019s still not enough\u2026something is missing."
-      - speaker: 1
-        Dialogue: "Well, sure, but we\u2019re one step closer!"
       - speaker: 0
-        Dialogue: I admire your optimism.
+        Dialogue: "Well, sure, but we\u2019re one step closer!"
       - speaker: 1
+        Dialogue: I admire your optimism.
+      - speaker: 0
         Dialogue: "Years of practice\u2026"
     LeadsTo:
     - End

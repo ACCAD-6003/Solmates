@@ -17,16 +17,16 @@ MonoBehaviour:
     Conversant: Player
     DialoguesSeries:
     - dialogues:
-      - speaker: 1
-        Dialogue: "Whoa\u2026how are we going to get through this?"
       - speaker: 0
+        Dialogue: "Whoa\u2026how are we going to get through this?"
+      - speaker: 1
         Dialogue: I believe we are capable of more than you think, especially as
           we grow together.
-      - speaker: 1
-        Dialogue: Sure, I guess.
       - speaker: 0
-        Dialogue: "You\u2019re cute."
+        Dialogue: Sure, I guess.
       - speaker: 1
+        Dialogue: "You\u2019re cute."
+      - speaker: 0
         Dialogue: Uh- ope- uh-...NO YOU!
     LeadsTo:
     - End

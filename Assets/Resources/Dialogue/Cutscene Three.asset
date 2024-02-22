@@ -17,22 +17,22 @@ MonoBehaviour:
     Conversant: Player
     DialoguesSeries:
     - dialogues:
-      - speaker: 1
-        Dialogue: "We\u2019re back in the weird, starry place again\u2026"
       - speaker: 0
-        Dialogue: This is all so strange.
+        Dialogue: "We\u2019re back in the weird, starry place again\u2026"
       - speaker: 1
+        Dialogue: This is all so strange.
+      - speaker: 0
         Dialogue: "Hey, don\u2019t panic. Maybe, now there\u2019s a way we can be
           closer together."
-      - speaker: 0
+      - speaker: 1
         Dialogue: I never said I was panicking.
-      - speaker: 1
+      - speaker: 0
         Dialogue: "Oh, so you don\u2019t need a big strong woman to rescue you?"
-      - speaker: 0
-        Dialogue: "\u2026I didn\u2019t say that\u2026But I\u2019m not afraid."
       - speaker: 1
-        Dialogue: "Don\u2019t worry, darling, I\u2019ll come back to you soon."
+        Dialogue: "\u2026I didn\u2019t say that\u2026But I\u2019m not afraid."
       - speaker: 0
+        Dialogue: "Don\u2019t worry, darling, I\u2019ll come back to you soon."
+      - speaker: 1
         Dialogue: "Let\u2019s just see what\u2019s going on here."
     LeadsTo:
     - Tutorial Two

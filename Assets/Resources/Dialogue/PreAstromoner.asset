@@ -17,10 +17,10 @@ MonoBehaviour:
     Conversant: Player
     DialoguesSeries:
     - dialogues:
-      - speaker: 1
+      - speaker: 0
         Dialogue: "Check it out! A lecture is happening near the doors! I\u2019ve
           always wanted to attend one."
-      - speaker: 0
+      - speaker: 1
         Dialogue: We should go listen to that individual before we keep going.
     LeadsTo:
     - End

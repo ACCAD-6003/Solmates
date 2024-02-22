@@ -17,12 +17,12 @@ MonoBehaviour:
     Conversant: Player
     DialoguesSeries:
     - dialogues:
-      - speaker: 1
+      - speaker: 0
         Dialogue: With these abilities combined, we have a chance at reaching the
           end of all this weird stuff!
-      - speaker: 0
-        Dialogue: We will be one again with all we have learned here.
       - speaker: 1
+        Dialogue: We will be one again with all we have learned here.
+      - speaker: 0
         Dialogue: "Ok\u2026?"
     LeadsTo:
     - End
