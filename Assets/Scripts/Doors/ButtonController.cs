@@ -10,7 +10,8 @@ public class ButtonController : MonoBehaviour
     [SerializeField] GameObject pressedButton;
     [SerializeField] GameObject unpressedButton;
     [SerializeField] private Material doorShader;
-        
+    [SerializeField] AudioSource buttonSound;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -19,6 +20,7 @@ public class ButtonController : MonoBehaviour
             door.CheckIfDoorShouldOpen();
             pressedButton.SetActive(true);
             unpressedButton.SetActive(false);
+            buttonSound.Play();
         }
     }
 

@@ -14,6 +14,7 @@ public class ReloadSceneWhenTouched : MonoBehaviour
     [SerializeField, ReadOnly] private float rotation;
     [SerializeField, ReadOnly] private float distance;
     [SerializeField, ReadOnly] private Transform players;
+    [SerializeField, ReadOnly] private GameObject[] doors;
 
     private Dictionary<Transform, Vector3> playersTransforms = new();
     private float timeToWait = 3f;
@@ -25,6 +26,7 @@ public class ReloadSceneWhenTouched : MonoBehaviour
         respawnPoint = players.transform.position;
         rotation = players.transform.rotation.eulerAngles.y;
         distance = players.GetComponentInChildren<Movement2>().initialRadius;
+        doors = GameObject.FindGameObjectsWithTag("Door");
 
         players.GetComponentsInChildren<Transform>().ForEach(x => playersTransforms.Add(x, x.localPosition));
     }
@@ -41,7 +43,7 @@ public class ReloadSceneWhenTouched : MonoBehaviour
         rotation = checkpoint.Rotation;
         players.GetComponentsInChildren<SpringJoint>().ForEach(x => { x.minDistance = distance; x.maxDistance = distance; });
     }
-    
+
     private void OnTriggerEnter(Collider other)
     {
         StartCoroutine(FadeInThenOutOfBlack());
@@ -66,6 +68,12 @@ public class ReloadSceneWhenTouched : MonoBehaviour
         players.GetComponentsInChildren<SpringJoint>().ForEach(x => { x.minDistance = distance; x.maxDistance = distance; });
         players.GetComponentsInChildren<Movement2>().ForEach(x => { x.StopGrowing(); });
         players.GetComponentsInChildren<Rigidbody>().ForEach(x => { x.velocity = new Vector3(0,0,0); });
+
+        // Renable doors
+        foreach (GameObject door in doors)
+        {
+            door.SetActive(true);
+        }
 
         StartCoroutine(FadeToBlackSystem.TryCueFadeOutOfBlack(timeToWait));
     }
