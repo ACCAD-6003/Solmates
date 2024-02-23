@@ -59,39 +59,6 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "Controller",
-                    "id": "bfe1f4b0-e8ba-4f8b-83ca-082459520f65",
-                    "path": "1DAxis",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Circle",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "negative",
-                    "id": "31c92302-779e-409f-b158-1f32b6dddd6d",
-                    "path": "<Gamepad>/leftStick/left",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Circle",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "positive",
-                    "id": "b3a267e7-60a4-4d88-81cb-f52f06f258b3",
-                    "path": "<Gamepad>/leftStick/right",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Circle",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
                     "name": "LogitechController",
                     "id": "a76cf854-0541-4f62-9452-a3891cafb57a",
                     "path": "1DAxis",
@@ -105,7 +72,7 @@
                 {
                     "name": "negative",
                     "id": "f21fcf9b-6363-490f-8e70-ac8e12d35ffb",
-                    "path": "<Joystick>/stick/left",
+                    "path": "<Gamepad>/leftStick/left",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -116,7 +83,7 @@
                 {
                     "name": "positive",
                     "id": "1c18b516-9c16-4e8f-aea7-3a3bb8ccad0e",
-                    "path": "<Joystick>/stick/right",
+                    "path": "<Gamepad>/leftStick/right",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -158,40 +125,7 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "Controller",
-                    "id": "555bfe11-d8a4-4dbf-a126-ff75382f191b",
-                    "path": "1DAxis",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Radius",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "negative",
-                    "id": "f17c25a8-8531-4709-8f16-f701973757ae",
-                    "path": "<Gamepad>/leftTrigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Radius",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "positive",
-                    "id": "d02370d6-1f57-4930-9689-0c973a0df425",
-                    "path": "<Gamepad>/rightTrigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Radius",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "LogitechController",
+                    "name": "XboxController",
                     "id": "6a5c3eaa-8116-4558-991b-b97b4f4c723f",
                     "path": "1DAxis",
                     "interactions": "",
@@ -204,7 +138,7 @@
                 {
                     "name": "negative",
                     "id": "1c619f7b-ec2a-4c25-b50f-66945baa10e0",
-                    "path": "<HID::Logitech Logitech RumblePad 2 USB>/button7",
+                    "path": "<Gamepad>/leftTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -215,7 +149,7 @@
                 {
                     "name": "positive",
                     "id": "ea0d42a3-685f-42b6-a3b3-c8264b5ab46e",
-                    "path": "<HID::Logitech Logitech RumblePad 2 USB>/button8",
+                    "path": "<Gamepad>/rightTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
