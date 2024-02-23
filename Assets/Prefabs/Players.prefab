@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 4774823881089956285}
-  particleScale: 0.25
+  particleScale: 0.5
 --- !u!114 &5821204783993440439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4962,7 +4962,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 6022356766101581409}
-  particleScale: 0.25
+  particleScale: 0.5
 --- !u!114 &2822597785529850600
 MonoBehaviour:
   m_ObjectHideFlags: 0
