@@ -9742,6 +9742,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1280393954427272782, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ee00d511645014b4492f0934799654d0, type: 2}
     - target: {fileID: 1283561729632177310, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}
       propertyPath: input
       value: 
@@ -9782,6 +9786,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2281182009916360294, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ee00d511645014b4492f0934799654d0, type: 2}
     - target: {fileID: 3045479165410398864, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}
       propertyPath: LookAt
       value: 

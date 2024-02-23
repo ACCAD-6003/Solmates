@@ -17,7 +17,7 @@ public class ReloadSceneWhenTouched : MonoBehaviour
     [SerializeField, ReadOnly] private GameObject[] doors;
 
     private Dictionary<Transform, Vector3> playersTransforms = new();
-    private float timeToWait = 3f;
+    private float timeToWait = 1f;
     private IEnumerator fadeToBlack;
 
     private void Awake()
