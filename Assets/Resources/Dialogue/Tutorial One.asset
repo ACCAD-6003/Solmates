@@ -20,8 +20,8 @@ MonoBehaviour:
       - speaker: 3
         Dialogue: Work your way through the puzzles until you can reunite the pair.
       - speaker: 3
-        Dialogue: "To move, use A/D if you\u2019re the player on the left and use
-          Left/Right arrow if you\u2019re the player on the right."
+        Dialogue: To move, use the left joystick. Advance the dialogue with the right
+          face button.
       - speaker: 3
         Dialogue: Good luck and if you have any questions raise your hand and we
           will come over.

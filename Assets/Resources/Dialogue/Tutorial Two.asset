@@ -24,10 +24,7 @@ MonoBehaviour:
         Dialogue: In this level, you will see pillars that, when one of the two players
           is nearby, will allow you to change the radius between both individuals.
       - speaker: 3
-        Dialogue: If the player on the Left is adjacent then they will use the W/D
-          keys
-      - speaker: 3
-        Dialogue: If the player on the Right is adjacent then they will use the Up
-          / Down Keys
+        Dialogue: To grow, push the other player with the right trigger. To shrink,
+          pull the other player in with the left trigger.
     LeadsTo:
     - End
