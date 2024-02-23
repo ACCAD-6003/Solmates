@@ -58,7 +58,8 @@ public class Movement2 : MonoBehaviour
 
         SetPlayerControls();
         actionMap = input.FindActionMap("Movement");
-        actionMap.actionTriggered += ActionTriggered;
+
+        //actionMap.actionTriggered += ActionTriggered;
         actionMap.Enable();
     }
 
@@ -80,14 +81,14 @@ public class Movement2 : MonoBehaviour
         }
     }
 
-    private void ActionTriggered(InputAction.CallbackContext inpAction)
+    private void ActionTriggered(InputAction inpAction)
     {
-        if (inpAction.control.device.deviceId != device)
+        if (inpAction.activeControl != null && inpAction.activeControl.device.deviceId != device)
         {
             return;
         }
 
-        string action = inpAction.action.name;
+        string action = inpAction.name;
 
         if (action == "Circle")
         {
@@ -162,6 +163,11 @@ public class Movement2 : MonoBehaviour
 
     private void Update()
     {
+        foreach (var a in actionMap.actions)
+        {
+            ActionTriggered(a);
+        }
+
         if (MovementDirection == 0)
         {
             Lock();
