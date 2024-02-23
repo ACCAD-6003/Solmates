@@ -9742,6 +9742,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1280393954427272782, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ee00d511645014b4492f0934799654d0, type: 2}
     - target: {fileID: 1283561729632177310, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}
       propertyPath: input
       value: 
@@ -9750,6 +9754,10 @@ PrefabInstance:
       propertyPath: joint
       value: 
       objectReference: {fileID: 1935508487259028181}
+    - target: {fileID: 1283561729632177310, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}
+      propertyPath: player
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1283561729632177310, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}
       propertyPath: otherPlayer
       value: 
@@ -9782,6 +9790,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2281182009916360294, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ee00d511645014b4492f0934799654d0, type: 2}
     - target: {fileID: 3045479165410398864, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}
       propertyPath: LookAt
       value: 
@@ -9970,9 +9982,17 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1283561729632177310, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}
+      propertyPath: input
+      value: 
+      objectReference: {fileID: -944628639613478452, guid: a54bed459ab5a8a42b5a408f15051ecc, type: 3}
+    - target: {fileID: 1283561729632177310, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}
       propertyPath: joint
       value: 
       objectReference: {fileID: 1935508487259028181}
+    - target: {fileID: 1283561729632177310, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}
+      propertyPath: player
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1283561729632177310, guid: d5e3ada37028a5f438883674aef4cb2e, type: 3}
       propertyPath: otherPlayer
       value: 

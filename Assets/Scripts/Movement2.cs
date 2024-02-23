@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.XInput;
 
 public class Movement2 : MonoBehaviour
 {
@@ -18,9 +19,19 @@ public class Movement2 : MonoBehaviour
     public float maxRadius = 20;
 
     [SerializeField]
+    public int player = 1;
+    private int device;
+
+    [SerializeField]
     public GameObject otherPlayer;
     [SerializeField]
     public SpringJoint joint;
+
+    List<string> AllowedDevices = new()
+    {
+        "XInputControllerWindows",
+        "HID::Logitech Logitech RumblePad 2 USB"
+    };
 
     [SerializeField]
     public InputActionAsset input;
@@ -44,14 +55,32 @@ public class Movement2 : MonoBehaviour
         joint.minDistance = initialRadius;
         joint.maxDistance = initialRadius;
         currentSpeed = moveSpeed;
-        
+
+        SetPlayerControls();
         actionMap = input.FindActionMap("Movement");
+
         actionMap.actionTriggered += ActionTriggered;
         actionMap.Enable();
     }
 
+    private void SetPlayerControls()
+    {
+        foreach (var d in InputSystem.devices)
+        {
+            if (AllowedDevices[player] == d.layout)
+            {
+                device = d.deviceId;
+            }
+        }
+    }
+
     private void ActionTriggered(InputAction.CallbackContext inpAction)
     {
+        if (inpAction.control.device.deviceId != device)
+        {
+            return;
+        }
+
         string action = inpAction.action.name;
 
         if (action == "Circle")
