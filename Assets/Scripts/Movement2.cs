@@ -112,7 +112,7 @@ public class Movement2 : MonoBehaviour
         return false;
     }
 
-    private void ChangeRadius(float delta)
+    public void ChangeRadius(float delta)
     {
         float newRadius = Mathf.Clamp(joint.maxDistance + delta, minRadius, maxRadius);
 

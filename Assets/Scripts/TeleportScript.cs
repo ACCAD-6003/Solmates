@@ -5,46 +5,34 @@ using Checkpoint_System;
 using UnityEngine;
 public class TeleportScript : MonoBehaviour
 {
-    public GameObject toPointNormal;
-    public GameObject toPointPlayerNotInTPZone;
+    public GameObject toPoint;
     public GameObject[] players;
     public GameObject maze1;
     public GameObject maze2;
+    public ZoneController bluePlayerZone;
+    public ZoneController redPlayerZone;
 
-    public bool moreThanOneTeleportPoint = false;
-    private int numOfPlayersInZone = 0;
+    public bool pretendTeleport = false;
 
-    void OnTriggerEnter(Collider other)
+    private void FixedUpdate()
     {
-        if (other.CompareTag("Player") && !moreThanOneTeleportPoint)
-        {
-            numOfPlayersInZone++;
-        }
-        else if (moreThanOneTeleportPoint)
-        {
-            maze1.SetActive(false);
-            maze2.SetActive(true);
-        }
-    }
-
-    void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player") && !moreThanOneTeleportPoint)
-        {
-            numOfPlayersInZone--;
-        }
-    }
-
-    void FixedUpdate()
-    {
-        if (numOfPlayersInZone == 2 && !moreThanOneTeleportPoint)
+        if (bluePlayerZone.isInZone && redPlayerZone.isInZone && !pretendTeleport)
         {
             foreach (GameObject player in players)
             {
                 maze1.SetActive(true);
                 maze2.SetActive(false);
-                player.transform.position = toPointNormal.transform.position;
-            }            
+                player.transform.position = toPoint.transform.position;
+                bluePlayerZone.isInZone = false;
+                redPlayerZone.isInZone = false;
+            }
+        }
+        else if (bluePlayerZone.isInZone && redPlayerZone.isInZone && pretendTeleport)
+        {
+            maze1.SetActive(false);
+            maze2.SetActive(true);
+            bluePlayerZone.isInZone = false;
+            redPlayerZone.isInZone = false;
         }
     }
 }
