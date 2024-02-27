@@ -5624,14 +5624,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 311917800, guid: 0c8b9e992168c234a94bf96f2296e0ff, type: 3}
-      propertyPath: dialogueSpeed
-      value: 500
-      objectReference: {fileID: 0}
-    - target: {fileID: 311917800, guid: 0c8b9e992168c234a94bf96f2296e0ff, type: 3}
-      propertyPath: dialogueFastSpeed
-      value: 1000
-      objectReference: {fileID: 0}
     - target: {fileID: 2380910099153925776, guid: 0c8b9e992168c234a94bf96f2296e0ff, type: 3}
       propertyPath: serializationData.Prefab
       value: 
