@@ -18,23 +18,29 @@ MonoBehaviour:
     DialoguesSeries:
     - dialogues:
       - speaker: 1
-        Dialogue: "*GASP* W-What\u2019s going on? It\u2019s so cold, and I feel so
-          heavy. what is this place?"
+        Dialogue: "*GASP* W-What\u2019s going on? Did we just fall from the sky?
+          It\u2019s so cold down here, and I feel so heavy. What is this place?"
       - speaker: 0
-        Dialogue: Whoaaaaaa this is trippy. I feel weird. Where are we?
+        Dialogue: Ack! We just fell a LONG way down, huh? Whoaaaaaa this is trippy.
+          I feel weird. Where are we?
+      - speaker: 1
+        Dialogue: "I see a sign that says \u201CStar Observatory\u201D."
+      - speaker: 0
+        Dialogue: "\u201CStair- uh steer- STAR\u2026..oboe- uh overalls- observation-
+          OBSERVATORY! It\u2019s called the \u201CStray Observatory\u201D. I\u2019m
+          so smart."
       - speaker: 1
         Dialogue: "I\u2019m trying, but\u2026I can\u2019t remember anything. Nothing
           at all. Like everything I have ever known left my head just mere moments
           ago."
       - speaker: 0
-        Dialogue: "What am I doing here?...What is this place?...WHERE is this place?...WAIT,
-          who even am I?? HAHAHA! I have no idea what\u2019s going on. This is so
-          funny."
+        Dialogue: "What am I doing here in an observatory?....HAHAHA! I have no idea
+          what\u2019s going on. This is so funny."
       - speaker: 1
-        Dialogue: "This Uri\u2026they\u2019re\u2026gorgeous. Why do they feel so
-          familiar? Like\u2026home."
+        Dialogue: "This Uri\u2026she\u2019s\u2026gorgeous. Why does she feel so familiar?
+          Like\u2026home."
       - speaker: 0
-        Dialogue: "AWOOGA! Cents is a hottie!! I kinda feel like I\u2019ve seen them
-          before."
+        Dialogue: "Also\u2026AWOOGA! Centa is a hottie!! I kinda feel like I\u2019ve
+          seen her before."
     LeadsTo:
     - End

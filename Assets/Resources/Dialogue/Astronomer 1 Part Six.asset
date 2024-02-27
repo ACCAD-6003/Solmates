@@ -23,5 +23,7 @@ MonoBehaviour:
         Dialogue: Heck if I know!
       - speaker: 1
         Dialogue: "Two stars\u2026"
+      - speaker: 0
+        Dialogue: I think this guy has more to say if we want to keep listening!
     LeadsTo:
     - End

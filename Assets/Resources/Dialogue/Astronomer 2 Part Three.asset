@@ -21,4 +21,4 @@ MonoBehaviour:
         Dialogue: "Centauri is one of those wondrous double stars, but she\u2019s
           gone\u2026"
     LeadsTo:
-    - End
+    - Astronomer 2 Part Four

@@ -18,12 +18,12 @@ MonoBehaviour:
     DialoguesSeries:
     - dialogues:
       - speaker: 1
-        Dialogue: "You\u2019re\u2026orbiting around me."
+        Dialogue: "You\u2019re\u2026orbiting around me?"
       - speaker: 0
         Dialogue: "You know it! I guess I\u2019m just attracted to you. Heh! Get
           it?"
       - speaker: 1
-        Dialogue: But, how is this happening?
+        Dialogue: But, how?
       - speaker: 0
         Dialogue: "Ahhh, she\u2019s unaware of her beauty. How poetic."
       - speaker: 1
@@ -32,7 +32,7 @@ MonoBehaviour:
         Dialogue: 'If by that you mean: hearing your silky voice, but not comprehending
           a thing, then yes.'
       - speaker: 1
-        Dialogue: "Ugh. I\u2019m Centa by the way."
+        Dialogue: "Ugh\u2026I\u2019m Centa by the way."
       - speaker: 0
         Dialogue: "And I\u2019m Uri, baby."
     LeadsTo:

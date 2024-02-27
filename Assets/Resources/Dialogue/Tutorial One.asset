@@ -18,12 +18,18 @@ MonoBehaviour:
     DialoguesSeries:
     - dialogues:
       - speaker: 3
-        Dialogue: Work your way through the puzzles until you can reunite the pair.
+        Dialogue: Work your way through the puzzles until you can reunite this beautiful
+          pair.
       - speaker: 3
-        Dialogue: To move, use the left joystick. Advance the dialogue with the right
-          face button.
+        Dialogue: "To move, use A/D if you\u2019re my first player and use Left/Right
+          arrow if you\u2019re my second player."
       - speaker: 3
-        Dialogue: Good luck and if you have any questions raise your hand and we
-          will come over.
+        Dialogue: "My first player, meet Uri. She\u2019s excitable, slightly forgetful,
+          and quite the jokester."
+      - speaker: 3
+        Dialogue: "My second player, meet Centa. She\u2019s about as wise and kind
+          as you can dream up, though she\u2019s quite horrible at social cues."
+      - speaker: 3
+        Dialogue: Off you go, then.
     LeadsTo:
     - End

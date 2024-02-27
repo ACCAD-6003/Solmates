@@ -32,16 +32,16 @@ MonoBehaviour:
       - speaker: 0
         Dialogue: "So\u2026we did it then?"
       - speaker: 1
-        Dialogue: Yes. I have finally returned to you and we can retake our place
-          as bright, beautiful, and infinite.
+        Dialogue: Yes. I have finally returned to you in a peaceful orbit, and we
+          can retake our place as bright, beautiful, and infinite.
       - speaker: 0
-        Dialogue: You were always that to me. Even down here.
+        Dialogue: You were always that to me. Even down in that observatory.
       - speaker: 1
         Dialogue: I know.
       - speaker: 0
-        Dialogue: "\u2026To the skies?"
+        Dialogue: "\u2026To the infinite void of space?"
       - speaker: 1
-        Dialogue: To the skies. Where I get to look at your pretty face for eternity.
+        Dialogue: Yes, we shall go. And I get to look at your pretty face for eternity.
       - speaker: 0
         Dialogue: DAW! Shucks.
     LeadsTo:

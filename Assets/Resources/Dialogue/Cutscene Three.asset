@@ -18,11 +18,11 @@ MonoBehaviour:
     DialoguesSeries:
     - dialogues:
       - speaker: 0
-        Dialogue: "We\u2019re back in the weird, starry place again\u2026"
+        Dialogue: "We\u2019re back in the weird, starry place in the sky again\u2026"
       - speaker: 1
         Dialogue: This is all so strange.
       - speaker: 0
-        Dialogue: "Hey, don\u2019t panic. Maybe, now there\u2019s a way we can be
+        Dialogue: "Hey, don\u2019t panic. Maybe, now there\u2019s a way we can get
           closer together."
       - speaker: 1
         Dialogue: I never said I was panicking.
@@ -33,6 +33,6 @@ MonoBehaviour:
       - speaker: 0
         Dialogue: "Don\u2019t worry, darling, I\u2019ll come back to you soon."
       - speaker: 1
-        Dialogue: "Let\u2019s just see what\u2019s going on here."
+        Dialogue: "We\u2019ll see."
     LeadsTo:
     - Tutorial Two

@@ -10,23 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ff4c86d78dfd55d47a03b069c598849c, type: 3}
-  m_Name: Convo Two C
+  m_Name: Tutorial Zero
   m_EditorClassIdentifier: 
   conversationData:
-    ID: Convo Two C
+    ID: Tutorial Zero
     Conversant: Player
     DialoguesSeries:
     - dialogues:
-      - speaker: 0
-        Dialogue: "Whoa\u2026how are we going to get through this?"
-      - speaker: 1
-        Dialogue: I believe we are capable of more than you think, especially as
-          we grow stronger together.
-      - speaker: 0
-        Dialogue: Whatever you say, oh, wise, Centa.
-      - speaker: 1
-        Dialogue: "You\u2019re cute."
-      - speaker: 0
-        Dialogue: Uh- oh- uh-...NO YOU!
+      - speaker: 3
+        Dialogue: Hello, darling. I hope you realize what a beautiful soul you control.
+      - speaker: 3
+        Dialogue: When your character speaks and the screen appears more gray, only
+          you are seeing the text displayed. Lucky you.
+      - speaker: 3
+        Dialogue: In other words, your character is talking to herself.
     LeadsTo:
-    - End
+    - Tutorial One

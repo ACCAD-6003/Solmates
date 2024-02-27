@@ -21,10 +21,11 @@ MonoBehaviour:
         Dialogue: Now, you can grow and shrink the bond between these two mysterious
           women.
       - speaker: 3
-        Dialogue: In this level, you will see pillars that, when one of the two players
-          is nearby, will allow you to change the radius between both individuals.
+        Dialogue: Here, you will see small planets. When one of the two players is
+          underneath one, it will allow you to change the radius between our lovely
+          ladies.
       - speaker: 3
-        Dialogue: To grow, push the other player with the right trigger. To shrink,
-          pull the other player in with the left trigger.
+        Dialogue: If player one is adjacent then they will use the W/D keys. If player
+          two is adjacent then they will use the Up / Down keys.
     LeadsTo:
     - End

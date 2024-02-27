@@ -10,22 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ff4c86d78dfd55d47a03b069c598849c, type: 3}
-  m_Name: Cutscene One
+  m_Name: Astronomer 2 Part Four
   m_EditorClassIdentifier: 
   conversationData:
-    ID: Cutscene One
+    ID: Astronomer 2 Part Four
     Conversant: Player
     DialoguesSeries:
     - dialogues:
       - speaker: 1
-        Dialogue: "You\u2019re so far away from me\u2026"
+        Dialogue: "We could listen to him one more time, or move onward\u2026to our
+          destiny."
       - speaker: 0
-        Dialogue: "I\u2019m sorry\u2026I don\u2019t know what happened\u2026I-I can\u2019t
-          reach you."
-      - speaker: 1
-        Dialogue: "We must\u2019ve been separated, though I don\u2019t know why.
-          We must try to come back together."
-      - speaker: 0
-        Dialogue: "Yeah let\u2019s do this!"
+        Dialogue: "Our\u2026destiny\u2026? Ok! Haha! Whatever floats your beautiful
+          boat, Centa, dear!"
     LeadsTo:
-    - Tutorial Zero
+    - End

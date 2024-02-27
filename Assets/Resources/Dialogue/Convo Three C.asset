@@ -22,8 +22,8 @@ MonoBehaviour:
       - speaker: 0
         Dialogue: "Yeah\u2026what, do you know where she is or something? Haha!"
       - speaker: 1
-        Dialogue: You could say that, yes. Hehe.
+        Dialogue: You could say that, yes.
       - speaker: 0
-        Dialogue: Oh?
+        Dialogue: "Oh\u2026?"
     LeadsTo:
     - End
