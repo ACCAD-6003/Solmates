@@ -14,6 +14,7 @@ namespace UI.Dialogue_System
         [SerializeField] private TextBoxDisplay textBoxDisplay;
         [SerializeField] private ConversantType player;
         [SerializeField] private Dictionary<ConversantType, DialogueDisplay> dialogueBackgrounds;
+        [SerializeField] private Image grayBackground;
 
         bool isDialogueActive;
         
@@ -57,6 +58,7 @@ namespace UI.Dialogue_System
         {
             if (player != playerListener) return;
             
+            grayBackground.enabled = DialogueManager.Instance.InInternalDialogue;
             textBoxDisplay.UpdateDialogueText(text, playerListener);
             dialogueBackgrounds.Values.Select(x => x.background).ForEach(x => x.SetActive(false));
             dialogueBackgrounds[speaker].background.SetActive(true);

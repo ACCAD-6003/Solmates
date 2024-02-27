@@ -29,6 +29,8 @@ namespace UI.Dialogue_System
         private bool continueInputReceived;
         private bool abortDialogue;
         public bool InDialogue => inDialogue;
+        public bool InInternalDialogue { get; private set; }
+
         public bool ValidateID(string id) => conversationGroup.Find(data => data.Data.ID.ToLower().Equals(id.ToLower()));
         private int playersReady;
     
@@ -140,13 +142,16 @@ namespace UI.Dialogue_System
                 {
                     case false when dialogue.speaker is PlayerOne:
                         index++;
+                        InInternalDialogue = true;
                         yield return ProcessDialogue(dialogue, dialogues[index], data.Conversant);
                         continue;
                     case false when dialogue.speaker is PlayerTwo:
                         index++;
+                        InInternalDialogue = true;
                         yield return ProcessDialogue(dialogues[index], dialogue, data.Conversant);
                         continue;
                     default:
+                        InInternalDialogue = false;
                         yield return ProcessDialogue(dialogue, dialogue, data.Conversant);
                         break;
                 }
