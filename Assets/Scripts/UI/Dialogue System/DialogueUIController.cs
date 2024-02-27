@@ -52,17 +52,24 @@ namespace UI.Dialogue_System
         
             textBoxDisplay.Display(player);
             DialogueManager.OnTextUpdated += UpdateDialogue;
+            DialogueManager.OnTextSet += SetDialogue;
         }
 
-        private void UpdateDialogue(string text, ConversantType playerListener, ConversantType speaker)
+        private void SetDialogue(string text, ConversantType playerListener, ConversantType speaker)
         {
             if (player != playerListener) return;
             
             grayBackground.enabled = DialogueManager.Instance.InInternalDialogue;
-            textBoxDisplay.UpdateDialogueText(text, playerListener);
+            textBoxDisplay.SetDialogueText(text, playerListener);
             dialogueBackgrounds.Values.Select(x => x.background).ForEach(x => x.SetActive(false));
             dialogueBackgrounds[speaker].background.SetActive(true);
             textBoxDisplay.SwapDialogueTextField(dialogueBackgrounds[speaker].textField);
+        }
+        
+        private void UpdateDialogue(string text, ConversantType playerListener, ConversantType speaker)
+        {
+            if (player != playerListener) return;
+            textBoxDisplay.UpdateDialogueText(text, playerListener);
         }
 
         private void OnDisable()

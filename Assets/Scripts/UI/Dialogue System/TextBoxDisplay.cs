@@ -15,10 +15,16 @@ namespace UI.Dialogue_System
             conversant = conversantToShow;
         }
 
-        public void UpdateDialogueText(string text, DialogueHelperClass.ConversantType playerListening)
+        public void SetDialogueText(string text, DialogueHelperClass.ConversantType playerListening)
         {
             if (playerListening != conversant) return;
             dialogueTextField.text = text;
+        }
+        
+        public void UpdateDialogueText(string text, DialogueHelperClass.ConversantType playerListening)
+        {
+            if (playerListening != conversant) return;
+            dialogueTextField.maxVisibleCharacters = text.Length;
         }
         
         public void SwapDialogueTextField(TMP_Text newDialogueTextField)

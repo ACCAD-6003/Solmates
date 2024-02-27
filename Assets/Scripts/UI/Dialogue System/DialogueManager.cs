@@ -11,13 +11,16 @@ namespace UI.Dialogue_System
 {
     public class DialogueManager : SingletonMonoBehavior<DialogueManager>
     {
+        
         public const ConversantType PlayerOne = ConversantType.PlayerOne;
         public const ConversantType PlayerTwo = ConversantType.PlayerTwo;
-        
+
         public static Action<ConversationData, ConversantType> OnDialogueStarted;
         public static Action OnDialogueEnded;
         public static Action<string, ConversantType, ConversantType> OnTextUpdated;
+        public static Action<string, ConversantType, ConversantType> OnTextSet;
 
+        [SerializeField] private int maxCharactersPerLine = 50;
         [SerializeField, Tooltip("Chars/Second")] float dialogueSpeed;
         [SerializeField, Tooltip("Chars/Second")] float dialogueFastSpeed;
         [SerializeField, ReadOnly] List<SOConversationData> conversationGroup;
@@ -223,26 +226,13 @@ namespace UI.Dialogue_System
             var atSpecialCharacter = false;
             var charsInRow = 0;
             var line = dialogue.Dialogue;
+            
+            OnTextSet?.Invoke(name + line, player, dialogue.speaker);
 
             for (var index = 0; index < line.Length; index++)
             {
                 var letter = line[index];
-                var nextSpace = line.IndexOf(' ', index);
-                var willClipLine = (nextSpace != -1 && charsInRow + (nextSpace - index) > 50) || (charsInRow > 50 && letter == ' ');
-                if (willClipLine)
-                {
-                    loadedText += "\n";
-                    charsInRow = 0;
-                    if (letter == ' ')
-                    {
-                        continue;
-                    }
-                }
-                else
-                {
-                    charsInRow++;
-                }
-            
+
                 loadedText += letter;
                 atSpecialCharacter = letter == '<' || atSpecialCharacter;
                 if (atSpecialCharacter && letter != '>') continue;
