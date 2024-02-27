@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.05361989, g: 0.0492052, b: 0.044723876, a: 1}
+  m_IndirectSpecularColor: {r: 0.0538141, g: 0.04922737, b: 0.04471934, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -129,7 +129,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-217932
+  m_Name: pb_Mesh-32238
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -293,7 +293,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-216970
+  m_Name: pb_Mesh-31226
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -494,6 +494,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 129792561}
     m_Modifications:
     - target: {fileID: 5771198210424922788, guid: c5b46b0cbca3b494e97eee2039ece217, type: 3}
+      propertyPath: animates
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5771198210424922788, guid: c5b46b0cbca3b494e97eee2039ece217, type: 3}
+      propertyPath: doorCollider
+      value: 
+      objectReference: {fileID: 149482513}
+    - target: {fileID: 5771198210424922788, guid: c5b46b0cbca3b494e97eee2039ece217, type: 3}
+      propertyPath: doorRenderer
+      value: 
+      objectReference: {fileID: 149482514}
+    - target: {fileID: 5771198210424922788, guid: c5b46b0cbca3b494e97eee2039ece217, type: 3}
       propertyPath: doorStayOpen
       value: 1
       objectReference: {fileID: 0}
@@ -502,8 +514,16 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5771198210424922788, guid: c5b46b0cbca3b494e97eee2039ece217, type: 3}
+      propertyPath: doorOpenAmount
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5771198210424922788, guid: c5b46b0cbca3b494e97eee2039ece217, type: 3}
       propertyPath: shouldStayOpen
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5771198210424922788, guid: c5b46b0cbca3b494e97eee2039ece217, type: 3}
+      propertyPath: doorClosedAmount
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 5771198210424922788, guid: c5b46b0cbca3b494e97eee2039ece217, type: 3}
       propertyPath: buttons.Array.size
@@ -591,6 +611,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13fea483ba31d624eaec3664e12f2d9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &149482513 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 8176951583162310818, guid: c5b46b0cbca3b494e97eee2039ece217, type: 3}
+  m_PrefabInstance: {fileID: 149482510}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &149482514 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 8176951583162310817, guid: c5b46b0cbca3b494e97eee2039ece217, type: 3}
+  m_PrefabInstance: {fileID: 149482510}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &157401443
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1382,7 +1412,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-217004
+  m_Name: pb_Mesh-31260
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1957,7 +1987,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-217806
+  m_Name: pb_Mesh-32112
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3681,7 +3711,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-217830
+  m_Name: pb_Mesh-32136
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4174,7 +4204,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-217710
+  m_Name: pb_Mesh-32016
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4338,7 +4368,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-218202
+  m_Name: pb_Mesh-32506
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5076,7 +5106,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-217956
+  m_Name: pb_Mesh-32262
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6018,6 +6048,26 @@ PrefabInstance:
     m_TransformParent: {fileID: 1380593037}
     m_Modifications:
     - target: {fileID: 5771198210424922788, guid: c5b46b0cbca3b494e97eee2039ece217, type: 3}
+      propertyPath: animates
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5771198210424922788, guid: c5b46b0cbca3b494e97eee2039ece217, type: 3}
+      propertyPath: doorCollider
+      value: 
+      objectReference: {fileID: 2081192832}
+    - target: {fileID: 5771198210424922788, guid: c5b46b0cbca3b494e97eee2039ece217, type: 3}
+      propertyPath: doorRenderer
+      value: 
+      objectReference: {fileID: 2081192833}
+    - target: {fileID: 5771198210424922788, guid: c5b46b0cbca3b494e97eee2039ece217, type: 3}
+      propertyPath: doorOpenAmount
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5771198210424922788, guid: c5b46b0cbca3b494e97eee2039ece217, type: 3}
+      propertyPath: doorClosedAmount
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5771198210424922788, guid: c5b46b0cbca3b494e97eee2039ece217, type: 3}
       propertyPath: singleButtonOpen
       value: 1
       objectReference: {fileID: 0}
@@ -6121,12 +6171,47 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5771198210424922788, guid: c5b46b0cbca3b494e97eee2039ece217, type: 3}
   m_PrefabInstance: {fileID: 2081192827}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 2081192830}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 13fea483ba31d624eaec3664e12f2d9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2081192830 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8176951583162310819, guid: c5b46b0cbca3b494e97eee2039ece217, type: 3}
+  m_PrefabInstance: {fileID: 2081192827}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &2081192831
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2081192830}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 27d17330a11b5a941a1f72f1372e3afd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &2081192832 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 8176951583162310818, guid: c5b46b0cbca3b494e97eee2039ece217, type: 3}
+  m_PrefabInstance: {fileID: 2081192827}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &2081192833 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 8176951583162310817, guid: c5b46b0cbca3b494e97eee2039ece217, type: 3}
+  m_PrefabInstance: {fileID: 2081192827}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2119429379
 PrefabInstance:
   m_ObjectHideFlags: 0

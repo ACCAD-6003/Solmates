@@ -4428,7 +4428,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-72150
+  m_Name: pb_Mesh-10780
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5907,6 +5907,12 @@ MonoBehaviour:
   requiresBothButtons: 1
   doorStayOpen: 1
   doorIsOpen: 0
+  animates: 1
+  doorRenderer: {fileID: 1151670951}
+  doorCollider: {fileID: 1151670950}
+  doorOpenAmount: 2
+  doorClosedAmount: -2.5
+  changeRate: 1.5
   buttons:
   - {fileID: 263205922}
 --- !u!64 &1151670950

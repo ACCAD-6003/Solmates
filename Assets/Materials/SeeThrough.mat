@@ -93,7 +93,7 @@ Material:
     - _Speed: 0
     - _SrcBlend: 1
     - _UVSec: 0
-    - _Vertical_Offset: -2.54
+    - _Vertical_Offset: -10
     - _ZWrite: 0
     - size: 1
     m_Colors:
