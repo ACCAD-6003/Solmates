@@ -118,7 +118,7 @@ Material:
     - _UVSec: 0
     - _Vertical_Offset: 0.38
     - _ZWrite: 0
-    - size: 1.5
+    - size: 0
     m_Colors:
     - _Color: {r: 0.95883864, g: 0.9622642, b: 0.6581524, a: 1}
     - _EmissionColor: {r: 1, g: 0.8831613, b: 0.6745283, a: 1}
