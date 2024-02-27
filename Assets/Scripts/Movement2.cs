@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.XInput;
+using UnityEngine.UI;
 
 public class Movement2 : MonoBehaviour
 {
@@ -33,9 +34,13 @@ public class Movement2 : MonoBehaviour
         "HID::Logitech Logitech RumblePad 2 USB"
     };
 
+    [Header("Icons")]
+    [SerializeField] private List<GameObject> growShrinkIcons;
+    
     [SerializeField]
     public InputActionAsset input;
     public InputActionMap actionMap;
+    
 
     private float currentSpeed;
     private Rigidbody rb;
@@ -78,7 +83,7 @@ public class Movement2 : MonoBehaviour
     {
         if (inpAction.control.device.deviceId != device)
         {
-            return;
+            //return;
         }
 
         string action = inpAction.action.name;
@@ -176,6 +181,9 @@ public class Movement2 : MonoBehaviour
         {
             Unlock();
         }
+
+        var isNearStatue = IsNearGrowShrinkStatue();
+        growShrinkIcons.ForEach(x => x.SetActive(isNearStatue));
     }
 
     private void FixedUpdate()
