@@ -60,6 +60,7 @@ namespace UI.Dialogue_System
             if (player != playerListener) return;
             
             grayBackground.enabled = DialogueManager.Instance.InInternalDialogue;
+            textBoxDisplay.UpdateDialogueText("", playerListener);
             textBoxDisplay.SetDialogueText(text, playerListener);
             dialogueBackgrounds.Values.Select(x => x.background).ForEach(x => x.SetActive(false));
             dialogueBackgrounds[speaker].background.SetActive(true);
@@ -76,11 +77,13 @@ namespace UI.Dialogue_System
         {
             DialogueManager.OnDialogueStarted -= DisplayUI;
             DialogueManager.OnDialogueEnded -= HideUI;
+            DialogueManager.OnTextSet -= SetDialogue;
         }
 
         private void OnDestroy()
         {
             DialogueManager.OnTextUpdated -= UpdateDialogue;
+            DialogueManager.OnTextSet -= SetDialogue;
         }
 
         [System.Serializable]

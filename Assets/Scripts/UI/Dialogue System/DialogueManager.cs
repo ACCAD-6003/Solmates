@@ -177,14 +177,17 @@ namespace UI.Dialogue_System
 
         private IEnumerator ProcessDialogue(DialogueData dialogue, DialogueData dialogueTwo, string conversant)
         {
-            OnTextUpdated?.Invoke("", ConversantType.PlayerOne, dialogue.speaker);
-            OnTextUpdated?.Invoke("", ConversantType.PlayerTwo, dialogue.speaker);
+            var speakerName = SpeakerName(dialogue, conversant);
+            var speakerNameTwo = SpeakerName(dialogueTwo, conversant);
+            
+            OnTextSet?.Invoke(speakerName + dialogue.Dialogue, ConversantType.PlayerOne, dialogue.speaker);
+            OnTextUpdated?.Invoke(speakerName, ConversantType.PlayerOne, dialogue.speaker);
+            OnTextSet?.Invoke(speakerNameTwo + dialogueTwo.Dialogue, ConversantType.PlayerTwo, dialogueTwo.speaker);
+            OnTextUpdated?.Invoke(speakerNameTwo, ConversantType.PlayerTwo, dialogueTwo.speaker);
             yield return new WaitUntil(() => FadeToBlackSystem.FadeOutComplete);
 
             continueInputReceived = false;
 
-            var speakerName = SpeakerName(dialogue, conversant);
-            var speakerNameTwo = SpeakerName(dialogueTwo, conversant);
 
             UIController.OnNextDialogue += SpeedUpText;
             playersReady = 0; 
@@ -227,8 +230,6 @@ namespace UI.Dialogue_System
             var charsInRow = 0;
             var line = dialogue.Dialogue;
             
-            OnTextSet?.Invoke(name + line, player, dialogue.speaker);
-
             for (var index = 0; index < line.Length; index++)
             {
                 var letter = line[index];
