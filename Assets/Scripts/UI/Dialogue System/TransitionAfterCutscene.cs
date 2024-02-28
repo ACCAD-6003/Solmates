@@ -13,5 +13,10 @@ namespace UI.Dialogue_System
         {
             StartCoroutine(SceneTools.TransitionToScene(SceneTools.NextSceneExists ? SceneTools.NextSceneIndex : 0));
         }
+        
+        private void OnDestroy()
+        {
+            DialogueManager.OnDialogueEnded -= HandleDialogueEnd;
+        }
     }
 }

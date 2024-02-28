@@ -84,6 +84,7 @@ namespace UI.Dialogue_System
 
         private void OnDestroy()
         {
+            DialogueManager.OnDialogueStarted -= DisplayUI;
             DialogueManager.OnTextUpdated -= UpdateDialogue;
             DialogueManager.OnTextSet -= SetDialogue;
         }

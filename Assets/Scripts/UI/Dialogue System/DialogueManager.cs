@@ -5,13 +5,13 @@ using System.Linq;
 using Controller;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using static UI.Dialogue_System.DialogueHelperClass;
 
 namespace UI.Dialogue_System
 {
     public class DialogueManager : SingletonMonoBehavior<DialogueManager>
     {
-        
         public const ConversantType PlayerOne = ConversantType.PlayerOne;
         public const ConversantType PlayerTwo = ConversantType.PlayerTwo;
 
@@ -47,8 +47,23 @@ namespace UI.Dialogue_System
         private void Start()
         {
             StartCoroutine(WatchForCrash());
+            SceneManager.activeSceneChanged += DestroyOnStart;
         }
-        
+
+        private void DestroyOnStart(Scene _, Scene __)
+        {
+            if (SceneManager.GetActiveScene().buildIndex == 0)
+            {
+                dialogueProgress.Clear();
+                
+            }
+        }
+
+        private void OnDestroy()
+        {
+            SceneManager.activeSceneChanged -= DestroyOnStart;
+        }
+
         private IEnumerator WatchForCrash()
         {
             while (true)

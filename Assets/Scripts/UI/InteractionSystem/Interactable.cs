@@ -69,7 +69,11 @@ namespace UI.InteractionSystem
 
         private void OnDestroy()
         {
-            UIController.OnInteract -= TriggerDialogue;
+            UIController.OnInteract -= goToNextScene switch
+            {
+                false => TriggerDialogue,
+                true => GoToNextScene
+            };
         }
     }
 }

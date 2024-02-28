@@ -45,6 +45,8 @@ namespace UI.Dialogue_System
         private void OnDisable()
         {
             Checkpoint_System.Checkpoint.OnCheckpointReached -= PrepDialogue;
+            SceneManager.activeSceneChanged -= OnSceneChange;
+            Controller.UIController.OnChitChat -= StartDialogue;
         }
     }
 }
